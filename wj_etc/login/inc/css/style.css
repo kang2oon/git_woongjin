@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* Common */
+html, body{margin:0;padding:0;font-size:12px;}
+
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix {display: block;*zoom:1;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+.fleft{float:left;}
+.fright{float:right;}
+.tborder{border:1px solid #ff0066;}
+.mgtop10{margin-top:10px;}
+.mgtop20{margin-top:20px;}
+.txtcenter{text-align:center;}
+
+/*Layout*/
+#wrap{position:absolute;top:50%;left:50%;width:500px;height:300px;margin-top:-150px;margin-left:-250px;}
+h1{margin:0;padding:0;}
+#footer{text-align:center;}
+
+#login_box{
+	background:#f8f8f8;
+	border:1px solid #ccc;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding:30px 35px;margin:15px 0;
+}
+	#login_box label{margin-right:10px;}
+	#login_box input{background:#fff;border:1px solid #ccc;color:#333;padding:3px;margin-top:-3px;}
+	#login_box input:focus{border:1px solid #7d8f00;}
+	#login_box input[type='radio']{border:none;border:transparent;}
+	#login_box select option{padding-right:5px;}
+
+.guide{color:#FF8500;}
+.btn{
+	display:inline-block;
+	*display:inline;
+	zoom: 1;
+	padding:5px 10px;
+	margin:0 1px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.ok{
+	border:1px solid #7d8f00;
+	background: #A6BC09;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bdd037), to(#A6BC09));
+	background: -moz-linear-gradient(top,  #bdd037,  #A6BC09);
+}
+	.ok a{color:#fff;text-decoration:none;font-weight:bold;text-shadow: 0 1px 0 rgba(125,143,0,0.7);}
+.reset{
+	border:1px solid #aaa;
+	background: #eeeeee;
+	background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+	background: -moz-linear-gradient(top,  #eeeeee,  #cccccc);
+}
+	.reset a{color:#333;text-decoration:none;font-weight:bold;}
+.auth{
+	border:1px solid #167daf;
+	background: #2a8ebf;
+	background: -webkit-gradient(linear, left top, left bottom, from(#3a9ecf), to(#2a8ebf));
+	background: -moz-linear-gradient(top,  #3a9ecf,  #2a8ebf);
+}
+	.auth a{color:#fff;text-decoration:none;font-weight:bold;text-shadow: 0 1px 0 rgba(35,136,185,0.7);}
+
+#auth_box{
+	background:#fff;
+	border:1px solid #ccc;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding:10px 20px;margin:25px 0 0;
+}
+	.timer{color:#f50003;}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+@import url('reset.css');
+@import url('/inc/font/font.css');
+
+/* Common */
+html, body{font-family:'Nanum Gothic';font-size:12px;margin:0;padding:0;line-height:160%;}
+div{position:relative;}
+ul, ol{list-style-position:inside;}
+caption{font-size:18px;font-weight:700;margin-top:30px;margin-bottom:10px;}
+pre{max-height:350px;font-family:verdana;font-size:12px;word-break:break-all;overflow:auto;}
+
+.tborder{border:1px solid #ff0066;}
+.noborder{border:none !important;}
+.hidden_txt, .hidden{display:none;}
+.fleft{float:left;}
+.fright{float:right;}
+.font13{font-size:13px;}
+.txtimportant{color:#ff0000;}
+.txtcenter{text-align:center;}
+.txtstrong{font-weight:700;}
+.mgtop5{margin-top:5px;}
+.mgtop15{margin-top:15px;}
+.mgtop20{margin-top:20px;}
+.mgtop30{margin-top:30px;}
+
+a:focus{border:1px dotted #ff0066;}
+
+/* LayOut */
+#wrap{position:relative;width:945px;margin:0 auto;}
+
+#header{margin-bottom:40px;}
+#footer{margin-top:80px;margin-bottom:20px;}
+#banner{position:fixed;top:250px;left:50%;margin-left:481px;}
+
+#img_intro{width:100%;height:1600px;background:url('/images/wj_intro.jpg') no-repeat 50% 0;}
+#img_politics{width:100%;height:1025px;background:url('/images/politics.jpg') no-repeat 50% 0;}
+
+table{width:100%;border-collapse:collapse;margin:5px 0;}
+th, td{border:1px solid #ccc;padding:3px 7px;vertical-align:middle;text-align:center;}
+td:nth-child(2){text-align:left;}
+th{background:#666;color:#fff;}
+tr:nth-child(even){background:#f5f5f5;}
+
+#content h2{margin-bottom:45px;}
+#content h3{font-size:24px;font-weight:800;color:#222;line-height:120%;}
+#content h4{font-size:16px;margin-top:30px;margin-bottom:10px;}
+
+#content ul{list-style:none;}
+#content li{background:url('/images/bu_li.jpg') no-repeat 0 6px;padding-left:15px;}
+
+.menu1_important{color:#4f5400;}
+.menu1_h4{color:#6a770b;}
+.menu3_h4{color:#c1531e;}
+
+.rule_detail{background:url('/images/bg_intro.jpg') no-repeat right 125px;}
+.vision{background:url('/images/bg_vision.jpg') no-repeat;padding-left:145px;}
+
+
