@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+@import url('reset.css');
+@import url('/inc/font/font.css');
+
+/* Common */
+html, body, textarea{font-family:'Nanum Gothic';font-size:12px;margin:0;padding:0;line-height:160%;}
+div{position:relative;}
+caption{display:none;}
+textarea{padding:3px 5px;}
+
+.tborder{border:1px solid #ff0066;}
+.hidden_txt{display:none;}
+.fleft{float:left;}
+.fright{float:right;}
+.font13{font-size:13px;}
+.txtleft{text-align:left;}
+.txtcenter{text-align:center;}
+.txtstrong{font-weight:700;}
+.txtlightgray{color:#ababab;}
+.mgtop5{margin-top:5px;}
+.mgtop10{margin-top:10px;}
+.mgtop15{margin-top:15px;}
+.mgtop20{margin-top:20px;}
+.mgtop30{margin-top:30px;}
+.mgleft10{margin-left:10px;}
+.pdtop5{padding-top:5px;}
+.pdtop30{padding-top:30px;}
+
+a:focus{border:2px dotted #ff0066;z-index:10000;}
+
+/* LayOut */
+#skipNavi li { font-size:0; line-height:0; }
+#skipNavi li a{ display:block; width:100%; padding:10px 0; color:#fff; position:absolute; left:0; top:-100px; text-align:center; z-index:200; background:#FF8500; border:0 none;}
+#skipNavi li a:active, #skipNavi li a:focus { top:0; font-weight:bold;font-size:16px;line-height:1.5; border-bottom:1px solid #fff;}
+
+#wrap{width:100%;}
+#header{position:relative;width:962px;height:100px;margin:0 auto;}
+#header h1{float:left;margin-top:13px;}
+	#tnb{position:absolute;top:5px;right:0;list-style:none;}
+	#tnb li{float:left;padding-left:17px;background:url('/images/common/side_menu_linebg.gif') no-repeat 8px 5px;}
+	#tnb li:first-child, #gnb li:first-child{background:none;}
+	#gnb{position:absolute;top:30px;right:0;list-style:none;}
+	#gnb li{position:relative;float:left;padding-left:39px;background:url('/images/common/top_menu_linebg.gif') no-repeat 18px 3px;}
+	#gnb li div{height:30px;overflow:hidden;}
+	#gnb li div:hover img{margin-top:-30px;}
+	#gnb li ul{position:absolute;top:30px;display:none;list-style:none;width:727px;background:#fff;}
+	#gnb li:hover ul{display:block;z-index:1000;}
+	#gnb li li{float:left;height:22px;padding:0;background:none;overflow:hidden;}
+	#gnb li li:hover img{margin-top:-22px!important;}
+	#gnb li li:first-child, #gnb li li:last-child{width:16px;}
+#footer{width:100%;height:79px;background:url('/images/common/footer_bg.gif') repeat-x 0 0;padding-top:45px;}
+	/*#footer div{position:relative;width:929px;height:79px;margin:0 auto;background:url('/images/common/footer.gif') no-repeat;}
+	#footer div img{position:absolute;cursor:pointer;}*/
+	#footer .address{margin-left:35px;font-size:11px;}
+	#footer .address .copy{font-family:tahoma;font-size:10px;color:#666;}
+	.fnb{list-style: none;margin-right:10px;}
+	.fnb li{float: left;padding-left:24px;background:url('/images/common/sp_fnb.gif') no-repeat  10px 6px;font-size:11px;}
+	.fnb li:first-child{background:none;}
+	.fnb li a{color:inherit;text-decoration:none;}
+	#family_site{position:absolute;bottom:38px;right:12px;width:107px;background:#fff;border:1px solid #ababab;padding:5px;list-style:none;display:none;}
+	#family_site li{padding:2px 0;}
+	#family_site a{font-family:돋움;font-size:11px;color:#666;text-decoration:none;}
+	#family_site a:hover{color:#000;}
+	
+#content{position:relative;width:962px;margin:0 auto;}
+	.main_banner{list-style:none;margin-left:6px;}
+	.main_banner li{float:left;position:relative;}
+	.main_banner li div{position:absolute;top:100px;}
+
+#popup{padding:10px;}
+	#popup h4{font-size:16px;margin-bottom:10px;}
+	
+#article{float:right;width:650px;margin-top:30px;}
+	#article .section{margin-top:23px;}	
+	#article h3{font-size:24px;font-weight:800;color:#222;line-height:120%;}
+	#article h4{font-size:16px;margin-top:30px;margin-bottom:10px;}
+	#article h5{font-size:14px;margin-bottom:10px;}
+	#article ul{list-style:none;}
+	#article li{background:url('/images/common/bu_li.jpg') no-repeat 0 6px;padding-left:15px;}
+	
+	.menu1_important{/*color:#4f5400;*/color:#157fc0;}
+	.menu4_important{/*color:#F67812;*/color:#157fc0;}
+	.menu5_important{/*color:#16799B;*/color:#157fc0;}
+	.menu1_h4{/*color:#6a770b;*/color:#157fc0;}
+	.menu3_h4{/*color:#c1531e;*/color:#157fc0;}
+	.menu4_h4{/*color:#F67812;*/color:#157fc0;}
+	
+	.rule_detail{background:url('/images/01_introduce/bg_intro.jpg') no-repeat right 123px;}
+	.company_culture{background:url('/images/01_introduce/img_ttotto2.gif') no-repeat 0 5px;padding-left:313px;}
+	#ci_introduce{width:625px;height:261px;background:url('/images/01_introduce/ci_logo_bg.gif') no-repeat;margin-top:20px;}
+	#ci_motive{float:right;width:255px;top:24px;right:24px;}
+	#ci_motive ul{float:right;list-style:none;}
+	#ci_motive li{width:34px;height:30px;margin-top:4px;padding:0;border:1px solid #ccc;}
+	#ci_motive li:first-child{margin-top:0;}
+	#ci_motive li:hover{border:1px solid #B2BB1B;}
+	#ci_motive li.tab{cursor:pointer;}
+	#ci_motive li.tab.selected{border:2px solid #F8981C;margin-left:-1px;}
+	
+	#history_year{list-style:none;}
+	#history_year li{float:left;width:108px;padding:0;height:34px;overflow:hidden;}
+	#history_year li.tab{cursor:pointer;}
+	#history_year li.tab.selected img, #history_year li:hover img{margin-top:-34px;}
+	.history_mainimg{border-bottom:1px solid #47494D;}
+	.history_year{float:left;width:135px;font-size:28px;font-family:verdana;letter-spacing:-2px; color:#979797;padding:15px 0;}
+	.history_detail{float:left;width:503px;padding:15px 5px;border-bottom:1px solid #979797;}
+	.txtbox{border:1px solid #e4e4e4;padding:10px 15px;}
+	.receipt_input label{display:inline-block;width:75px;}
+	.receipt_input input[type='text']{border:1px solid #ccc;}
+	.receipt_input hr{height:1px;border-top:1px dashed #e4e4e4;}
+	.input_type2{background:url('/images/03_management/bg_input2.gif') no-repeat left bottom;min-height:270px;}
+	.input_type1{background:url('/images/03_management/bg_input1.gif') no-repeat left top;min-height:33px;}
+	.input_type1 input[type='radio']{border:none;margin-top:-2px;}
+	.input_type1 ul{list-style:none;margin-top:15px;margin-left:-7px;}
+	.input_type1 li{padding:0;background:none !important;}
+	#recruit_system2 blockquote{background:url('/images/04_recruit/bg_blockquote.gif') no-repeat;padding-left:20px;margin-top:30px;}
+	.human_resource{background:url('/images/04_recruit/bg_system_2.gif') no-repeat right bottom;padding-right:210px;}
+	.system21{background:url('/images/04_recruit/bg_system_21.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.system22{background:url('/images/04_recruit/bg_system_22.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.system23{background:url('/images/04_recruit/bg_system_23.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.philosophy_recruit{background:url('/images/04_recruit/bg_philosophy_recruit.gif') no-repeat right 30px;}
+	.bg_job{background:url('/images/04_recruit/bg_job.gif') no-repeat; padding-left:180px;}
+	.job_company{width:100%;background:url('/images/04_recruit/row_r1.gif') no-repeat right 0;}
+	.job_company li{float:left;height:34px;overflow:hidden;padding:0 !important;background:none !important;}
+	.job_company li:first-child{background:url('/images/04_recruit/row_l2.gif') no-repeat !important;padding-left:30px !important;}
+	.job_company .selected img{margin-top:-34px;}
+	.recruit_qna{width:650px;height:79px;background:url('/images/04_recruit/notice_img01.gif') no-repeat;}
+	.interview{background:url('/images/04_recruit/bg_interview_bottom.gif') no-repeat left bottom;padding-bottom:115px;list-style:none;margin-top:20px;}
+	.interview li{padding:0 !important;background:none !important;margin-top:30px;*zoom:1;}
+	.interview li:after{content:"";clear:both;display:block;}
+	.interview li:first-child{margin-top:0;background:url('/images/04_recruit/bg_interview_top.gif') no-repeat right top !important;}
+	.interview h5{margin-top:10px;color:#F67812;font-size:23px !important;font-weight:400;}
+	.interview h6{margin-top:15px;color:#C1AA8F}
+	.sitemap1{list-style:none;}
+	.sitemap1 li{border-bottom:1px solid #ebebeb;padding:5px 0;background:none !important;font-weight:700;*zoom:1;}
+	.sitemap1 li:after, .sitemap2:after{content:"";clear:both;display:block;}
+	.sitemap1 li p{float:left;width:100px;}
+	.sitemap1 li a, .sitemap2 li a{color:inherit;text-decoration:none;}
+	.sitemap1 ul{float:left;width:530px;}
+	.sitemap1 li li{float:left;border:none;padding:0;color:#999;font-weight:400;}
+	.sitemap2{list-style:none;border-bottom:1px solid #ebebeb;*zoom:1;}
+	.sitemap2 li{float:left;margin-right:10px;padding:5px 0;background:none !important;font-weight:700;*zoom:1;}
+	.business_title{float:left;width:70px;font-weight:700;color:#00ABE8;}
+	.business_content{float:right;width:580px;}
+	
+	.tab_sysvision, .tab_social, .tab_moral{list-style:none;background:url('/images/03_management/tab03_bg.gif') repeat-x;}
+	.tab_sysvision li{float:left;width:96px;padding:0 !important;margin:0;overflow:hidden;}
+	.tab_social li{float:left;width:106px;padding:0 !important;margin:0;overflow:hidden;}
+	.tab_moral li{float:left;width:110px;padding:0 !important;margin:0;overflow:hidden;}
+	.tab_sysvision li img{margin-left:-101px;}
+	.tab_social li img, .tab_moral li img{margin-left:-110px;}
+	.tab_sysvision .selected{width:101px;}
+	.tab_social .selected, .tab_moral .selected{width:110px;}
+	.tab_sysvision .selected img, .tab_social .selected img, .tab_moral .selected img{margin:0;}
+	.bg_systorganization{background:url('/images/03_management/bg_system_organization.gif') no-repeat right 150px;}
+	.bg_systorganization2{background:url('/images/03_management/bg_system_organization2.gif') no-repeat 0 0;padding-left:300px;margin:20px 0;}
+	.table_climate{width:100%;border-collapse:collapse;border-top:1px solid #e4e4e4;margin:10px 0;}
+	.table_climate th, td{border-bottom:1px solid #e4e4e4;border-left:1px solid #e4e4e4;padding:5px 10px;text-align:center;}
+	.table_climate th:first-child, td:first-child{border-left:none;}
+	.table_climate th{background:#f5f5f5;}
+	.vision {background: url("/images/03_management/bg_vision.jpg") no-repeat scroll 0 0 transparent;padding-left: 145px;}
+	.bg_yuguchun{background:url('/images/03_management/bg_yuguchun.gif') no-repeat right bottom;padding-right:210px;margin:10px 0;}
+	.table_social{width:100%;border-collapse:collapse;margin:10px 0;}
+	.table_social th, td{border-bottom:1px solid #FFC700;border-left:none;padding:5px 10px;}
+	.table_social th{background:#FFC700;color:#fff;}
+	.table_job, .job_detail{width:100%;border-collapse:collapse;}
+	.table_job tbody th, td{text-align:left;padding:5px 10px;border-bottom:1px solid #d4d4d4;}
+	.table_job tbody th{background:url('/images/04_recruit/btn_work_bg.gif') no-repeat 15px 5px;}
+	.table_job a{cursor:pointer;text-decoration:underline;}
+	.job_rule{margin-top:25px;display:none;}
+	.job_rule a{cursor:pointer;}
+	.job_detail th{border:1px solid #d4d4d4;background:#F8F2ED;color:#E46D01;padding:5px;text-align:center;}
+	.job_detail td{border:1px solid #d4d4d4;padding:5px;vertical-align:middle;}
+	.table_contact{width:100%;}
+	.table_contact th{padding:0;}
+	.table_contact td{border-bottom:1px solid #d4d4d4;padding:5px;vertical-align:middle;}
+
+#snb{float:left;width:190px;margin-top:30px;}
+	#snb ul{margin-top:20px;list-style:none;}
+	#snb li{width:190px;overflow:hidden;}
+		#snb ul ul{margin-top:-7px;margin-left:11px;display:none;}
+		#snb li .menu1 li{background:url('/images/01_introduce/left_sub_menu1_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
+		#snb li .menu3 li{background:url('/images/03_management/left_sub_menu3_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
+		#snb li .menu4 li{background:url('/images/04_recruit/left_sub_menu4_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
+		#snb .menu1 .depth3_first, #snb .menu3 .depth3_first, #snb .menu4 .depth3_first{height:15px;padding-left:0;}
+		#snb .menu1 .depth3_last, #snb .menu3 .depth3_last, #snb .menu4 .depth3_last{height:17px;padding-left:0;}
+		#snb li li img{margin-left:0 !important;}
+	
+#lnb ul{list-style:none;font-size:11px;float:right;}
+	#lnb ul a{font-family:돋움;color:#929292;text-decoration:none;}
+	#lnb ul li{float:left;padding-left:15px;background:url('/images/common/loc_arrow.gif') no-repeat 5px 4px;}
+	#lnb ul li:first-child{background:none;}
+	#lnb ul li:first-child img{margin-top:-1px;margin-top:2px \0/IE9;}
+
+#floating_banner{position:fixed;list-style:none;top:213px;left:50%;margin-left:495px;z-index:10000;}
+	#floating_banner li img{margin-top:-70px;overflow:hidden;}
+	#floating_banner li:hover{height:70px !important;overflow:hidden;}
+	#floating_banner li:hover img{margin-top:0;}
+	#floating_banner li:last-child img, #floating_banner li.float_top img{margin-top:-28px;*margin-top:-23px;margin-top:-21px \0/IE9;//margin-top:-21px;}
+	#floating_banner li:last-child:hover, #floating_banner li.float_top:hover{height: 20px !important;overflow:hidden;}
+	#floating_banner li:last-child:hover img, #floating_banner li.float_top:hover img{margin-top:0;}
+	#floating_banner li.float_top{padding:0;margin:0;*line-height:15px;}
+	
+/* GNB, SNB Position */
+/* GNB 컬러변경 */
+#gnb li li img{margin-top:0 !important;}
+#overview #gnb #introduce img, #philosophy #gnb #introduce img, #ci_mean #gnb #introduce img, #ci_guide #gnb #introduce img, #history #gnb #introduce img,
+#system_vision #gnb #politics img, #system_organization #gnb #politics img, #system_climate #gnb #politics img, 
+#social_vision #gnb #politics img, #social_act_yuguchun #gnb #politics img, #moral_message #gnb #politics img, #moral_inform_receipt #gnb #politics img, 
+#moral_inform_use #gnb #politics img, #woongjin_foundation #gnb #politics img, #woongjin_foundation2 #gnb #politics img, #woongjin_foundation3 #gnb #politics img, 
+#woongjin_foundation4 #gnb #politics img, #woongjin_foundation5 #gnb #politics img, #wanted #gnb #recruit img, #recruit_system1 #gnb #recruit img, 
+#recruit_system2 #gnb #recruit img, #recruit_system3 #gnb #recruit img, #recruit_system4 #gnb #recruit img, #work_rule #gnb #recruit img,
+#holdings #gnb #business img, #thinkbig #gnb #business img, #booxen #gnb #business img, #rexfield #gnb #business img, #play #gnb #business img, 
+#food #gnb #business img, #energy #gnb #business img, #chemical #gnb #business img, #notice_list #gnb #recruit img, #login #gnb #recruit img, #pop_inquire #gnb #recruit img,
+#faq_list #gnb #recruit img
+{margin-top:-30px;}
+/* GNB SUB 컬러변경 */
+#overview #gnb #introduce #company_introduce img, 
+#philosophy #gnb #introduce #politics_philosophy img,
+#ci_mean #gnb #introduce #ci img, #ci_guide #gnb #introduce #ci img, #history #gnb #introduce #footprints img,
+#system_vision #gnb #politics #environment img, #system_organization #gnb #politics #environment img, #system_climate #gnb #politics #environment img,
+#social_vision #gnb #politics #social img, #social_act_yuguchun #gnb #politics #social img, #moral_message #gnb #politics #moral img, 
+#moral_inform_receipt #gnb #politics #moral img, #moral_inform_use #gnb #politics #moral img, #woongjin_foundation #gnb #politics #foundation img, 
+#woongjin_foundation2 #gnb #politics #foundation img, #woongjin_foundation3 #gnb #politics #foundation img, #woongjin_foundation4 #gnb #politics #foundation img, 
+#woongjin_foundation5 #gnb #politics #foundation img, #wanted #gnb #recruit #insa_wanted img, #recruit_system1 #gnb #recruit #insa_system img, 
+#recruit_system2 #gnb #recruit #insa_system img, #recruit_system3 #gnb #recruit #insa_system img, #recruit_system4 #gnb #recruit #insa_system img,
+#work_rule #gnb #recruit #insa_job img, #holdings #gnb #business #bholdings img, #thinkbig #gnb #business #bthinkbig img, #booxen #gnb #business #bbooxen img, 
+#rexfield #gnb #business #brexfield img, #play #gnb #business #bplay img, #food #gnb #business #bfood img, #energy #gnb #business #benergy img, 
+#chemical #gnb #business #bchemical img, #notice_list #gnb #recruit #insa_info img, #login #gnb #recruit #insa_info img, #pop_inquire #gnb #recruit #insa_info img,
+#faq_list #gnb #recruit #insa_info img
+{margin-top:-22px !important;}
+/* SNB 컬러변경 */
+#overview #company_introduce_snb img, #philosophy #politics_philosophy_snb img,
+#ci_mean #ci_mean_snb img, #ci_guide #ci_mean_snb img, #history #history_snb img,
+#system_vision #environment_snb img, #system_organization #environment_snb img, #system_climate #environment_snb img,
+#social_vision #social_snb img, #social_act_yuguchun #social_snb img, #moral_message #moral_snb img, #moral_inform_receipt #moral_snb img, 
+#moral_inform_use #moral_snb img, #woongjin_foundation #foundation_snb img, #woongjin_foundation2 #foundation_snb img, #woongjin_foundation3 #foundation_snb img, 
+#woongjin_foundation4 #foundation_snb img, #woongjin_foundation5 #foundation_snb img, #wanted #wanted_snb img, #recruit_system1 #system_snb img,
+#recruit_system2 #system_snb img, #recruit_system3 #system_snb img, #recruit_system4 #system_snb img, #work_rule #workrule_snb img, #call #call_snb img, 
+#legal #legal_snb img, #private #private_snb img, #sitemap #sitemap_snb img, #holdings #holdings_snb img, #thinkbig #thinkbig_snb img, #booxen #booxen_snb img, 
+#rexfield #rexfield_snb img, #play #play_snb img, #food #food_snb img, #energy #energy_snb img, #chemical #chemical_snb img, #notice_list #recruit_snb img,
+#login #recruit_snb img, #pop_inquire #recruit_snb img, #faq_list #recruit_snb img
+{margin-left:-190px;z-index:50;}
+/* SNB Depth3 Show */
+#ci_mean #ci_mean_snb ul, #ci_guide #ci_mean_snb ul, #history #history_snb ul, 
+#moral_message #moral_snb ul, #moral_inform_receipt #moral_snb ul, #moral_inform_use #moral_snb ul,  #woongjin_foundation #foundation_snb ul, 
+#woongjin_foundation2 #foundation_snb ul, #woongjin_foundation3 #foundation_snb ul, #woongjin_foundation4 #foundation_snb ul, #woongjin_foundation5 #foundation_snb ul,
+#recruit_system1 #system_snb ul, #recruit_system2 #system_snb ul, #recruit_system3 #system_snb ul, #recruit_system4 #system_snb ul, #notice_list #recruit_snb ul,
+#login #recruit_snb ul, #pop_inquire #recruit_snb ul, #faq_list #recruit_snb ul
+{display:block;z-index: 100;}
+/* SNB Depth3 컬러변경 */
+#ci_mean #ci_mean_snb #depth131 img, #ci_guide #ci_mean_snb #depth132 img, #history #history_snb #depth141 img,
+#moral_message #moral_snb #depth331 img, #moral_inform_receipt #moral_snb #depth332 img, #moral_inform_use #moral_snb #depth332 img,
+#woongjin_foundation #foundation_snb #depth341 img, #woongjin_foundation2 #foundation_snb #depth342 img, #woongjin_foundation3 #foundation_snb #depth343 img,
+#woongjin_foundation4 #foundation_snb #depth344 img, #woongjin_foundation5 #foundation_snb #depth345 img, #recruit_system1 #system_snb #depth421 img,
+#recruit_system2 #system_snb #depth422 img, #recruit_system3 #system_snb #depth423 img, #recruit_system4 #system_snb #depth424 img, 
+#notice_list #recruit_snb #depth441 img, #login #recruit_snb #depth442 img, #pop_inquire #recruit_snb #depth443 img, #faq_list #recruit_snb #depth444 img
+{position:relative;top:-13px;}
+/* GNB SHOW/HIDE */
+#overview #gnb #introduce ul, #philosophy #gnb #introduce ul, #ci_mean #gnb #introduce ul, #ci_guide #gnb #introduce ul, #history #gnb #introduce ul,
+#system_vision #gnb #politics ul, #system_organization #gnb #politics ul, #system_climate #gnb #politics ul, 
+#social_vision #gnb #politics ul, #social_act_yuguchun #gnb #politics ul, #moral_message #gnb #politics ul, #moral_inform_receipt #gnb #politics ul, 
+#moral_inform_use #gnb #politics ul, #woongjin_foundation #gnb #politics ul, #woongjin_foundation2 #gnb #politics ul, #woongjin_foundation3 #gnb #politics ul, 
+#woongjin_foundation4 #gnb #politics ul, #woongjin_foundation5 #gnb #politics ul, #wanted #gnb #recruit ul, #recruit_system1 #gnb #recruit ul, 
+#recruit_system2 #gnb #recruit ul, #recruit_system3 #gnb #recruit ul, #recruit_system4 #gnb #recruit ul, #work_rule #gnb #recruit ul,
+#holdings #gnb #business ul, #thinkbig #gnb #business ul, #booxen #gnb #business ul, #rexfield #gnb #business ul, #play #gnb #business ul, 
+#food #gnb #business ul, #energy #gnb #business ul, #chemical #gnb #business ul, #notice_list #gnb #recruit ul, #login #gnb #recruit ul, #pop_inquire #gnb #recruit ul,
+#faq_list #gnb #recruit ul
+{display:block;}
