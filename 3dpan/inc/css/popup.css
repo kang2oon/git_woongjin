@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* layout */
+body {background:#fff}
+#pop-wrapper {width:100%; background:#fff}
+#pop-wrapper .top {height:43px; background:url('/images/common/bg_popheader.png') repeat-x 0 0;}
+#pop-wrapper .top h2 {margin-top:0px; padding:15px 0 0 15px; font-size:14px; line-height:14px; color:#222}
+#pop-wrapper .cont {margin:15px 15px 0 15px;}
+.into-map {width:495px; height:210px; border:1px solid #c7c7c7; background:#f2f2f2}
+
+dl.address-map dt {margin-top:13px; font-weight:bold; color:#666; line-height:17px}
+dl.address-map dd {color:#666;}
+    dl.address-map dd ul li {line-height:14px}
+
+.btn-pop-c {margin-top:35px; padding-bottom:17px; text-align:center}
