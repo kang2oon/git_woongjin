@@ -44,7 +44,46 @@
 					</ul>
 					<h4 class="menu3_h4">지원방법</h4>
 					<p>범지원사업내용별 지원단체의 개발 프로그램 위주로 사업계획제안서(RFP)를 제출받아 소정의 심사를 거쳐 선정시 시행효과가 큰 프로그램의 경우 지속적인 지원 방향 고려</p>
-					<div class="mgtop20 txtcenter"><img src="/images/03_management/img_foundation3.jpg" alt=""/></div>
+					<div class="mgtop20 clearfix">
+						<div class="fleft"><img src="/images/03_management/img_multiculture1.gif" alt="출판도시 문화재단의 책 만들기 체험 캠프 사진"/>
+							<p class="found_caption">
+								<h5>출판도시문화재단</h5>
+								책 만들기 체험 캠프
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_multiculture2.gif" alt="울산시 다문화가족 지원센터의 부모와 자녀의 다문화 공부방 사진"/>
+							<p class="found_caption">
+								<h5>울산시 다문화가족 지원센터</h5>
+								다문화 공부방(부모, 자녀)
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_multiculture3.gif" alt="광주시 다문화가족 지원센터의 퓨전새댁네 멋진 베이커리 사진"/>
+							<p class="found_caption">
+								<h5>광주시 다문화가족 지원센터</h5>
+								퓨전새댁네 멋진 베이커리
+							</p>
+						</div>
+					</div>
+					<div class="mgtop20 clearfix">
+						<div class="fleft"><img src="/images/03_management/img_multiculture4.gif" alt="동대문구 다문화가족 지원센터의 다문화가족 해피라이프 다문화 어머니 합창단 사진"/>
+							<p class="found_caption">
+								<h5>동대문구 다문화가족 지원센터</h5>
+								다문화가족 'Happy Life'<br/>(다문화어머니 합창단)
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_multiculture5.gif" alt="동대문구 다문화가족 지원센터의 다문화가족 해피라이프 다문화 자녀 연극단 사진"/>
+							<p class="found_caption">
+								<h5>동대문구 다문화가족 지원센터</h5>
+								다문화가족 'Happy Life'<br/>(다문화자녀 연극단)
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_multiculture6.gif" alt="서산시 다문화가족 지원센터의 책 읽어주는 엄마 동화책속으로 고고 사진"/>
+							<p class="found_caption">
+								<h5>서산시 다문화가족 지원센터</h5>
+								책 읽어주는 엄마 동화책 속으로 go!go!
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

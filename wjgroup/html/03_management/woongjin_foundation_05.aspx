@@ -46,7 +46,10 @@
 					<h4 class="menu3_h4">지원방법</h4>
 					<p>수업료 전액과 소정의 자기계발 성격의 비용 지원<br/>
 					장학생 선정 후 소정의 지원 기준을 충족하는 경우 일정 시점시까지 지속적으로 지원</p>
-					<div class="mgtop20 txtcenter"><img src="/images/03_management/img_foundation5.jpg" alt=""/></div>
+					<div class="mgtop20 clearfix">
+						<div class="fleft"><img src="/images/03_management/img_scholarship1.gif" alt="웅진재단 제1기 수학 과학 예술영재 장학증서 수여식 및 멘토링 행사 사진"/></div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_scholarship2.gif" alt="수학 과학 예술영재 음악회 사진"/></div>
+					</div>
 				</div>
 			</div>
 		</div>

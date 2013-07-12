@@ -38,6 +38,8 @@
 						<li><a href="/html/03_management/moral_inform_use.aspx"><img src="/images/03_management/tab_030401.gif" alt="이용안내"/></a></li>
 					</ul>
 <textarea cols="76" rows="10" class="mgtop30" style="width:100%;" title="개인정보 수집 및 이용안내">
+개인정보 수집 및 이용안내
+
 웅진홀딩스가 수집, 이용중인 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 웅진홀딩스가 수집, 이용 시 본인의 동의를 얻어야 하는 정보입니다. 
 본인은 웅진홀딩스의 개인정보 수집, 이용에 동의합니다.
 

@@ -39,7 +39,8 @@
 					</ul>
 					<h4 class="menu3_h4">저탄소경영 4대 전략 과제</h4>
 					<div style="width:650px;height:276px;background:url('/images/03_management/climate_img01.gif') no-repeat;">
-						<dl class="hidden_txt">
+						<div class="hidden_txt">
+						<dl>
 							<dt>온실가스 감축설비</dt>
 							<dd>웅진은 온실가스 감축 설비의 적극적인 도입으로 탄소배출을 줄입니다.</dd>
 							<dt>친환경 공정 혁신</dt>
@@ -49,10 +50,12 @@
 							<dt>탄소상쇄 프로그램</dt>
 							<dd>웅진은 탄소상쇄 프로그램 확대로 탄소배출을 줄입니다.</dd>
 						</dl>
+						</div>
 					</div>
 					<h4 class="menu3_h4">저탄소경영 6대 실천 캠페인</h4>
 					<div style="width:650px;height:220px;background:url('/images/03_management/climate_img02.gif') no-repeat;">
-						<ul class="hidden_txt">
+						<div class="hidden_txt">
+						<ul>
 							<li>웅진은 그린오피스 활동으로 탄소배출을 줄입니다.</li>
 							<li>웅진은 그린교통 생활로 탄소배출을 줄입니다.</li>
 							<li>웅진은 자원 재활용으로 탄소배출을 줄입니다.</li>
@@ -60,6 +63,7 @@
 							<li>웅진은 그린고객과 함께 탄소배출을 줄입니다.</li>
 							<li>웅진은 흡연제로화로 탄소배출을 줄입니다.</li>
 						</ul>
+						</div>
 					</div>
 					<h5 class="mgtop20 txtcenter"><img src="/images/03_management/climate_h5.gif" alt="지구를 차갑게 하는 여섯 가지 방법"/></h5>
 					<div class="clearfix">

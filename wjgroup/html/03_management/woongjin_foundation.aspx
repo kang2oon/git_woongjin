@@ -47,7 +47,7 @@
 					<h4 class="menu3_h4">법인재산 출연계획</h4>
 					<p>법인의 초기 출연금 100억원은 윤석금 회장이 50억원, (주)웅진씽크빅, 웅진코웨이(주)가 각각 25억원씩 내고 향후 매년 30억원 이상 꾸준히 늘려 장기적으로 1,000억원으로 기본재산을
 					확충해 글로벌 시대에 맞는 다양한 사회공익 사업을 펼칠 계획이다.</p>
-					<div class="mgtop20 txtcenter"><img src="/images/03_management/img_foundation.gif" alt=""/></div>
+					<div class="mgtop20 txtcenter"><img src="/images/03_management/img_foundation.gif" alt="또또사랑을 실천하여, 따뜻한 사회와 아름다운 세상을 만들어 나가는 데 이바지할 웅진재단"/></div>
 				</div>
 			</div>
 		</div>

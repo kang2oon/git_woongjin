@@ -10,7 +10,8 @@ caption{display:none;}
 textarea{padding:3px 5px;}
 
 .tborder{border:1px solid #ff0066;}
-.hidden_txt{display:none;}
+.hidden_txt{z-index:-1;}
+.hidden_txt li{list-style:none;}
 .fleft{float:left;}
 .fright{float:right;}
 .font13{font-size:13px;}
@@ -75,7 +76,7 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	#article .section{margin-top:23px;}	
 	#article h3{font-size:24px;font-weight:800;color:#222;line-height:120%;}
 	#article h4{font-size:16px;margin-top:30px;margin-bottom:10px;}
-	#article h5{font-size:14px;margin-bottom:10px;}
+	#article h5{font-size:13px;}
 	#article ul{list-style:none;}
 	#article li{background:url('/images/common/bu_li.jpg') no-repeat 0 6px;padding-left:15px;}
 	
@@ -96,7 +97,15 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	#ci_motive li:hover{border:1px solid #B2BB1B;}
 	#ci_motive li.tab{cursor:pointer;}
 	#ci_motive li.tab.selected{border:2px solid #F8981C;margin-left:-1px;}
-	
+	#yuguchun{position:relative;margin:5px 0;}
+	#yuguchun ul{position:absolute;list-style:none;top:6px;left:9px;z-index:100;}
+	#yuguchun li{float:left;height:30px;padding:0;overflow:hidden;}
+	#yuguchun li.tab{cursor:pointer;}
+	#yuguchun li.tab.selected img{position:relative;top:-32px;}
+	.yg_contnent{background:url('/images/03_management/bg_yuguchun_contents.gif') no-repeat 0 100%;padding:23px;}
+	.yg_contnent h6{background:url('/images/03_management/bu_h6_yuguchun.gif') no-repeat 0 2px;padding-left:13px;}
+	.yg_caption{text-align:center;font-size:11px;padding-top:5px;line-height:140%;}
+	.found_caption{font-size:11px;padding-top:5px;line-height:140%;}
 	#history_year{list-style:none;}
 	#history_year li{float:left;width:108px;padding:0;height:34px;overflow:hidden;}
 	#history_year li.tab{cursor:pointer;}
@@ -161,8 +170,8 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.vision {background: url("/images/03_management/bg_vision.jpg") no-repeat scroll 0 0 transparent;padding-left: 145px;}
 	.bg_yuguchun{background:url('/images/03_management/bg_yuguchun.gif') no-repeat right bottom;padding-right:210px;margin:10px 0;}
 	.table_social{width:100%;border-collapse:collapse;margin:10px 0;}
-	.table_social th, td{border-bottom:1px solid #FFC700;border-left:none;padding:5px 10px;}
-	.table_social th{background:#FFC700;color:#fff;}
+	.table_social th, .table_social td{border-bottom:1px solid #FFC700;border-left:none;padding:5px 10px;}
+	.table_social th{background:#ffc700;color:/*#fff*/#4c3204;}
 	.table_job, .job_detail{width:100%;border-collapse:collapse;}
 	.table_job tbody th, td{text-align:left;padding:5px 10px;border-bottom:1px solid #d4d4d4;}
 	.table_job tbody th{background:url('/images/04_recruit/btn_work_bg.gif') no-repeat 15px 5px;}

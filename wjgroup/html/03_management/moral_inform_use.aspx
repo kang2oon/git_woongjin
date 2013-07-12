@@ -68,19 +68,23 @@
 						</ul>
 					</div>
 					<h4 class="menu3_h4">윤리제보 처리 과정</h4>
-					<img src="/images/03_management/img_use1.gif" alt="윤리제보 처리 과정" class="mgtop5"/>
+					<div style="width:650px;height:181px;background:url('/images/03_management/img_use1.gif') no-repeat;" class="mgtop10">
+						<div class="hidden_txt">시안발생 > 고객제보 > 제보내용 확인 > 사실확인 > 진상조사 > 심의 및 의결 > 결과통보 > 사례공유</div>
+					</div>
 					<h4 class="menu3_h4">윤리제보센터는 다음과 같은 과정을 거쳐 운영됩니다.</h4>
 					<div style="width:650px;height:306px;background:url('/images/03_management/img_use2.gif') no-repeat;">
-						<dl class="hidden_txt">
-							<dt>고객제보</dt>
+						<div class="hidden_txt">
+						<dl>
+							<dt>1. 고객제보</dt>
 							<dd>고객이 윤리제보센터를 통해 접수합니다. (우편이나 팩스 제보도 가능)</dd>
-							<dt>제보내용확인</dt>
+							<dt>2. 제보내용확인</dt>
 							<dd>그룹 윤리 사무국에서 제보 내용을 확인하고 관련 사항을 조사한 후 윤리위원회에서 심의, 의결합니다.</dd>
-							<dt>결과통보</dt>
+							<dt>3. 결과통보</dt>
 							<dd>내용에 대한 조사 결과를 제보자에게 통보합니다. (우편이나 이메일 등)</dd>
-							<dt>사례공유</dt>
+							<dt>4. 사례공유</dt>
 							<dd>고객의 제보를 통해 발견된 부정행위가 다시는 반복되지 않도록 또는 고객이 알려주신 모범사례가 모든 계열사로 전파되도록 관련 사례를 공유합니다.</dd>
 						</dl>
+						</div>
 					</div>
 				</div>
 			</div>

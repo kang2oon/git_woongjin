@@ -45,7 +45,32 @@
 					<h4 class="menu3_h4">지원방법</h4>
 					<p>희귀난치성 질환별 지원단체, 전문학회, 치료병원 등의 개발 프로그램 위주로 사업계획제안서(RFP)를 제출받아 소정의 심사결과를 거쳐 선정, 지원 환자 및 가족들에게 기술적이고
 					근원적인 도움이 될 수 있는 프로그램 위주의 선택과 집중식 지원</p>
-					<div class="mgtop20 txtcenter"><img src="/images/03_management/img_foundation4.jpg" alt=""/></div>
+					<div class="mgtop20 clearfix">
+						<div class="fleft"><img src="/images/03_management/img_obstinacy1.gif" alt="희귀난치성질환 연합회의 희귀난치성질환 인식향상 캠페인 사진"/>
+							<p class="found_caption">
+								<h5>희귀난치성질환연합회</h5>
+								희귀난치성질환 인식향상<br/>캠페인
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_obstinacy2.gif" alt="희귀난치성질환 연합회의 식이요법용 특수쌀 지원식 사진"/>
+							<p class="found_caption">
+								<h5>희귀난치성질환연합회</h5>
+								식이요법용 특수쌀 지원식
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_obstinacy3.gif" alt="화순 전남대학교병원의 미술체험 프로그램 사진"/>
+							<p class="found_caption">
+								<h5>화순전남대학교병원</h5>
+								미술체험프로그램
+							</p>
+						</div>
+						<div class="fleft mgleft10"><img src="/images/03_management/img_obstinacy4.gif" alt="순천향 대학교병원의 아미노산 대사질환 가족캠프 사진"/>
+							<p class="found_caption">
+								<h5>순천향대학교병원</h5>
+								아미노산 대사질환 가족캠프
+							</p>
+						</div>
+					</div>
 					<div class="mgtop30 txtcenter"><a href="http://www.kcmd.or.kr/coding/sub9/default.html" target="_blank"><img src="/images/03_management/btn_foundation4.jpg" alt="선천성 대사이상 환아 자동식단 바로가기"/></a></div>
 				</div>
 			</div>
