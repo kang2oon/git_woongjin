@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* Common */
+html, body{margin:0;padding:0;font-size:12px;}
+
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix {display: block;*zoom:1;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+.fleft{float:left;}
+.fright{float:right;}
+.tborder{border:1px solid #ff0066;}
+
+/* Layout */
+#wrap{position:relative;width:944px;margin:0 auto;}
+
+/* html과 연계된 CSS에 하단 Deatil Table Style 만 이용하시면 됩니다. */
+/* Detail Table Style */
+caption{display:none;}
+.product_detail{width:100%;border-collapse:collapse;margin:15px 0;border:2px #9d9d9d;border-style:solid none;}
+.product_detail th, .product_detail td{border:1px #bdbdbd;border-style:solid none;padding:7px 10px;text-align:left;color:#777;}
+.product_detail th{background:#e1e1e1;color:#666;}
