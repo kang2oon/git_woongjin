@@ -1,5 +1,5 @@
 <div id="header">
-	<h1><span>WOONGJIN</span><br/>WEB STANDARD GUIDE <span class="version">VER. 0.9</span></h1>
+	<h1><span>WOONGJIN</span><br/>WEB STANDARD GUIDE <span class="version">VER. 1.0</span></h1>
 	<div id="menubar">
 		<ul id="gnb">
 			<li><a href="/">HOME</a></li>

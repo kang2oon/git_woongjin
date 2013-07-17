@@ -96,14 +96,17 @@ tr:nth-child(even){background:#f5f5f5;}
 #html_intro #gnb li, #html_summary #gnb li, #html_dtd #gnb li, #html_rule #gnb li, #html_write #gnb li, #css_intro #gnb li, #css_basic #gnb li, #css_reset #gnb li, #css_font #gnb li,
 #css_select #gnb li, #css_hack #gnb li, #name_css #gnb li, #name_image #gnb li, #access_definition #gnb li, #access_disabled #gnb li, #access_designer #gnb li,
 #access_planner #gnb li, #access_case #gnb li, #access_korea #gnb li, #access_addon #gnb li, #access_kwah #gnb li, #access_openwax #gnb li, #access_n-wax #gnb li,
-#access_firebug #gnb li, #access_webdev #gnb li, #access_htmlvaild #gnb li
+#access_firebug #gnb li, #access_webdev #gnb li, #access_htmlvaild #gnb li, #access_headings #gnb li, #access_reader #gnb li, #access_uia #gnb li, #access_peat #gnb li,
+#access_wcag #gnb li, #access_cca #gnb li, #access_cr #gnb li, #access_url #gnb li
 {color:#c6e8f8;}
 #html_intro #gnb #gnb_html, #html_summary #gnb #gnb_html, #html_dtd #gnb #gnb_html, #html_rule #gnb #gnb_html,  #html_write #gnb #gnb_html,
 #css_intro #gnb #gnb_css, #css_basic #gnb #gnb_css, #css_reset #gnb #gnb_css, #css_font #gnb #gnb_css, #css_select #gnb #gnb_css, #css_hack #gnb #gnb_css,
 #name_css #gnb #gnb_name, #name_image #gnb #gnb_name, #access_definition #gnb #gnb_access, #access_disabled #gnb #gnb_access,
 #access_designer #gnb #gnb_access, #access_planner #gnb #gnb_access, #access_case #gnb #gnb_access, #access_korea #gnb #gnb_access, 
 #access_addon #gnb #gnb_access, #access_kwah #gnb #gnb_access, #access_openwax #gnb #gnb_access, #access_n-wax #gnb #gnb_access,
-#access_firebug #gnb #gnb_access, #access_webdev #gnb #gnb_access, #access_htmlvaild #gnb #gnb_access
+#access_firebug #gnb #gnb_access, #access_webdev #gnb #gnb_access, #access_htmlvaild #gnb #gnb_access, #access_headings #gnb #gnb_access,
+#access_reader #gnb #gnb_access, #access_uia #gnb #gnb_access, #access_peat #gnb #gnb_access, #access_wcag #gnb #gnb_access, #access_cca #gnb #gnb_access,
+#access_cr #gnb #gnb_access, #access_url #gnb #gnb_access
 {font-weight:700;color:#fff;}
 #html_intro #snb #snb_html_intro, #html_summary #snb #snb_html_summary, #html_dtd #snb #snb_html_dtd, #html_rule #snb #snb_html_rule, 
 #html_write #snb #snb_html_write, #css_intro #snb #snb_css_intro, #css_basic #snb #snb_css_basic, #css_reset #snb #snb_css_reset, #css_font #snb #snb_css_font, 
@@ -111,8 +114,12 @@ tr:nth-child(even){background:#f5f5f5;}
 #access_definition #snb #snb_access_definition, #access_disabled #snb #snb_access_disabled, #access_designer #snb #snb_access_designer, 
 #access_planner #snb #snb_access_planner, #access_case #snb #snb_access_case, #access_korea #snb #snb_access_korea, #access_addon #snb #snb_access_addon,
 #access_kwah #snb #snb_access_kwah, #access_openwax #snb #snb_access_tools, #access_n-wax #snb #snb_access_tools, #access_firebug #snb #snb_access_tools,
-#access_webdev #snb #snb_access_tools, #access_htmlvaild #snb #snb_access_tools
+#access_webdev #snb #snb_access_tools, #access_htmlvaild #snb #snb_access_tools, #access_headings #snb #snb_access_tools, #access_reader #snb #snb_access_tools,
+#access_uia #snb #snb_access_tools, #access_peat #snb #snb_access_tools, #access_wcag #snb #snb_access_tools, #access_cca #snb #snb_access_tools,
+#access_cr #snb #snb_access_tools, #access_url #snb #snb_access_tools
 {font-weight: 700;color:#FF8500;}
 
-#access_openwax #menu_openwax, #access_n-wax #menu_nwax, #access_firebug #menu_firebug, #access_webdev #menu_webdev, #access_htmlvaild #menu_htmlvaild
+#access_openwax #menu_openwax, #access_n-wax #menu_nwax, #access_firebug #menu_firebug, #access_webdev #menu_webdev, #access_htmlvaild #menu_htmlvaild,
+#access_headings #menu_headings, #access_reader #menu_reader, #access_uia #menu_uia, #access_peat #menu_peat, #access_wcag #menu_wcag, 
+#access_cca #menu_cca, #access_cr #menu_cr, #access_url #menu_url
 {background:#167DAF;color:#fff;font-weight:700;}

@@ -16,7 +16,7 @@
 		<div class="clearfix">
 			<div id="snb"><!--#include file="snb.aspx"--></div>
 			<div id="content">
-				<h2>진단/분석 Tools - Web Developer</h2>
+				<h2>진단/분석 Tools - HTML Validator</h2>
 				<!--#include file="menu_tools.aspx"-->
 				<h3 class="mgtop20"><i class="icon-chevron-right"></i> HTML Validator 소개</h3>
 				<div class="info_box mgtop5">
