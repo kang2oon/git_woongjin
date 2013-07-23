@@ -6,8 +6,14 @@ $(document).ready(function () {
 	$('.dep1li').focusin(function() {
 					$('div.dep2', this).removeClass('off'); 
 	});
+	$('.dep1li').mouseover(function() {
+					$('div.dep2', this).removeClass('off'); 
+	});
 
 	$('.dep1li').focusout(function() {
+					$('div.dep2', this).addClass('off'); 
+	});
+	$('.dep1li').mouseout(function() {
 					$('div.dep2', this).addClass('off'); 
 	});
 	

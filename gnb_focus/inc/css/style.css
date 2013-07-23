@@ -7,9 +7,6 @@ form, input, ul, li, dl, dt, dd, fieldset {margin:0; padding:0;list-style:none;}
 
 h1,h2,h3, h4, h5, h6, p, ul, ol {margin:0; padding:0;}
 
-
-
-
 hr {display:none;}
 img, fieldset, legend {border:none;}
 legend {position:absolute; top:0px; left:0px; overflow:hidden;text-indent:-9999px; }
@@ -17,7 +14,6 @@ table {border-collapse:collapse;}
 caption{visibility:hidden;overflow:hidden;text-indent:-10000px;width:.1%;height:.1%;line-height:.1%;font-size:.1%}
 
 img {display:inline-block;}
-
 
 /* 상단메뉴 */
 /* GNB */
@@ -42,12 +38,12 @@ h2.menu_area {position:absolute; top:-10000px; font-size:0;}
 #gnb #d2_5 ul {width:260px;}
 #gnb #d2_6 {left:-90px;}
 #gnb #d2_6 ul {width:450px;}
-/*
+
 #gnb ul li a.dep1:hover img,
 #gnb ul li a.dep1:focus img {margin-top:-31px;}
 #gnb ul li.on a.dep1 img {margin-top:-31px;}
 #gnb ul li.on .dep2 {display:block !important;}
-
+/*
 #gnb ul li a {display:inline-block; overflow:hidden}
 #gnb ul li a.dep1 {height:31px;}
 #gnb ul li li {height:12px; margin:0 10px 0; padding:0 0 0 14px; background:url('../images/common/gnb/bar_2dep.gif') no-repeat left center;  font-size:0px;}
@@ -56,8 +52,6 @@ h2.menu_area {position:absolute; top:-10000px; font-size:0;}
 #gnb ul li li a:hover img,
 #gnb ul li li a:focus img {margin:-12px 0 0;}
 #gnb ul li li a.on img {margin:-12px 0 0;}
-
-
 
 #gnb_bg {position:absolute; top:96px; left:0; width:100%; height:28px;  }
 #gnb_bg.dep2bg {display:block !important; height:32px; border:0;   background:url('/images/common/gnb/bg_2dep.png') repeat-x left top; z-index:15;}
