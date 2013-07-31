@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+@import url('reset.css');
+@import url('/inc/font/font.css');
+
+/* Common */
+html, body, textarea{font-family:'Nanum Gothic';font-size:12px;margin:0;padding:0;line-height:160%;}
+div{position:relative;}
+caption{display:none;}
+textarea{padding:3px 5px;border:1px solid #ccc;}
+
+.tborder{border:1px solid #ff0066;}
+.txtstrong{font-weight:700;}
+.fleft{float:left;}
+.fright{float:right;}
+.mgtop10{margin-top:10px;}
+.mgleft20{margin-left:20px;}
+a:focus{outline:1px solid #FF8500;}
+
+/* LayOut */
+#skipNavi li { font-size:0; line-height:0; }
+#skipNavi li a{ display:block; width:100%; padding:10px 0; color:#fff; position:absolute; left:0; top:-100px; text-align:center; z-index:200; background:#FF8500; border:0 none;}
+#skipNavi li a:active, #skipNavi li a:focus { top:0; font-weight:bold;font-size:16px;line-height:1.5; border-bottom:1px solid #fff;outline:none;}
+
+#wrap{width:100%;}
+#header{position:relative;width:940px;height:123px;margin:0 auto;}
+#header h1{position:relative;float:left;margin-top:20px;}
+
+/* GNB */
+#tnb ul{position:absolute;top:15px;right:-5px;list-style:none;z-index:100;}
+	#tnb ul li{float:left;padding:0 7px;line-height:5px;border:solid #ccc;border-width:0 0 0 1px;}
+	#tnb ul li:first-child{border:none;}
+#gnb{float:right;}
+	#gnbitem{padding:0; margin:40px 0 0;}
+	#gnbitem ul{margin:0; padding:0; list-style:none;}
+	#gnbitem ul li{float:left; margin:0 0 0 30px; padding:0 0 0 1px; list-style:none;}
+	#gnbitem ul li div{position:absolute;height:28px; left:0; margin:10px 0 0; *margin:25px 0 0; padding:0;}
+		#gnbitem ul li.menu1 div{left:-208px;*width:577px;}
+		#gnbitem ul li.menu2 div{left:-87px;*width:456px;}
+		#gnbitem ul li.menu3 div{left:173px;*width:196px;}
+		#gnbitem ul li.menu4 div{left:-111px;*width:480px;}
+		#gnbitem ul li div ul{float:left; height:30px; margin:0; padding:0; list-style:none; display:inline; }
+		#gnbitem ul li div ul li{width:auto; height:auto; margin:0;padding:0; }
+		/*.current{border:1px solid #ff0066;}
+
+/* Family Site */
+#footer{border:solid #ccc;border-width:1px 0 0;margin:35px 0 0;padding:20px 0;font-size:11px;color:#666;}
+#copyright{ width:940px; margin:0 auto; }
+	#familysite{position:absolute; top:0; right:0; width:119px; height:20px; text-align:left; }
+	#familysite dl{ margin:0; padding:0; }
+	#familysite dl dt{ margin:0; padding:0; }
+	#familysite dl dd{ position:absolute; width:119px; left:0px; bottom:18px; margin:0; padding:0; }
+	#familysite dl dd ul{margin:0; padding:5px 10px; list-style:none;border:1px solid #d4d4d4;background:#fff;}
+	#familysite dl dd ul li{ margin:0; padding:0; list-style:none; }
+	#familysite dl dd ul li a{text-decoration:none;color:#666;}
+	#familysite dl dd ul li a:focus, #familysite dl dd ul li a:hover{color:#FF8500;}
+#award{list-style:none;}
+	#award li{float:left;}
+	
+/* Content */
+#article{width:940px; margin:0 auto;}
