@@ -7,16 +7,17 @@
 html, body, textarea{font-family:'Nanum Gothic';font-size:12px;margin:0;padding:0;line-height:160%;}
 div{position:relative;}
 caption{display:none;}
-textarea{padding:3px 5px;}
+textarea{padding:3px 5px;border:1px solid #ccc;}
 
 .tborder{border:1px solid #ff0066;}
-.hidden_txt{z-index:-1;}
+.hidden_txt{z-index:-1;width:0;height:0;overflow:hidden;*display:none;}
 .hidden_txt li{list-style:none;}
 .fleft{float:left;}
 .fright{float:right;}
 .font13{font-size:13px;}
 .txtleft{text-align:left;}
 .txtcenter{text-align:center;}
+.txtright{text-align:right;}
 .txtstrong{font-weight:700;}
 .txtlightgray{color:#ababab;}
 .mgtop5{margin-top:5px;}
@@ -28,29 +29,42 @@ textarea{padding:3px 5px;}
 .pdtop5{padding-top:5px;}
 .pdtop30{padding-top:30px;}
 
-a:focus{border:2px dotted #ff0066;z-index:10000;}
+a{*color:#000;}
+a:focus{outline: 1px solid #ff0066;z-index:10000;}
 
 /* LayOut */
 #skipNavi li { font-size:0; line-height:0; }
 #skipNavi li a{ display:block; width:100%; padding:10px 0; color:#fff; position:absolute; left:0; top:-100px; text-align:center; z-index:200; background:#FF8500; border:0 none;}
-#skipNavi li a:active, #skipNavi li a:focus { top:0; font-weight:bold;font-size:16px;line-height:1.5; border-bottom:1px solid #fff;}
+#skipNavi li a:active, #skipNavi li a:focus { top:0; font-weight:bold;font-size:16px;line-height:1.5; border-bottom:1px solid #fff;outline:none;}
 
 #wrap{width:100%;}
 #header{position:relative;width:962px;height:100px;margin:0 auto;}
-#header h1{float:left;margin-top:13px;}
+#header h1{position:relative;float:left;margin-top:13px;}
 	#tnb{position:absolute;top:5px;right:0;list-style:none;}
 	#tnb li{float:left;padding-left:17px;background:url('/images/common/side_menu_linebg.gif') no-repeat 8px 5px;}
 	#tnb li:first-child, #gnb li:first-child{background:none;}
-	#gnb{position:absolute;top:30px;right:0;list-style:none;}
-	#gnb li{position:relative;float:left;padding-left:39px;background:url('/images/common/top_menu_linebg.gif') no-repeat 18px 3px;}
-	#gnb li div{height:30px;overflow:hidden;}
-	#gnb li div:hover img{margin-top:-30px;}
-	#gnb li ul{position:absolute;top:30px;display:none;list-style:none;width:727px;background:#fff;}
-	#gnb li:hover ul{display:block;z-index:1000;}
-	#gnb li li{float:left;height:22px;padding:0;background:none;overflow:hidden;}
-	#gnb li li:hover img{margin-top:-22px!important;}
-	#gnb li li:first-child, #gnb li li:last-child{width:16px;}
-#footer{width:100%;height:79px;background:url('/images/common/footer_bg.gif') repeat-x 0 0;padding-top:45px;}
+	h2.menu_area {position:absolute; top:-10000px; font-size:0;}
+	#gnb {position:absolute; top:30px; right:0;list-style:none;}
+	#gnb .off{position:absolute !important; top:-1000px !important; left:0;}
+	#gnb li{list-style:none !important;} 
+	#gnb ul li.dep1li{position:relative;float:left;margin:0;height:30px;padding-left:39px;background:url('/images/common/top_menu_linebg.gif') no-repeat 18px 3px;}
+	#gnb ul li.dep1li:first-child{background:none;}
+	#gnb ul li a{display:inline-block;overflow:hidden;*position:relative;*top:-8px;}
+	#gnb ul li a.dep1{height:30px;*position:relative;*top:-8px;}
+	#gnb ul li a.dep1:hover img, #gnb ul li a.dep1:focus img{margin-top:-30px;*position:relative;*top:6px;}
+
+	#gnb .dep2{position:absolute; top:35px; left:0; padding:8px 0; margin:-8px 0 0; z-index:200;width:727px;background:#fff;}
+	#gnb .dep2 ul {position:relative; padding:3px 0 0; margin:-3px 0 0;*margin-top:0;}
+	#gnb .dep2 ul li{position:relative;float:left; margin:0;list-style:none;}
+	#gnb .dep2 ul li a{display:inline-block;overflow:hidden;height:22px;*position:relative;*top:-8px;}
+	#gnb .dep2 ul li a:hover img, #gnb .dep2 ul li a:focus img{position:relative;top:-22px;}
+	
+	#gnb #d2_1{left:-285px;}
+	#gnb #d2_2{left:-386px;}
+	#gnb #d2_3{left:-487px;}
+	#gnb #d2_4{left:-618px;}
+
+#footer{width:100%;height:79px;background:#fff url('/images/common/footer_bg.gif') repeat-x 0 0;padding-top:45px;margin-top:35px;}
 	/*#footer div{position:relative;width:929px;height:79px;margin:0 auto;background:url('/images/common/footer.gif') no-repeat;}
 	#footer div img{position:absolute;cursor:pointer;}*/
 	#footer .address{margin-left:35px;font-size:11px;}
@@ -71,6 +85,7 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 
 #popup{padding:10px;}
 	#popup h4{font-size:16px;margin-bottom:10px;}
+	#popup a{color:inherit;text-decoration:none;}
 	
 #article{float:right;width:650px;margin-top:30px;}
 	#article .section{margin-top:23px;}	
@@ -87,8 +102,8 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.menu3_h4{/*color:#c1531e;*/color:#157fc0;}
 	.menu4_h4{/*color:#F67812;*/color:#157fc0;}
 	
-	.rule_detail{background:url('/images/01_introduce/bg_intro.jpg') no-repeat right 123px;}
-	.company_culture{background:url('/images/01_introduce/img_ttotto2.gif') no-repeat 0 5px;padding-left:313px;}
+	.rule_detail{background:#fff url('/images/01_introduce/bg_intro.jpg') no-repeat 100% 123px;}
+	.company_culture{background:#fff url('/images/01_introduce/img_ttotto2.gif') no-repeat 0 5px;padding-left:313px;}
 	#ci_introduce{width:625px;height:261px;background:url('/images/01_introduce/ci_logo_bg.gif') no-repeat;margin-top:20px;}
 	#ci_motive{float:right;width:255px;top:24px;right:24px;}
 	#ci_motive ul{float:right;list-style:none;}
@@ -99,13 +114,13 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	#ci_motive li.tab.selected{border:2px solid #F8981C;margin-left:-1px;}
 	#yuguchun{position:relative;margin:5px 0;}
 	#yuguchun ul{position:absolute;list-style:none;top:6px;left:9px;z-index:100;}
-	#yuguchun li{float:left;height:30px;padding:0;overflow:hidden;}
+	#yuguchun li{position:relative;float:left;height:30px;padding:0;overflow:hidden;}
 	#yuguchun li.tab{cursor:pointer;}
 	#yuguchun li.tab.selected img{position:relative;top:-32px;}
 	.yg_contnent{background:url('/images/03_management/bg_yuguchun_contents.gif') no-repeat 0 100%;padding:23px;}
 	.yg_contnent h6{background:url('/images/03_management/bu_h6_yuguchun.gif') no-repeat 0 2px;padding-left:13px;}
 	.yg_caption{text-align:center;font-size:11px;padding-top:5px;line-height:140%;}
-	.found_caption{font-size:11px;padding-top:5px;line-height:140%;}
+	.found_caption{font-size:11px;padding-top:5px;line-height:160%;}
 	#history_year{list-style:none;}
 	#history_year li{float:left;width:108px;padding:0;height:34px;overflow:hidden;}
 	#history_year li.tab{cursor:pointer;}
@@ -116,28 +131,28 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.txtbox{border:1px solid #e4e4e4;padding:10px 15px;}
 	.receipt_input label{display:inline-block;width:75px;}
 	.receipt_input input[type='text']{border:1px solid #ccc;}
-	.receipt_input hr{height:1px;border-top:1px dashed #e4e4e4;}
-	.input_type2{background:url('/images/03_management/bg_input2.gif') no-repeat left bottom;min-height:270px;}
-	.input_type1{background:url('/images/03_management/bg_input1.gif') no-repeat left top;min-height:33px;}
+	.receipt_input hr{height:1px;border-top:1px dashed #e4e4e4;*margin:6px 0;}
+	.input_type2{background:url('/images/03_management/bg_input2.gif') no-repeat 0 100%;min-height:270px;}
+	.input_type1{background:url('/images/03_management/bg_input1.gif') no-repeat 0 0;min-height:33px;}
 	.input_type1 input[type='radio']{border:none;margin-top:-2px;}
 	.input_type1 ul{list-style:none;margin-top:15px;margin-left:-7px;}
 	.input_type1 li{padding:0;background:none !important;}
 	#recruit_system2 blockquote{background:url('/images/04_recruit/bg_blockquote.gif') no-repeat;padding-left:20px;margin-top:30px;}
-	.human_resource{background:url('/images/04_recruit/bg_system_2.gif') no-repeat right bottom;padding-right:210px;}
-	.system21{background:url('/images/04_recruit/bg_system_21.gif') no-repeat; padding-left:175px;margin-top:30px;}
-	.system22{background:url('/images/04_recruit/bg_system_22.gif') no-repeat; padding-left:175px;margin-top:30px;}
-	.system23{background:url('/images/04_recruit/bg_system_23.gif') no-repeat; padding-left:175px;margin-top:30px;}
-	.philosophy_recruit{background:url('/images/04_recruit/bg_philosophy_recruit.gif') no-repeat right 30px;}
-	.bg_job{background:url('/images/04_recruit/bg_job.gif') no-repeat; padding-left:180px;}
-	.job_company{width:100%;background:url('/images/04_recruit/row_r1.gif') no-repeat right 0;}
+	.human_resource{background:#fff url('/images/04_recruit/bg_system_2.gif') no-repeat 100% 100%;padding-right:210px;}
+	.system21{background:#fff url('/images/04_recruit/bg_system_21.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.system22{background:#fff url('/images/04_recruit/bg_system_22.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.system23{background:#fff url('/images/04_recruit/bg_system_23.gif') no-repeat; padding-left:175px;margin-top:30px;}
+	.philosophy_recruit{background:#fff url('/images/04_recruit/bg_philosophy_recruit.gif') no-repeat 100% 30px;}
+	.bg_job{background:#fff url('/images/04_recruit/bg_job.gif') no-repeat; padding-left:180px;}
+	.job_company{width:100%;background:#fff url('/images/04_recruit/row_r1.gif') no-repeat 100% 0;}
 	.job_company li{float:left;height:34px;overflow:hidden;padding:0 !important;background:none !important;}
-	.job_company li:first-child{background:url('/images/04_recruit/row_l2.gif') no-repeat !important;padding-left:30px !important;}
+	.job_company li:first-child{background:#fff url('/images/04_recruit/row_l2.gif') no-repeat !important;padding-left:30px !important;}
 	.job_company .selected img{margin-top:-34px;}
-	.recruit_qna{width:650px;height:79px;background:url('/images/04_recruit/notice_img01.gif') no-repeat;}
-	.interview{background:url('/images/04_recruit/bg_interview_bottom.gif') no-repeat left bottom;padding-bottom:115px;list-style:none;margin-top:20px;}
+	.recruit_qna{width:650px;height:79px;background:#fff url('/images/04_recruit/notice_img01.gif') no-repeat;}
+	.interview{background:#fff url('/images/04_recruit/bg_interview_bottom.gif') no-repeat 0 100%;padding-bottom:115px;list-style:none;margin-top:20px;}
 	.interview li{padding:0 !important;background:none !important;margin-top:30px;*zoom:1;}
 	.interview li:after{content:"";clear:both;display:block;}
-	.interview li:first-child{margin-top:0;background:url('/images/04_recruit/bg_interview_top.gif') no-repeat right top !important;}
+	.interview li:first-child{margin-top:0;background:#fff url('/images/04_recruit/bg_interview_top.gif') no-repeat 100% 0 !important;}
 	.interview h5{margin-top:10px;color:#F67812;font-size:23px !important;font-weight:400;}
 	.interview h6{margin-top:15px;color:#C1AA8F}
 	.sitemap1{list-style:none;}
@@ -146,11 +161,13 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.sitemap1 li p{float:left;width:100px;}
 	.sitemap1 li a, .sitemap2 li a{color:inherit;text-decoration:none;}
 	.sitemap1 ul{float:left;width:530px;}
-	.sitemap1 li li{float:left;border:none;padding:0;color:#999;font-weight:400;}
+	.sitemap1 li li{float:left;border:none;padding:0;color:#555;font-weight:400;}
 	.sitemap2{list-style:none;border-bottom:1px solid #ebebeb;*zoom:1;}
 	.sitemap2 li{float:left;margin-right:10px;padding:5px 0;background:none !important;font-weight:700;*zoom:1;}
 	.business_title{float:left;width:70px;font-weight:700;color:#00ABE8;}
 	.business_content{float:right;width:580px;}
+	.family_list{margin-left:20px;width:180px;}
+	.family_list li{background:url('/images/05_service/bu_family_list.gif') no-repeat 0 6px!important;}
 	
 	.tab_sysvision, .tab_social, .tab_moral{list-style:none;background:url('/images/03_management/tab03_bg.gif') repeat-x;}
 	.tab_sysvision li{float:left;width:96px;padding:0 !important;margin:0;overflow:hidden;}
@@ -161,14 +178,14 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.tab_sysvision .selected{width:101px;}
 	.tab_social .selected, .tab_moral .selected{width:110px;}
 	.tab_sysvision .selected img, .tab_social .selected img, .tab_moral .selected img{margin:0;}
-	.bg_systorganization{background:url('/images/03_management/bg_system_organization.gif') no-repeat right 150px;}
-	.bg_systorganization2{background:url('/images/03_management/bg_system_organization2.gif') no-repeat 0 0;padding-left:300px;margin:20px 0;}
+	.bg_systorganization{background:#fff url('/images/03_management/bg_system_organization.gif') no-repeat 100% 150px;}
+	.bg_systorganization2{background:#fff url('/images/03_management/bg_system_organization2.gif') no-repeat 0 0;padding-left:300px;margin:20px 0;}
 	.table_climate{width:100%;border-collapse:collapse;border-top:1px solid #e4e4e4;margin:10px 0;}
 	.table_climate th, td{border-bottom:1px solid #e4e4e4;border-left:1px solid #e4e4e4;padding:5px 10px;text-align:center;}
 	.table_climate th:first-child, td:first-child{border-left:none;}
 	.table_climate th{background:#f5f5f5;}
-	.vision {background: url("/images/03_management/bg_vision.jpg") no-repeat scroll 0 0 transparent;padding-left: 145px;}
-	.bg_yuguchun{background:url('/images/03_management/bg_yuguchun.gif') no-repeat right bottom;padding-right:210px;margin:10px 0;}
+	.vision {background:#fff url("/images/03_management/bg_vision.jpg") no-repeat  0 0;padding-left: 145px;}
+	.bg_yuguchun{background:#fff url('/images/03_management/bg_yuguchun.gif') no-repeat 100% 100%;padding-right:210px;margin:10px 0;}
 	.table_social{width:100%;border-collapse:collapse;margin:10px 0;}
 	.table_social th, .table_social td{border-bottom:1px solid #FFC700;border-left:none;padding:5px 10px;}
 	.table_social th{background:#ffc700;color:/*#fff*/#4c3204;}
@@ -183,16 +200,26 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 	.table_contact{width:100%;}
 	.table_contact th{padding:0;}
 	.table_contact td{border-bottom:1px solid #d4d4d4;padding:5px;vertical-align:middle;}
+	.table_receipt{width:100%;border-collapse:collapse;margin:0;}
+	.table_receipt th, .table_receipt td{border-bottom:1px dashed #d8d8d8;border-left:none;padding:5px 10px;}
+	.table_receipt th{text-align:left;background:#f9f9f9;}
+	
+	.pop_page{display:inline-block;*display:inline;zoom:1;list-style:none;}
+	.pop_page li{float:left;padding:0 7px;}
+	.pop_page img{position:relative;top:3px;}
+	.pop_page .pg_navi{padding:0;}
+	.pop_page .selected{font-weight:800;}
 
 #snb{float:left;width:190px;margin-top:30px;}
 	#snb ul{margin-top:20px;list-style:none;}
 	#snb li{width:190px;overflow:hidden;}
-		#snb ul ul{margin-top:-7px;margin-left:11px;display:none;}
-		#snb li .menu1 li{background:url('/images/01_introduce/left_sub_menu1_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
-		#snb li .menu3 li{background:url('/images/03_management/left_sub_menu3_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
-		#snb li .menu4 li{background:url('/images/04_recruit/left_sub_menu4_bg.gif') repeat-y;padding-left:30px;height:13px;overflow:hidden;}
-		#snb .menu1 .depth3_first, #snb .menu3 .depth3_first, #snb .menu4 .depth3_first{height:15px;padding-left:0;}
-		#snb .menu1 .depth3_last, #snb .menu3 .depth3_last, #snb .menu4 .depth3_last{height:17px;padding-left:0;}
+		#snb ul ul{margin-top:-7px;*margin-top:-10px;margin-left:11px;display:none;}
+		#snb li .menu1{background:url('/images/01_introduce/left_sub_menu1_bg.gif') repeat-y;}
+		#snb li .menu3{background:url('/images/03_management/left_sub_menu3_bg.gif') repeat-y;}
+		#snb li .menu4{background:url('/images/04_recruit/left_sub_menu4_bg.gif') repeat-y;}
+		#snb .menu1 .depth3_first, #snb .menu3 .depth3_first, #snb .menu4 .depth3_first{height:15px !important;padding-left:0;position:relative;*top:-1px;}
+		#snb .menu1 .depth3_last, #snb .menu3 .depth3_last, #snb .menu4 .depth3_last{height:17px !important;padding-left:0;}
+		#snb li li{position:relative;height:16px;padding-left:30px;overflow:hidden;}
 		#snb li li img{margin-left:0 !important;}
 	
 #lnb ul{list-style:none;font-size:11px;float:right;}
@@ -223,6 +250,18 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 #food #gnb #business img, #energy #gnb #business img, #chemical #gnb #business img, #notice_list #gnb #recruit img, #login #gnb #recruit img, #pop_inquire #gnb #recruit img,
 #faq_list #gnb #recruit img
 {margin-top:-30px;}
+/* IE7 GNB Image Position 보정*/
+#overview #gnb #introduce .dep1 img, #philosophy #gnb #introduce .dep1 img, #ci_mean #gnb #introduce .dep1 img, #ci_guide #gnb #introduce .dep1 img, 
+#history #gnb #introduce .dep1 img, #system_vision #gnb #politics .dep1 img, #system_organization #gnb #politics .dep1 img, #system_climate #gnb #politics .dep1 img, 
+#social_vision #gnb #politics .dep1 img, #social_act_yuguchun #gnb #politics .dep1 img, #moral_message #gnb #politics .dep1 img, 
+#moral_inform_receipt #gnb #politics .dep1 img, #moral_inform_use #gnb #politics .dep1 img, #woongjin_foundation #gnb #politics .dep1 img, 
+#woongjin_foundation2 #gnb #politics .dep1 img, #woongjin_foundation3 #gnb #politics .dep1 img, #woongjin_foundation4 #gnb #politics .dep1 img, 
+#woongjin_foundation5 #gnb #politics .dep1 img, #wanted #gnb #recruit .dep1 img, #recruit_system1 #gnb #recruit .dep1 img, 
+#recruit_system2 #gnb #recruit .dep1 img, #recruit_system3 #gnb #recruit .dep1 img, #recruit_system4 #gnb #recruit .dep1 img, #work_rule #gnb #recruit .dep1 img,
+#holdings #gnb #business .dep1 img, #thinkbig #gnb #business .dep1 img, #booxen #gnb #business .dep1 img, #rexfield #gnb #business .dep1 img, 
+#play #gnb #business .dep1 img, #food #gnb #business .dep1 img, #energy #gnb #business .dep1 img, #chemical #gnb #business .dep1 img, 
+#notice_list #gnb #recruit .dep1 img, #login #gnb #recruit .dep1 img, #pop_inquire #gnb #recruit .dep1 img, #faq_list #gnb #recruit .dep1 img
+{position:relative;*top:6px;}
 /* GNB SUB 컬러변경 */
 #overview #gnb #introduce #company_introduce img, 
 #philosophy #gnb #introduce #politics_philosophy img,
@@ -237,7 +276,7 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 #rexfield #gnb #business #brexfield img, #play #gnb #business #bplay img, #food #gnb #business #bfood img, #energy #gnb #business #benergy img, 
 #chemical #gnb #business #bchemical img, #notice_list #gnb #recruit #insa_info img, #login #gnb #recruit #insa_info img, #pop_inquire #gnb #recruit #insa_info img,
 #faq_list #gnb #recruit #insa_info img
-{margin-top:-22px !important;}
+/*{margin-top:-22px !important;}*/{position:relative;top:-22px;}
 /* SNB 컬러변경 */
 #overview #company_introduce_snb img, #philosophy #politics_philosophy_snb img,
 #ci_mean #ci_mean_snb img, #ci_guide #ci_mean_snb img, #history #history_snb img,
@@ -246,9 +285,9 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 #moral_inform_use #moral_snb img, #woongjin_foundation #foundation_snb img, #woongjin_foundation2 #foundation_snb img, #woongjin_foundation3 #foundation_snb img, 
 #woongjin_foundation4 #foundation_snb img, #woongjin_foundation5 #foundation_snb img, #wanted #wanted_snb img, #recruit_system1 #system_snb img,
 #recruit_system2 #system_snb img, #recruit_system3 #system_snb img, #recruit_system4 #system_snb img, #work_rule #workrule_snb img, #call #call_snb img, 
-#legal #legal_snb img, #private #private_snb img, #sitemap #sitemap_snb img, #holdings #holdings_snb img, #thinkbig #thinkbig_snb img, #booxen #booxen_snb img, 
-#rexfield #rexfield_snb img, #play #play_snb img, #food #food_snb img, #energy #energy_snb img, #chemical #chemical_snb img, #notice_list #recruit_snb img,
-#login #recruit_snb img, #pop_inquire #recruit_snb img, #faq_list #recruit_snb img
+#legal #legal_snb img, #private #private_snb img, #sitemap #sitemap_snb img, #family #family_snb img, #holdings #holdings_snb img, #thinkbig #thinkbig_snb img, 
+#booxen #booxen_snb img, #rexfield #rexfield_snb img, #play #play_snb img, #food #food_snb img, #energy #energy_snb img, #chemical #chemical_snb img, 
+#notice_list #recruit_snb img, #login #recruit_snb img, #pop_inquire #recruit_snb img, #faq_list #recruit_snb img
 {margin-left:-190px;z-index:50;}
 /* SNB Depth3 Show */
 #ci_mean #ci_mean_snb ul, #ci_guide #ci_mean_snb ul, #history #history_snb ul, 
@@ -264,15 +303,15 @@ a:focus{border:2px dotted #ff0066;z-index:10000;}
 #woongjin_foundation4 #foundation_snb #depth344 img, #woongjin_foundation5 #foundation_snb #depth345 img, #recruit_system1 #system_snb #depth421 img,
 #recruit_system2 #system_snb #depth422 img, #recruit_system3 #system_snb #depth423 img, #recruit_system4 #system_snb #depth424 img, 
 #notice_list #recruit_snb #depth441 img, #login #recruit_snb #depth442 img, #pop_inquire #recruit_snb #depth443 img, #faq_list #recruit_snb #depth444 img
-{position:relative;top:-13px;}
+/*{position:relative;top:-13px;}*/{position:relative;left:-190px;}
 /* GNB SHOW/HIDE */
-#overview #gnb #introduce ul, #philosophy #gnb #introduce ul, #ci_mean #gnb #introduce ul, #ci_guide #gnb #introduce ul, #history #gnb #introduce ul,
-#system_vision #gnb #politics ul, #system_organization #gnb #politics ul, #system_climate #gnb #politics ul, 
-#social_vision #gnb #politics ul, #social_act_yuguchun #gnb #politics ul, #moral_message #gnb #politics ul, #moral_inform_receipt #gnb #politics ul, 
-#moral_inform_use #gnb #politics ul, #woongjin_foundation #gnb #politics ul, #woongjin_foundation2 #gnb #politics ul, #woongjin_foundation3 #gnb #politics ul, 
-#woongjin_foundation4 #gnb #politics ul, #woongjin_foundation5 #gnb #politics ul, #wanted #gnb #recruit ul, #recruit_system1 #gnb #recruit ul, 
-#recruit_system2 #gnb #recruit ul, #recruit_system3 #gnb #recruit ul, #recruit_system4 #gnb #recruit ul, #work_rule #gnb #recruit ul,
-#holdings #gnb #business ul, #thinkbig #gnb #business ul, #booxen #gnb #business ul, #rexfield #gnb #business ul, #play #gnb #business ul, 
-#food #gnb #business ul, #energy #gnb #business ul, #chemical #gnb #business ul, #notice_list #gnb #recruit ul, #login #gnb #recruit ul, #pop_inquire #gnb #recruit ul,
-#faq_list #gnb #recruit ul
-{display:block;}
+#overview #gnb #introduce div, #philosophy #gnb #introduce div, #ci_mean #gnb #introduce div, #ci_guide #gnb #introduce div, #history #gnb #introduce div,
+#system_vision #gnb #politics div, #system_organization #gnb #politics div, #system_climate #gnb #politics div, 
+#social_vision #gnb #politics div, #social_act_yuguchun #gnb #politics div, #moral_message #gnb #politics div, #moral_inform_receipt #gnb #politics div, 
+#moral_inform_use #gnb #politics div, #woongjin_foundation #gnb #politics div, #woongjin_foundation2 #gnb #politics div, #woongjin_foundation3 #gnb #politics div, 
+#woongjin_foundation4 #gnb #politics div, #woongjin_foundation5 #gnb #politics div, #wanted #gnb #recruit div, #recruit_system1 #gnb #recruit div, 
+#recruit_system2 #gnb #recruit div, #recruit_system3 #gnb #recruit div, #recruit_system4 #gnb #recruit div, #work_rule #gnb #recruit div,
+#holdings #gnb #business div, #thinkbig #gnb #business div, #booxen #gnb #business div, #rexfield #gnb #business div, #play #gnb #business div, 
+#food #gnb #business div, #energy #gnb #business div, #chemical #gnb #business div, #notice_list #gnb #recruit div, #login #gnb #recruit div, #pop_inquire #gnb #recruit div,
+#faq_list #gnb #recruit div
+/*{position:absolute;top:30px;/*display:block;/visibility:visible;}*/{position:absolute; top:35px !important;z-index:100;}

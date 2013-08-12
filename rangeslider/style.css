@@ -1,0 +1,11 @@
+body{
+	font-family: "돋움", "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 11px;
+}
+input[type='text']{border:none;width:130px;font-size:11px;font-weight:bold;color:#888;margin:0 0 10px;padding:0;}
+.txtleft{text-align:left;}
+.txtcenter{text-align:center;}
+.txtright{text-align:right;}
+.range-wrap{width:390px;margin:0 auto;}
+#slider-range{position:relative;width:370px;margin:0 auto;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;behavior: url(PIE.htc);}
+.price-range{width:370px;height:5px;margin:0 auto 5px;border:1px #c0c0c0;border-style:solid solid none;}
