@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D010501.js?v=0005"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Weat_Member_Modify">
+		<div class="container">
+			<div class="section">
+				<div class="viewport">
+					<!-- 입력폼 : 시작 -->
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									회원번호
+								</strong>
+								<span class="field">
+									<span class="string" id="KUNNR"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									진행수업
+								</strong>
+								<div class="field">
+									<ul class="inline-list" id="ZMATX">
+									</ul>
+								</div>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_NAME">학생명</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="NAME1" id="NAME1" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									생년월일
+								</strong>
+								<span class="field">
+									<input type="text" name="GBDAT" id="GBDAT" />
+									<button type="button" class="calendar-button blind" onclick="app_openCalendar('set_birth');">달력</button>
+									<span class="inline-group">
+										<span class="item"><input type="radio" name="MEMBER_BIRTHDAY_TYPE" id="MEMBER_BIRTHDAY_TYPE1" value="1" checked="checked" > <label for="MEMBER_BIRTHDAY_TYPE1">양</label></span>
+										<span class="item"><input type="radio" name="MEMBER_BIRTHDAY_TYPE" id="MEMBER_BIRTHDAY_TYPE2" value="2" /> <label for="MEMBER_BIRTHDAY_TYPE2">음</label></span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_CLASS"><span class="super">학년/성별</span></label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_CLASS">
+									</select>
+									<span class="inline-group">
+										<span class="item"><input type="radio" name="MEMBER_SEX" id="MEMBER_SEX1" value="1" /> <label for="MEMBER_SEX1">남</label></span>
+										<span class="item"><input type="radio" name="MEMBER_SEX" id="MEMBER_SEX2" value="2" /> <label for="MEMBER_SEX2">여</label></span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_CEL1">휴대폰</label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_CEL1">
+										<option value="" selected>선택</option>
+										<option value="010" >010</option>
+										<option value="011" >011</option>
+										<option value="016" >016</option>
+										<option value="017" >017</option>
+										<option value="018" >018</option>
+										<option value="019" >019</option>
+									</select>
+									<input type="text" name="MEMBER_CEL" id="MEMBER_CEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_TEL1"><span class="hyper">전화번호</span></label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_TEL1">
+										<option value="" selected>선택</option>
+										<option value="02">02</option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>
+										<option value="070">070</option>
+									</select>
+									<input type="text" name="MEMBER_TEL" id="MEMBER_TEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+							<li>
+								<strong class="label">
+									<label for="MEMBER_EMAIL1">이메일</label>
+								</strong>
+								<span class="field">
+									<span class="block-group">
+										<span class="block">
+											<input type="text" name="MEMBER_EMAIL1" id="MEMBER_EMAIL1" style="width: 90px; " />
+											<span class="string">@</span>
+											<select id="MEMBER_EMAIL2" style="width: 117px; " onchange="fn_mail()">
+												<option value="" selected>선택하세요</option>
+												<option value="self">기타메일</option >
+												<option value="naver.com">naver.com</option>
+												<option value="nate.com">nate.com</option>
+												<option value="hanmail.net">hanmail.net</option>
+												<option value="hotmail.com">hotmail.com</option>
+												<option value="dreamwiz.com">dreamwiz.com</option>
+												<option value="yahoo.co.kr">yahoo.co.kr</option>
+												<option value="empal.com">empal.com</option>
+												<option value="unitel.co.kr">unitel.co.kr</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="korea.com">korea.com</option>
+												<option value="chol.com">chol.com</option>
+											</select>
+										</span>
+										<span class="none">
+											<input type="text" id="etctext" class="text01"  maxlength="20" style="width:100%;"/>
+										</span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									주소
+								</strong>
+								<span class="field">
+									<span class="block-group">
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS1" style="width: 50px; " disabled />
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS2" style="width: 50px; " disabled />
+											<button type="button" class="button-style s-size global" onclick="button_post();">우편번호</button>
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS3" style="width: 100%; " disabled />
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS4" style="width: 100%; " />
+										</span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<span class="hyper">등록수정일</span>
+								</strong>
+								<span class="field">
+									<span class="string" id="DATE1"></span>
+								</span>
+							</li>
+						</ul>
+					</div>
+					<!-- 입력폼 : 끝 -->
+
+					<!-- 수정 취소 버튼 : 시작 -->
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="button" class="button-style m-size global" onclick="app_goCancel();">취소</button>
+								<button type="submit" class="button-style m-size submit" onclick="editSubmit();">수정</button>
+							</span>
+						</div>
+					</div>
+					<!-- 수정 취소 버튼 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

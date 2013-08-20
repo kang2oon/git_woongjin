@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회비 카드승인확인및배분</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/B020500.js?v=0003"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Pay_Approve">
+		<div class="container">
+			<div class="section">
+				<div class="viewport">
+					<div class="searching-list">
+						<ul>
+							<!-- 기간검색 : 시작 -->
+							<li>
+								<label for="PAY_APPROVE_SEARCH1">
+									<strong class="label">
+										<input type="radio" name="PAY_APPROVE_SEARCH" id="PAY_APPROVE_SEARCH1" class="graphic" checked />
+										<span class="string">기간</span>
+									</strong>
+									<span class="field">
+										<span class="item block">
+											<input type="text" name="PAY_APPROVE_SEARCH_PERIOD1" id="PAY_APPROVE_SEARCH_PERIOD1" readonly onclick="app_openCalendar('open_calendar1');" />
+											<button type="button" class="calendar-button blind" onclick="app_openCalendar('open_calendar1');">달력</button>
+										</span>
+										<span class="item block">
+											<input type="text" name="PAY_APPROVE_SEARCH_PERIOD2" id="PAY_APPROVE_SEARCH_PERIOD2" readonly onclick="app_openCalendar('open_calendar2');"  />
+											<button type="button" class="calendar-button blind" onclick="app_openCalendar('open_calendar1');">달력</button>
+										</span>
+									</span>
+								</label>
+							</li>
+							<!-- 기간검색 : 끝 -->
+							
+							<!-- 카드번호 : 시작 -->
+							<li>
+								<label for="PAY_APPROVE_SEARCH2">
+									<strong class="label">
+										<input type="radio" name="PAY_APPROVE_SEARCH" id="PAY_APPROVE_SEARCH2" class="graphic" />
+										<span class="string">카드번호</span>
+									</strong>
+									<span class="field">
+										<input type="text" name="PAY_APPROVE_SEARCH_CARD_NUM" id="PAY_APPROVE_SEARCH_CARD_NUM" onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value="" style="width: 130px; " />
+									</span>
+								</label>
+							</li>
+							<!-- 카드번호 : 끝 -->
+							
+							<!-- 승인번호 : 시작 -->
+							<li>
+								<label for="PAY_APPROVE_SEARCH3">
+									<strong class="label">
+										<input type="radio" name="PAY_APPROVE_SEARCH" id="PAY_APPROVE_SEARCH3" class="graphic" />
+										<span class="string">승인번호</span>
+									</strong>
+									<span class="field">
+										<input type="text" name="PAY_APPROVE_SEARCH_APPR_NUM" id="PAY_APPROVE_SEARCH_APPR_NUM" onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value="" style="width: 130px; " />
+									</span>
+								</label>
+							</li>
+							<!-- 승인번호 : 끝 -->
+						</ul>
+						
+						<!-- 검색버튼 : 시작 -->
+						<div class="submit"><button type="submit" class="button-style m-size submit" onclick="search_database();">검색</button></div>
+						<!-- 검색버튼 : 끝 -->
+					</div>
+					
+					<!-- 리스트 추가될 div : 시작 -->
+					<div class="pay_approve_anchor" id="pay_approve_anchor">
+					</div>
+					<!-- 리스트 추가될 div : 끝 -->
+					
+					<!-- 리스트 템플릿 : 시작 -->
+					<div class="pay_approve_anchor none" id='tmp_list'>
+						<ul>
+							<li>
+								<a href="#" onclick="detail_page('#APPNO#');">
+									<div class="item">
+										<strong>학생이름</strong>
+										<span>#KUNNR_NM#</span>
+									</div>
+									<div class="item">
+										<strong>카드정보</strong>
+										<span>#CRDCD_NM# ( #CRDNO# )</span>
+									</div>
+									<div class="item">
+										<strong>승인일자</strong>
+										<span>#APDAT#</span>
+									</div>
+									<div class="item">
+										<span class="item">
+											<strong>승인번호</strong>
+											<span>#APPNO#</span>
+										</span>
+										/ <span class="item">
+											<strong>배분</strong>
+											<span>#DVIND#</span>
+										</span>
+										/ <span class="item">
+											<strong>금액</strong>
+											<span>#APAMT_C#</span>
+										</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 리스트 템플릿 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

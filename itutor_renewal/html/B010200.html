@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name = "format-detection" content = "telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회원정보 회원상세조회및수정</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/CalendarUtil.js" ></script>
+<script type="text/javascript" src="../js/B010200.js?v=00005" ></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+    var $ = jQuery;
+
+	// 스크롤시	top버튼	보이지 않게	설정 : 옵티머스에서	fadeIn() 처리시	어플꺼짐으로 인해 주석처리.
+    $(window).scroll(function(){
+//        $('#Document #Aside button.top-button').hide();
+//
+//        if($(this).scrollTop() < 40) {
+//            $('#Document #Aside button.top-button').fadeOut('fast');
+//        } else {
+//            $('#Document #Aside button.top-button').delay('100').fadeIn();
+//        }
+    });
+
+	// top버튼 클릭시
+    $('#Aside button.top-button').click(function(){getUrl('#Document')});
+
+	// 탭 클릭시
+    $('#Contents>.container>.section').each(function(){
+        /* 탭모두 닫게 처리
+		$(this).not(':first-child').children(':not(h2)').hide()
+		.andSelf().find('h2	.toggle-button').removeClass('open').text('보이기');
+		/*/
+
+		// 탭이벤트
+        $(this).find('h2').click(function(){
+            var $switch = $(this).find('button.toggle-button');
+
+            if(! $switch.hasClass('open')) {
+                $switch.addClass('open').text('숨기기').closest('div.section').children(':not(h2)').removeClass('none');
+            } else {
+                $switch.removeClass('open').text('보이기').closest('div.section').children(':not(h2)').addClass('none');
+            }
+        });
+    });
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+    <div id="Contents" class="Member_Modify">
+        <div class="container">
+        	<!-- 회원기본정보 :: 시작 -->
+            <div class="section">
+                <div class="member_info">
+                    <div class="form-list">
+                        <ul>
+                            <li>
+                                <strong class="label">
+                                    회원번호
+                                </strong>
+                                <span class="field">
+                                    <span id="MEMBER_CD" class="string"></span>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    회원명
+                                </strong>
+                                <span class="field">
+                                    <span id="MEMBER_NAME" class="string"></span>
+                                    <span class="portrait"><img id="MEMBER_IMG" src="../image/null_noimage_portrait.8bit.png" alt="사진" /></span>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    성별
+                                </strong>
+                                <span class="field">
+                                    <span id="MEMBER_GENDER" class="string"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 회원기본정보 :: 끝 -->
+
+			<hr />
+
+			<!-- 회원상세정보 :: 시작 -->
+            <div class="section">
+                <h2><strong class="wrap">상세정보</strong> <button type="button" class="toggle-button blind">보이기</button></h2>
+
+
+                <div class="viewport none">
+                    <div class="form-list">
+                        <ul>
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_CLASS">학년</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="MEMBER_CLASS">
+                                    </select>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    생년월일
+                                </strong>
+                                <span class="field">
+                                    <span class="string" id="MEMBER_BIRTHDAY"></span>
+                                    <button type="button" id="MEMBER_BIRTHDAY_BTN" class="calendar-button blind">달력</button>
+                                    <span class="inline-group">
+                                        <span class="item"><input type="radio" name="MEMBER_BIRTHDAY_TYPE" id="MEMBER_BIRTHDAY_TYPE1" value="2" class="graphic" /><label for="MEMBER_BIRTHDAY_TYPE1">양</label></span>
+                                        <span class="item"><input type="radio" name="MEMBER_BIRTHDAY_TYPE" id="MEMBER_BIRTHDAY_TYPE2" value="1" class="graphic" /><label for="MEMBER_BIRTHDAY_TYPE2">음</label></span>
+                                    </span>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_TEL1">전화번호</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="MEMBER_TEL1">
+                                        <option value="select0" selected>선택</option>
+                                        <option value="02">02</option>
+                                        <option value="031">031</option>
+                                        <option value="032">032</option>
+                                        <option value="033">033</option>
+                                        <option value="041">041</option>
+                                        <option value="042">042</option>
+                                        <option value="043">043</option>
+                                        <option value="051">051</option>
+                                        <option value="052">052</option>
+                                        <option value="053">053</option>
+                                        <option value="054">054</option>
+                                        <option value="055">055</option>
+                                        <option value="061">061</option>
+                                        <option value="062">062</option>
+                                        <option value="063">063</option>
+                                        <option value="064">064</option>
+                                        <option value="070">070</option>
+                                    </select>
+                                    <input maxlength="9" type="text" name="MEMBER_TEL" id="MEMBER_TEL2" value="" onkeypress="returnOnlyNumber(event)" onkeyup="returnPhoneNumber(event)" />
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_CEL1">휴대전화</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="MEMBER_CEL1">
+                                        <option value="select0" selected>선택</option>
+                                        <option value="010" >010</option>
+                                        <option value="011" >011</option>
+                                        <option value="016" >016</option>
+                                        <option value="017" >017</option>
+                                        <option value="018" >018</option>
+                                        <option value="019" >019</option>
+                                    </select>
+                                    <input maxlength="9" type="text" name="MEMBER_CEL" id="MEMBER_CEL2" value="" onkeypress="returnOnlyNumber(event)" onkeyup="returnPhoneNumber(event)" />
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    주소
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS1" value="" style="width: 50px; " disabled="dissabled" />
+                                            <input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS2" value="" style="width: 50px; " disabled="disabbled" />
+                                            <button type="button" class="button-style s-size global">우편번호1</button>
+                                        </span>
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS3" value="" style="width: 100%; " />
+                                        </span>
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS4" value="" style="width: 100%; " />
+                                        </span>
+                                    </span>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    학부모명
+                                </strong>
+                                <span class="field">
+                                    <span class="string" id="MEMBER_P_NAME"></span>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_P_TEL1">전화번호</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="MEMBER_P_TEL1">
+                                        <option value="select0" selected>선택</option>
+                                        <option value="02">02</option>
+                                        <option value="031">031</option>
+                                        <option value="032">032</option>
+                                        <option value="033">033</option>
+                                        <option value="041">041</option>
+                                        <option value="042">042</option>
+                                        <option value="043">043</option>
+                                        <option value="051">051</option>
+                                        <option value="052">052</option>
+                                        <option value="053">053</option>
+                                        <option value="054">054</option>
+                                        <option value="055">055</option>
+                                        <option value="061">061</option>
+                                        <option value="062">062</option>
+                                        <option value="063">063</option>
+                                        <option value="064">064</option>
+                                        <option value="070">070</option>
+                                    </select>
+                                    <input maxlength="9" type="text" name="MEMBER_P_TEL" id="MEMBER_P_TEL2" value="" onkeypress="returnOnlyNumber(event)" onkeyup="returnPhoneNumber(event)" />
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_P_CEL1">휴대전화</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="MEMBER_P_CEL1">
+                                        <option value="select0" selected>선택</option>
+                                        <option value="010" >010</option>
+                                        <option value="011" >011</option>
+                                        <option value="016" >016</option>
+                                        <option value="017" >017</option>
+                                        <option value="018" >018</option>
+                                        <option value="019" >019</option>
+                                    </select>
+                                    <input maxlength="9" type="text" name="MEMBER_P_CEL" id="MEMBER_P_CEL2" value="" onkeypress="returnOnlyNumber(event)" onkeyup="returnPhoneNumber(event)" />
+                                </span>
+                            </li>
+
+<!--
+                            <li>
+                                <strong class="label">
+                                    <label for="MEMBER_P_EMAIL1">이메일</label>
+                                </strong>
+                                <span class="field">
+                                    <input type="text" name="MEMBER_P_EMAIL" id="MEMBER_P_EMAIL1" value="" style="width: 90px; " />
+                                    <span class="string">@</span>
+                                    <input type="text" name="MEMBER_P_EMAIL" id="MEMBER_P_EMAIL3" value="" class="none" />
+                                    <select id="MEMBER_P_EMAIL2" style="width: 115px; ">
+                                        <option value="select0" selected>선택하세요</option>
+                                    </select>
+                                </span>
+                            </li>
+-->
+                            <li>
+                                <strong class="label">
+                                    주소
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS1" value="" style="width: 50px; " disabled="dissabled" />
+                                            <input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS2" value="" style="width: 50px; " disabled="disabbled" />
+                                            <button type="button" class="button-style s-size global">우편번호2</button>
+                                        </span>
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS3" value="" style="width: 100%; " />
+                                        </span>
+                                        <span class="block">
+                                            <input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS4" value="" style="width: 100%; " />
+                                        </span>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="performing">
+                        <div class="bottom center">
+                            <span class="wrap">
+                                <button id="SAVE_INFO_BTN" type="submit" class="button-style m-size submit">저장</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 회원상세정보 :: 끝 -->
+
+			<hr />
+
+			<!-- 과목정보 :: 시작 -->
+            <div class="section">
+                <h2><strong class="wrap">과목정보</strong> <button type="button" class="toggle-button blind">보이기</button></h2>
+
+
+                <div class="viewport">
+                    <div id="subjectListTable" class="dtype1 none">
+                        <table border="1" class="col">
+                        <caption class="hiding">과목정보 표</caption>
+                            <colgroup>
+                                <col style="width: 26%; " />
+                                <col style="width: auto; " />
+                                <col style="width: 27%; " />
+                            </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">과목</th>
+                                <th scope="col">진도</th>
+                                <th scope="col">휴회</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="SUBJECT_BODY">
+                           <!-- 자바스크립트에서 동적생성
+                            <tr>
+                                <td class="button-right">국어 <button type="button" class="button-style s-size global">변경</button></td>
+                                <td class="button-right">H단계 9호 <button type="button" class="button-style s-size global">변경</button></td>
+                                <td><button type="button" class="button-style s-size global">휴회</button></td>
+                            </tr>
+                            <tr>
+                                <td class="button-right"><input type="radio" name="CLASS_SEL" id="CLASS_SEL1" class="graphic" /> <label for="CLASS_SEL1">수학</label> <button type="button" class="button-style s-size global">변경</button></td>
+                                <td class="button-right">H단계 9호 <button type="button" class="button-style s-size global">변경</button></td>
+                                <td><button type="button" class="button-style s-size global">휴회</button></td>
+                            </tr>
+                            <tr>
+                                <td class="button-right">국어 <button type="button" class="button-style s-size global">변경</button></td>
+                                <td class="button-right">H단계 9호 <button type="button" class="button-style s-size global">변경</button></td>
+                                <td><button type="button" class="button-style s-size global">휴회</button></td>
+                            </tr>
+                            -->
+                        </tbody>
+                        </table>
+                    </div>
+
+                    <div id="subjectUI" class="performing">
+                        <div class="bottom center">
+                            <span class="wrap">
+                                <button id="NEW_SUBJECT_BTN" type="submit" class="button-style m-size submit">과목입회</button>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- 과목정보 :: 끝 -->
+
+					<!-- 결제정보테이블 :: 시작 -->
+                    <div id="payTable" class="form-list none">
+                        <ul>
+                            <li>
+                                <strong class="label">
+                                    <label for="CLASS_JOIN_NAME">예금주명</label>
+                                </strong>
+                                <span class="field">
+                                    <input type="text" name="CLASS_JOIN_NAME" id="CLASS_JOIN_NAME" value="" />
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="label">
+                                    <label for="CLASS_JOIN_SSNUM1">주민번호</label>
+                                </strong>
+                                <span class="field">
+                                    <input maxlength="13" type="text" name="CLASS_JOIN_SSNUM" id="CLASS_JOIN_SSNUM1" style="width: 150px;" onKeyPress="returnOnlyNumber(event)" />
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="label">
+                                    <label for="CLASS_JOIN_ACCOUT">계좌번호</label>
+                                </strong>
+                                <span class="field">
+                                    <input maxlength="18" type="text" name="CLASS_JOIN_ACCOUT" id="CLASS_JOIN_ACCOUT" style="width: 150px; " onKeyPress="returnOnlyNumber(event)" />
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="label">
+                                    <label for="CLASS_JOIN_ACCOUT_DATE">이체일</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="CLASS_JOIN_ACCOUT_DATE">
+                                        <option value="select0" selected="selected">선택</option>
+                                        <option value="15">15일</option>
+                                        <option value="21">21일</option>
+                                        <option value="26">26일</option>
+                                    </select>
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="label">
+                                    <label for="CLASS_JOIN_ACCOUT_BANK">은행명</label>
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select id="CLASS_JOIN_ACCOUT_BANK">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <button id="checkingAccount" type="button" class="button-style s-size global">계좌조회</button>
+                                        </span>
+                                    </span>
+                                    
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 결제정보테이블 :: 끝 -->
+                    
+                    <!-- 기획변경으로 사용하지않음.	계좌정보저장
+					<div id="payUI"	class="performing none ">
+						<div class="bottom center">
+							<span class="wrap">
+								<button	id="SAVE_ACCOUNT_BTN" type="submit"	class="button-style	m-size submit">계좌정보저장</button>
+							</span>
+						</div>
+					</div>
+					-->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- top버튼 : 시작	-->
+    <div id="Aside">
+		<hr />
+        <div class="container">
+            <button type="button" class="top-button blind">Top</button>
+        </div>
+    </div>
+    <!-- top버튼 : 끝 -->
+</div>
+</body>
+</html>

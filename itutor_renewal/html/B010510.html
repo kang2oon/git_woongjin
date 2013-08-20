@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>바로셈 진도 조회</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/B010510.js?v=00009" ></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+// TOP Button
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+	// top버튼 클릭시
+	$('#Aside button.top-button').click(function(){getUrl('#Document')});
+});
+//]]>
+</script>
+
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Header">
+		<div class="container">
+			<h1></h1>
+		</div>
+		<hr />
+	</div>
+
+				<!-- 검색 UI 시작 -->
+				<div class="jindo_radioButton">
+					<input type="radio" name="GUBUN_RADIO" id="radio1" class="graphic" value="X" />
+					<label for="radio1">표준진도</label>
+					<input type="radio" name="GUBUN_RADIO" id="radio2" class="graphic" value="N" />
+					<label for="radio2" style="margin-left:20px;">수정진도</label>
+				</div>
+				<!-- 검색 UI 끝 -->
+
+
+				<!-- 진도 리스트 시작 -->
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" >
+								<tr>
+									<th style="width:40%;">수업 예정일</th>
+									<th style="width:auto;"><div id="class_date">2013-03-12</div></th>
+								</tr>
+						</table>
+					</div>                  
+
+                
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width:30%;" />
+                                <col style="width:auto;" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" colspan="2">등록할 진도</th>
+								</tr>
+							</thead>
+								<tr>
+									<td>단계</td>
+                                    <td style="text-align:left">
+                                        <div class="">
+                        					<select id="dange" style="width:100%;">
+                        					</select>
+                        				</div>
+                                    </td>
+								</tr>  
+                            <tbody id="std_jindo">
+								<tr>
+									<td>표준주차</td>
+                                    <td style="text-align:left">
+                                        <div class="" >
+                        					<select id="std_jucha" onchange="stdJindoSelectHandle(this.value)" style="width:100%;">
+                        					</select>
+                        				</div>
+                                    </td>
+								</tr>
+                             </tbody>                                
+                             <tbody id="sujung_jindo">                                
+								<tr>
+									<td>주교재</td>
+                                    <td style="text-align:left">
+                                        <div class="" >
+                        					<select name="smat1" id="smat1" onchange="mainSelectHandle(this.value)"   style="width:100%;">
+                        					</select>
+                        				</div>                                        
+                                    </td>
+								</tr>
+								<tr>
+									<td>부교재선택</td>
+                                    <td style="text-align:left">
+                                        <div class="" >
+                        					<select  id="smat2Select" multiple="multiple"  onchange="subSelectHandle(this.value)"  style="width:100%;">
+                        					</select>
+                        				</div>                                        
+                                    </td>
+								</tr>
+								<tr>
+									<td>부교재1</td>
+                                    <td style="text-align:left">
+                                        <input type="text" placeholder="부교재1"  name="smat2" id="smat2" style="width: 80%;" disabled="" />
+                                    </td>
+								</tr>                                
+								<tr>
+									<td>부교재2</td>
+                                    <td style="text-align:left">
+                                        <input type="text" placeholder="부교재2"  name="smat3" id="smat3" style="width: 80%;" disabled="" />
+                                    </td>
+								</tr>
+								<tr>
+									<td>부교재3</td>
+                                    <td style="text-align:left">
+                                        <input type="text" placeholder="부교재3"  name="smat4" id="smat4" style="width: 80%;" disabled="" />
+                                    </td>
+								</tr>  
+                            </tbody>                                                                                  
+
+						</table>
+					</div>
+    					<div class="performing">
+    						<div class="bottom center">
+    							<span class="wrap">
+    								<button id="saveBtn" type="submit" class="button-style m-size submit">저장</button>
+    							</span>
+    						</div>
+    					</div>                       
+
+				</div>
+				<!-- 진도 리스트 끝 -->
+
+
+
+
+	<div id="Contents" class="Jindo_Inquire">
+		<div class="container">
+			<div class="viewport">
+				<!-- 진도리스트 시작-->
+                
+				<ul class="memListline">
+				</ul>
+				<!-- 진도리스트 끝-->
+			</div>
+		</div>
+	</div>
+	<!-- 하단top버튼 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼 끝 -->
+</div>
+</body>
+</html>

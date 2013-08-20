@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* ----------------------------------------------------------------------------------------------- 
+ *	Motion-blue Publishing.Div
+ * Author	: 2012-10-27 by 2dea
+ * Descript	: iTutor Layout CSS
+ * Edit+	: 2012-10-27 by 2dea
+ * Comment	: Modified Line	-
+ ----------------------------------------------------------------------------------------------- */
+
+/* Wrapper Area */
+html, body {height: 100%; }
+#Document {position: relative; min-height: 100%; background: url('../image/bg_Document-L.png') repeat-y left top, url('../image/bg_Document-R.png') repeat-y right top, #f3f0e9 url('../image/bg_Document.png') no-repeat center top; background-size: 5px 100%, 5px 100%, 100% auto; color: #666; }
+#Document.has-Nav {padding-top: 35px; -webkit-box-sizing: border-box; }
+#Document.has-Footer {-webkit-box-sizing: border-box; }
+
+/* Header Area */
+#Header {position: relative; z-index: 30; width: 101.6129032258065%; margin: 0px -0.8064516129032258% -4px; }
+#Header.fixed {position: fixed; left: 0px; top: 0px; margin: 0px; padding: 0px 2.5px; -webkit-box-sizing: border-box; width: 100%; }
+#Header .container {padding-bottom: 4px; height: 34px; background: url('../image/bg_Nav.png') no-repeat center top; background-size: 100% 38px; }
+	#Header h1 {padding-top: 8px; text-align: center; color: #FFF; }
+
+/* Nav Area */
+#Nav {position: relative; z-index: 30; width: 101.6129032258065%; margin: 0px -0.8064516129032258% -3px; }
+#Nav.fixed {position: fixed; left: 0px; top: 0px; margin: 0px; padding: 0px 2.5px; -webkit-box-sizing: border-box; width: 100%; }
+	#Nav .area-lnb {height: 38px; background: url('../image/bg_Nav.png') no-repeat center top; background-size: 100% 38px; }
+		#Nav .area-lnb ul {height: 34px; }
+			#Nav .area-lnb ul li {display: inline; float: left; border-right: 1px solid #07365e; border-left: 1px solid #3a6991; -webkit-box-sizing: border-box; color: #84a4be; font-weight: bold; width: 33.333%; font-size: 107.1%; letter-spacing: -2px; }
+			#Nav .area-lnb ul.item-size2 li {width: 50%; font-size: 107.1%; letter-spacing: 0px; }
+			#Nav .area-lnb ul.item-size3 li {width: 33.333%; font-size: 107.1%; letter-spacing: -2px; }
+			#Nav .area-lnb ul li:first-child {border-left: 0px none; border-top-left-radius: 10%; border-bottom-left-radius: 10%; }
+			#Nav .area-lnb ul li:last-child {border-right: 0px none; border-top-right-radius: 10%; border-bottom-right-radius: 10%; }
+				#Nav .area-lnb ul li a {display: block; position: relative; z-index: 40; padding: 10px 1px 0px 2px; height: 24px; color: #84a4be; text-align: center; }
+			#Nav .area-lnb ul li.active {background: url('../image/bg_Nav_active.png') repeat; color: #FFF; }
+				#Nav .area-lnb ul li.active a {color: #FFF; }
+
+/* Contents Area */
+#Contents {position: static; border-bottom: 1px solid #4d4c4c; }
+	#Contents .section {position: relative; }
+		#Contents .section> h2 {border-top: 1px solid #4d4c4c; padding: 11px 5px 9px; min-height: 20px; background: url('../image/bg_Document-L.png') repeat-y left top, url('../image/bg_Document-R.png') repeat-y right top, #FFF; background-size: 5px 100%, 5px 100%; color: #0066bd; letter-spacing: -1px; word-spacing: -2px; opacity: 0.75; }
+		#Contents .section:first-child> h2 {border-top: 0px none; }
+		#Contents .section> h2.has-control {padding-left: 35px; }
+			#Contents .section> h2 strong.wrap {color: #0066bd; }
+			#Contents .section> h2 button.toggle-button {position: absolute; right: 0px; top: 0px; }
+			#Contents .section> h2 span.control {display: inline-block; margin: -5px 0px; }
+				#Contents .section> h2 span.control .prev-button {position: absolute; left: 5px; }
+			#Contents .section> h2 span.check-button {display: inline-block; margin-left: 10px; vertical-align: text-top; color: #666; font-size: 82.4%; }
+				#Contents .section> h2 span.check-button .graphic-checkbox {padding-top: 2px; }
+					#Contents .section> h2 span.check-button .graphic-checkbox button {margin-top: -2px; margin-right: 5px; }
+		#Contents .section> .viewport {position: relative; border-top: 1px solid #ababab; min-height: 40px; background: url('../image/bg_viewport.png') repeat-x left bottom; background-size: auto 12px; }
+			#Contents .section> .viewport .selecting {padding: 10px 0px; text-align: center; background: url('../image/bg_Document-L.png') repeat-y left top, url('../image/bg_Document-R.png') repeat-y right top, #e6e1d6; background-size: 5px 100%, 5px 100%; }
+				#Contents .section> .viewport .selecting .message {margin-top: 10px; }
+					#Contents .section> .viewport .selecting .message p {line-height: 128.6%; }
+			#Contents .section> .viewport .learning {padding: 10px 0px; }
+				#Contents .section> .viewport .learning> .section {margin-top: 20px; }
+				#Contents .section> .viewport .learning> .section:first-child {margin-top: 0px; }
+					#Contents .section> .viewport .learning> .section> h3 {padding: 0px 5px 10px; }
+						#Contents .section> .viewport .learning> .section> h3 .wrap {padding-right: 16px; background: url('../image/bg_h3.png') no-repeat right 50%; background-size: auto 16px; }
+						#Contents .section> .viewport .learning> .section> h3 ins.select_level {display: inline-block; margin-left: 5px; color: #0066bd; font-size: 0.813em; letter-spacing: -0.1em; }
+							#Contents .section> .viewport .learning> .section> h3 ins.select_level em {padding-left: 5px; color: #0066bd; font-weight: normal; font-size: 1.308em; letter-spacing: 0em; }
+								#Contents .section> .viewport .learning> .section> h3 ins.select_level em span {display: inline-block; padding: 2px 0.36em 1px; vertical-align: text-bottom; background-color: #0066bd; color: #FFF; -webkit-border-radius: 50%; }
+					#Contents .section> .viewport .learning> .section> .article {position: relative; }
+						#Contents .section> .viewport .learning> .section> .article .article-toggle-button {position: absolute; right: 5px; top: -34px; }
+							#Contents .section> .viewport .learning> .section> .article .article-toggle-button button {padding: 0px 5px; width: 70px; height: 30px; text-align: right; color: #1170c1; font-weight: bold; font-size: 1em; }
+								#Contents .section> .viewport .learning> .section> .article .article-toggle-button button span {padding-right: 18px; background: url('../image/btn_toggle_article-or.png') no-repeat right center; background-size: 14px 14px; }
+								#Contents .section> .viewport .learning> .section> .article .article-toggle-button button.close span {background-image: url('../image/btn_toggle_article-on.png'); }
+					#Contents .section> .viewport .learning> .section> .article.attach-article {display: none; padding-top: 10px; }
+					#Contents .section> .viewport .learning> .section> .article.full-article {margin-bottom: -10px; }
+						#Contents .section> .viewport .learning> .section> .article> h4 {margin-top: 10px; padding: 0px 5px; color: #0066bd; }
+						#Contents .section> .viewport .learning> .section> .article> h4:first-child {margin-top: 0px; }
+							#Contents .section> .viewport .learning> .section> .article> h4 .wrap {display: block; padding: 0px 0px 5px 10px; background: url('../image/bul_h4.png') no-repeat left 3px; background-size: 5px auto; color: #0066bd; }
+						#Contents .section> .viewport .learning> .section> .article> .content {padding: 0px 5px; text-align: justify; line-height: 128.6%; }
+						#Contents .section> .viewport .learning> .section> .article> .content.summary {display: none; padding-bottom: 10px; }
+						#Contents .section> .viewport .learning> .section> .article> .hiligh-box {margin-top: 6px; }
+						#Contents .section> .viewport .learning> .section> .article> .hiligh-box:first-child {margin-top: 0px; }
+			#Contents .section> .viewport .space {margin-top: 10px; }
+			#Contents .section> .viewport .semi-space {margin-top: 5px; }
+			#Contents .section> .viewport .wrapper {padding: 0px 5px; }
+
+/* Aside Area */
+#Aside {position: fixed; width: 100%; height: 0px; z-index: 20; left: 0px; bottom: 7px; }
+#Aside.has-Footer {bottom: 54px; }
+#Aside .container {position: absolute; z-index: 200; right: 15px; bottom: 0px; }
+	#Aside button.top-button {display: none; }
+
+/* Footer Area */
+#Footer {position: relative; z-index: 10; }
+#Footer.fixed {position: fixed; left: 0px; bottom: 0px; padding: 0px 5px; -webkit-box-sizing: border-box; width: 100%; }
+#Footer.fixed .container {border-top: 1px solid #ababab; background: url('../image/bg_Document-L.png') repeat-y left top, url('../image/bg_Document-R.png') repeat-y right top, #f3f0e9; background-size: 5px 100%, 5px 100%; }
+	#Footer .performing .bottom {padding-bottom: 7px !important; }

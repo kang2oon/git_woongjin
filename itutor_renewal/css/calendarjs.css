@@ -1,0 +1,90 @@
+div.js_calendar * {
+	/* old-style reset here :) */
+	border: 0px;
+	padding: 0px;
+}
+
+div.js_calendar table {
+	border-spacing:0; 
+	width:100%;
+	border:1px solid #9dabce;
+	border-top:1px solid #9dacbe;
+}
+div.js_calendar table tr td, div.js_calendar table tr th, div.js_calendar table tfoot th {
+	text-align:center;
+	color:#444;
+	height:40px;
+	background-color:#c0c9d3;
+	border-left:1px solid #e1e6ec;
+	border-bottom:1px solid #9dacbe;
+	font-size:1em;
+}
+div.js_calendar table tr td:first-child {border-left:none;}
+div.js_calendar table tr th:first-child {border-left:none;}
+div.js_calendar table thead tr th, div.js_calendar table tfoot th {
+	font-weight: bold;
+}
+div.js_calendar table tbody tr td:hover {
+	background:#bdc5cf;
+	color:#222;
+}
+div.js_calendar table tbody tr td.date_has_event {
+	background:lime;
+	color: white;
+}
+div.js_calendar table tbody tr td.date_has_event:hover {
+	background-position: 80px -40px;
+}
+div.js_calendar table tbody tr td.padding {
+	background:#cbd2d8;
+}
+div.js_calendar table tbody tr td.today {
+	background-color:#91a7c8;
+	/*background: -webkit-linear-gradient(top, #536a8c, #6682ac);*/
+	color:white;
+}
+div.js_calendar table tbody tr td.today:hover {
+	
+}
+
+div.js_calendar div.ui {
+	margin: 0px;
+	padding: 0px;
+	background: url(../image/calendarjs_body.png);
+}
+
+.events {
+	position: relative;
+}
+.events ul {
+	text-align: left;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	padding: 15px;
+	background: #E7ECF2 url(../image/calendarjs_popup.png) no-repeat;
+	color: white;
+	border: 1px solid white;
+	font-size: 15px;
+	width: 200px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-border-radius: 3px;
+	list-style: none;
+	color: #444444;
+	-webkit-box-shadow: 0px 8px 8px #333;
+}
+.events li {
+	padding-bottom: 5px;
+}
+.events li span {
+	display: block;
+	font-size: 12px;
+	text-align: justify;
+	color: #555;
+}
+.events li span.title {
+	font-weight: bold;
+	color: #222;
+}

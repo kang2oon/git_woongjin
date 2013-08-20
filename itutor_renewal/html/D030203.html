@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css?v=001" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D030203.js?v=0012"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+    
+
+    
+
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+
+
+//]]>
+</script>
+<style type="text/css">
+<!--
+
+.data {border-top-right-radius: 1px; border-bottom-right-radius: 1px; width: 0%; height: 10px; vertical-align: top; background: url('../image/ico_graph-s.png') repeat-x; background-size: auto 200%; }
+.data2 {border-top-right-radius: 1px; border-bottom-right-radius: 1px; width: 0%; height: 10px; vertical-align: top; background: url('../image/ico_graph-s.png') repeat-x; background-size: auto 200%;background-position: 0% 100%; }
+
+.datah {border-top-right-radius: 1px; border-bottom-right-radius: 1px; width: 100%; height: 0%; vertical-align: top; background: url('../image/ico_graph-s.png') repeat-x; background-size: auto 200%; color:white;}
+.datah2 {border-top-right-radius: 1px; border-bottom-right-radius: 1px; width: 100%; height: 0%; vertical-align: top; background: url('../image/ico_graph-s.png') repeat-x; background-size: auto 200%; color:white; background-position: 0% 100%; }
+
+-->
+</style>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<!-- 상단 네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li id="navTO"><a href="#" onclick="page_move_code('D030201.html','TO');">종합</a></li>
+					<li id="navSE" class="none"><a href="#" onclick="page_move_code('D030202.html','SE');">감각운동</a></li>
+					<li id="navCO" class="none"><a href="#" onclick="page_move_code('D030202.html','CO');">인지</a></li>
+					<li id="navLA"><a href="#" onclick="page_move_code('D030203.html','LA');">언어</a></li>
+					<li id="navEM" class="none"><a href="#" onclick="page_move_code('D030202.html','EM');">사회정서</a></li>
+                    <li id="navMA"><a href="#" onclick="page_move_code('D030203.html','MA');">수리</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<!-- 상단 네비 : 끝 -->
+
+	<div id="Contents" class="Weat_Result_Analysis_Detail">
+		<div class="container">
+
+			<!-- 요인별 발달 수준 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">요인별 발달 수준 </strong> </h2>
+
+				<div class="viewport">
+
+					<div class="weat_analysis_detail_graph">
+						<div class="example">
+							<ul>
+								<li><span class="icon">1. </span>전체평균정답률</li>
+								<li><span class="icon">2. </span>나의 정답률</li>
+							</ul>
+						</div>
+                    </div>    
+
+                
+					<div class="dtype1">
+						<table border="1" class="col" style="table-layout: fixed;">
+							<colgroup>
+								<col style="width: 40px; " />
+                                <col style="width: auto; " />
+								<col style="width: 40px; " />
+                                <col style="width: auto; " />
+								<col style="width: 40px; " />
+							</colgroup>
+
+<!--
+    						<thead>
+    							<tr>
+    								<th scope="col"><span class="super">측정요인</span></th>
+                                    <th scope="col">수준</th>
+    							</tr>
+    						</thead>
+    
+                            <tbody id='TB_DATA'>
+                            </tbody>
+-->
+
+    
+
+    						<tbody id='TB_DATA' >
+    							<tr>
+                                    <td><span>수준</span></td>
+                                    <td valign="bottom" style="padding: 0;">
+                                    <!-- 정답률 그래프 : 시작 -->
+                                        <table border="0" style="height: 100%;width: 100%; table-layout: fixed;">
+                                            <tr>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                                <td style="border:0px solid red;padding: 0;" width="38%" valign="bottom">
+                                                    <table id="PERCENT_OTHER_NU" class="datah" style="height: 0%;table-layout: fixed;">
+                                                        <tr>
+                                                            <td valign="top"><span  id="PERCENT_OTHER_STR_NU">0%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                                <td style="border:0px solid red;padding: 0;" width="38%" valign="bottom" >
+                                                    <table  id="PERCENT_ME_NU" class="datah2" style="height: 0%;table-layout: fixed;">
+                                                        <tr>
+                                                            <td valign="top"><span  id="PERCENT_ME_STR_NU">0%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                        			<!-- 정답률 그래프 : 끝-->
+                                    </td>
+           							<td style="padding:0;">
+                                        <table border="1" class="col">
+                                            <tr><td id="LEVEL_TEXT_NU1" style="padding:0;">최상</td></tr>
+                                            <tr><td id="LEVEL_TEXT_NU2" style="padding:0;">상</td></tr>
+                                            <tr><td id="LEVEL_TEXT_NU3" style="padding:0;">중</td></tr>
+                                            <tr><td id="LEVEL_TEXT_NU4" style="padding:0;">중하</td></tr>
+                                            <tr><td id="LEVEL_TEXT_NU5" style="padding:0;">하</td></tr>
+                                        </table>
+                                    </td>
+                                    <td valign="bottom" style="padding: 0;">
+                                    <!-- 정답률 그래프 : 시작 -->
+                                        <table border="0" style="height: 100%;table-layout: fixed;">
+                                            <tr>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                                <td style="border:0px solid red;padding: 0;" width="38%" valign="bottom" >
+                                                    <table id="PERCENT_OTHER_SP" class="datah" style="height: 0%;table-layout: fixed;">
+                                                        <tr>
+                                                            <td valign="top"><span  id="PERCENT_OTHER_STR_SP">0%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                                <td style="border:0px solid red;padding: 0;" width="38%" valign="bottom" >
+                                                    <table  id="PERCENT_ME_SP" class="datah2" style="height: 0%;table-layout: fixed;">
+                                                        <tr>
+                                                            <td valign="top"><span  id="PERCENT_ME_STR_SP">0%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="border:0px solid red;" width="8%">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                            
+                        			<!-- 정답률 그래프 : 끝-->
+                                    </td>
+           							<td style="padding:0;">
+                                        <table border="1" class="col">
+                                            <tr><td id="LEVEL_TEXT_SP1" style="padding:0;">최상</td></tr>
+                                            <tr><td id="LEVEL_TEXT_SP2" style="padding:0;">상</td></tr>
+                                            <tr><td id="LEVEL_TEXT_SP3" style="padding:0;">중</td></tr>
+                                            <tr><td id="LEVEL_TEXT_SP4" style="padding:0;">중하</td></tr>
+                                            <tr><td id="LEVEL_TEXT_SP5" style="padding:0;">하</td></tr>
+                                        </table>
+                                    </td>
+    							</tr>
+    							</tr>
+    							<tr>
+                                    <td><span>측정요인</span></td>
+                                    <td colspan="2"><span id="SUB_AREA_NAME_NU"></span></td>
+                                    <td colspan="2"><span id="SUB_AREA_NAME_SP"></span></td>
+    							</tr>
+    							<tr>
+                                    <td><span>측정내용</span></td>
+                                    <td colspan="2"><span id="SUB_AREA_TEXT_NU"></span></td>
+                                    <td colspan="2"><span id="SUB_AREA_TEXT_SP"></span></td>
+    							</tr>
+    						</tbody>
+                            
+
+
+                            
+                            
+                            
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 요인별 발달 수준  : 끝 -->
+
+
+
+
+			<!-- 향상 가이드 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">향상 가이드</strong> </h2>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width: 30%; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<thead>
+							<tr>
+								<th scope="col"><span class="super">구분</span></th>
+								<th scope="col">내용</th>
+							</tr>
+						</thead>
+
+						<tbody id='TB_MENT_DATA'>
+							<tr>
+								<td colspan="3">데이터가 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 향상 가이드 : 끝 -->
+
+
+
+
+
+			<!-- A코드 결괄 분석 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">문항별 평가</strong> </h2>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width: 10%; " />
+								<col style="width: 25; " />
+								<col style="width: auto " />
+								<col style="width: 10; " />
+								<col style="width: 15%; " />                                                                
+							</colgroup>
+
+						<thead>
+							<tr>
+								<th scope="col"><span class="super">번호</span></th>
+								<th scope="col">측정요인</th>
+                                <th scope="col">문항별 평가내용</th>
+                                <th scope="col">채점결과</th>
+                                <th scope="col">평균 정답률</th>
+							</tr>
+						</thead>
+
+						<tbody id='TB_CATE_DATA'>
+							<tr>
+
+								<td colspan="5">데이터가 없습니다.</td>
+
+<!--
+                                <td>1</td>
+                                <td>측정요인</td>
+                                <td>평가내용평가내용평가내용평가내용평가내용평가내용평가내용평가내용</td>
+                                <td>O</td>
+                                <td>98%</td>
+-->
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- A코드 결괄 분석 : 끝 -->
+            
+            
+            
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,663 @@
+{
+    "version": "1.1.83",
+    "json": {
+        "RFCJSON.json": {
+            "version": "1.0.76"
+        },
+				"HOLIDAYJSON.json": {
+            "version": "1.0.03"
+        }
+    },
+    "html": {
+        "A020100.html": {
+            "version": "1.0.74"
+        },
+        "A020300.html": {
+            "version": "1.0.73"
+        },
+        "A020400.html": {
+            "version": "1.0.71"
+        },
+        "A020402.html": {
+            "version": "1.0.56"
+        },
+        "B010200.html": {
+            "version": "1.0.70"
+        },
+        "B010201.html": {
+            "version": "1.0.60"
+        },
+        "B010202.html": {
+            "version": "1.0.60"
+        },
+        "B010300.html": {
+            "version": "1.0.59"
+        },
+        "B010400.html": {
+            "version": "1.0.56"
+        },
+        "B010500.html": {
+            "version": "1.0.56"
+        },
+        "B010501.html": {
+            "version": "1.0.56"
+        },
+        "B010510.html": {
+            "version": "1.0.57"
+        },
+        "B010511.html": {
+            "version": "1.0.56"
+        },
+        "B010600.html": {
+            "version": "1.0.69"
+        },
+        "B010601.html": {
+            "version": "1.0.56"
+        },
+        "B010602.html": {
+            "version": "1.0.56"
+        },
+        "B010603.html": {
+            "version": "1.0.56"
+        },
+        "B020100.html": {
+            "version": "1.0.56"
+        },
+        "B020200.html": {
+            "version": "1.0.56"
+        },
+        "B020201.html": {
+            "version": "1.0.59"
+        },
+        "B020202.html": {
+            "version": "1.0.56"
+        },
+        "B020203.html": {
+            "version": "1.0.57"
+        },
+        "B020300.html": {
+            "version": "1.0.56"
+        },
+        "B020400.html": {
+            "version": "1.0.56"
+        },
+        "B020401.html": {
+            "version": "1.0.56"
+        },
+        "B020402.html": {
+            "version": "1.0.56"
+        },
+        "B020404.html": {
+            "version": "1.0.57"
+        },
+        "B020405.html": {
+            "version": "1.0.56"
+        },
+        "B020500.html": {
+            "version": "1.0.56"
+        },
+        "B020501.html": {
+            "version": "1.0.56"
+        },
+        "B020502.html": {
+            "version": "1.0.55"
+        },
+        "B020503.html": {
+            "version": "1.0.56"
+        },
+        "B020504.html": {
+            "version": "1.0.56"
+        },
+        "C010000.html": {
+            "version": "1.0.57"
+        },
+        "C010100.html": {
+            "version": "1.0.58"
+        },
+        "C010101.html": {
+            "version": "1.0.57"
+        },
+        "C010200.html": {
+            "version": "1.0.56"
+        },
+        "C010300.html": {
+            "version": "1.0.0"
+        },
+        "D010100.html": {
+            "version": "1.0.70"
+        },
+        "D010200.html": {
+            "version": "1.0.56"
+        },
+        "D010300.html": {
+            "version": "1.0.61"
+        },
+        "D010400.html": {
+            "version": "1.0.58"
+        },
+        "D010401.html": {
+            "version": "1.0.00"
+        },
+        "D010500.html": {
+            "version": "1.0.56"
+        },
+        "D010501.html": {
+            "version": "1.0.57"
+        },
+        "D020100.html": {
+            "version": "1.0.59"
+        },
+        "D020101.html": {
+            "version": "1.0.56"
+        },
+        "D020200.html": {
+            "version": "1.0.57"
+        },
+        "D020201.html": {
+            "version": "1.0.57"
+        },
+        "D020202.html": {
+            "version": "1.0.56"
+        },
+        "D020203.html": {
+            "version": "1.0.57"
+        },
+        "join.html": {
+            "version": "1.0.56"
+        },
+		"join_admin.html": {
+            "version": "1.0.56"
+        },
+        "login.html": {
+            "version": "1.0.66"
+        },
+        "login_admin.html": {
+            "version": "1.0.66"
+        },
+        "notice.html": {
+            "version": "1.0.56"
+        },
+        "D030100.html": {
+            "version": "1.0.01"
+        },
+        "D030101.html": {
+            "version": "1.0.02"
+        },
+        "D030200.html": {
+            "version": "1.0.03"
+        },
+        "D030201.html": {
+            "version": "1.0.00"
+        },
+        "D030202.html": {
+            "version": "1.0.00"
+        },
+        "D030203.html": {
+            "version": "1.0.00"
+        }
+    },
+    "js": {
+        "A020100.js": {
+            "version": "1.0.86"
+        },
+        "A020100_b.js": {
+            "version": "1.0.71"
+        },
+        "A020100_u.js": {
+            "version": "1.0.72"
+        },
+        "A020300.js": {
+            "version": "1.0.86"
+        },
+        "A020300_b.js": {
+            "version": "1.0.70"
+        },
+        "A020300_u.js": {
+            "version": "1.0.72"
+        },
+        "A020400.js": {
+            "version": "1.0.80"
+        },
+        "A020400_msg.js": {
+            "version": "1.0.58"
+        },
+        "A020402.js": {
+            "version": "1.0.55"
+        },
+        "B010200.js": {
+            "version": "1.0.78"
+        },
+        "B010300.js": {
+            "version": "1.0.65"
+        },
+        "B010400.js": {
+            "version": "1.0.60"
+        },
+        "B010500.js": {
+            "version": "1.0.56"
+        },
+        "B010501.js": {
+            "version": "1.0.55"
+        },
+        "B010510.js": {
+            "version": "1.0.56"
+        },
+        "B010511.js": {
+            "version": "1.0.55"
+        },
+        "B010600.js": {
+            "version": "1.0.69"
+        },
+        "B010601.js": {
+            "version": "1.0.57"
+        },
+        "B010602.js": {
+            "version": "1.0.55"
+        },
+        "B010603.js": {
+            "version": "1.0.56"
+        },
+        "B020100.js": {
+            "version": "1.0.62"
+        },
+        "B020200.js": {
+            "version": "1.0.56"
+        },
+        "B020201.js": {
+            "version": "1.0.61"
+        },
+        "B020202.js": {
+            "version": "1.0.64"
+        },
+        "B020203.js": {
+            "version": "1.0.57"
+        },
+        "B020300.js": {
+            "version": "1.0.55"
+        },
+        "B020400.js": {
+            "version": "1.0.55"
+        },
+        "B020401.js": {
+            "version": "1.0.56"
+        },
+        "B020402.js": {
+            "version": "1.0.56"
+        },
+        "B020404.js": {
+            "version": "1.0.57"
+        },
+        "B020405.js": {
+            "version": "1.0.60"
+        },
+        "B020500.js": {
+            "version": "1.0.56"
+        },
+        "B020501.js": {
+            "version": "1.0.55"
+        },
+        "B020502.js": {
+            "version": "1.0.55"
+        },
+        "B020503.js": {
+            "version": "1.0.56"
+        },
+        "B020504.js": {
+            "version": "1.0.55"
+        },
+        "C010100.js": {
+            "version": "1.0.59"
+        },
+        "C010101.js": {
+            "version": "1.0.59"
+        },
+        "C010200.js": {
+            "version": "1.0.58"
+        },
+        "C010300.js": {
+            "version": "1.0.0"
+        },
+        "CalendarUtil.js": {
+            "version": "1.0.54"
+        },
+        "common.js": {
+            "version": "1.0.56"
+        },
+        "connect.js": {
+            "version": "1.0.58"
+        },
+        "D010100.js": {
+            "version": "1.0.69"
+        },
+        "D010200.js": {
+            "version": "1.0.56"
+        },
+        "D010300.js": {
+            "version": "1.0.56"
+        },
+        "D010400.js": {
+            "version": "1.0.61"
+        },
+        "D010401.js": {
+            "version": "1.0.01"
+        },		
+        "D010500.js": {
+            "version": "1.0.59"
+        },
+        "D010501.js": {
+            "version": "1.0.60"
+        },
+        "D020100.js": {
+            "version": "1.0.65"
+        },
+        "D020101.js": {
+            "version": "1.0.67"
+        },
+        "D020200.js": {
+            "version": "1.0.60"
+        },
+        "D020201.js": {
+            "version": "1.0.57"
+        },
+        "D020202.js": {
+            "version": "1.0.57"
+        },
+        "D020203.js": {
+            "version": "1.0.57"
+        },
+        "extension.js": {
+            "version": "1.0.54"
+        },
+        "jindo_mobile_component.js": {
+            "version": "1.0.54"
+        },
+        "join.js": {
+            "version": "1.0.54"
+        },
+        "jquery.simplemodal.1.4.3.min.js": {
+            "version": "1.0.54"
+        },
+        "jquery.treeview.edit.js": {
+            "version": "1.0.54"
+        },
+        "jquery.treeview.js": {
+            "version": "1.0.54"
+        },
+        "jquery-1.8.2.min.js": {
+            "version": "1.0.54"
+        },
+        "json2.js": {
+            "version": "1.0.54"
+        },
+        "notice.js": {
+            "version": "1.0.58"
+        },
+        "D030100.js": {
+            "version": "1.0.06"
+        },
+        "D030101.js": {
+            "version": "1.0.09"
+        },
+        "D030200.js": {
+            "version": "1.0.07"
+        },
+        "D030201.js": {
+            "version": "1.0.04"
+        },
+        "D030202.js": {
+            "version": "1.0.02"
+        },
+        "D030203.js": {
+            "version": "1.0.02"
+        }
+    },
+    "css": {
+        "calendarjs.css": {
+            "version": "1.0.54"
+        },
+        "common.css": {
+            "version": "1.0.60"
+        },
+        "init.css": {
+            "version": "1.0.54"
+        },
+        "layout.css": {
+            "version": "1.0.55"
+        },
+        "popup.css": {
+            "version": "1.0.54"
+        },
+        "spec.css": {
+            "version": "1.0.54"
+        },
+        "style.css": {
+            "version": "1.0.54"
+        }
+    },
+    
+    "image": {
+        "ajax-loader.gif": {
+            "version": "1.0.54"
+        },
+        "bg_Dialog.png": {
+            "version": "1.0.54"
+        },
+        "bg_Dialog-footer.png": {
+            "version": "1.0.54"
+        },
+        "bg_Dialog-footer_slice.png": {
+            "version": "1.0.54"
+        },
+        "bg_Document.png": {
+            "version": "1.0.54"
+        },
+        "bg_Document-L.png": {
+            "version": "1.0.54"
+        },
+        "bg_Document-R.png": {
+            "version": "1.0.54"
+        },
+        "bg_h3.png": {
+            "version": "1.0.54"
+        },
+        "bg_large-button.png": {
+            "version": "1.0.54"
+        },
+        "bg_Nav.png": {
+            "version": "1.0.54"
+        },
+        "bg_Nav_active.png": {
+            "version": "1.0.54"
+        },
+        "bg_postit.png": {
+            "version": "1.0.54"
+        },
+        "bg_postit_title.png": {
+            "version": "1.0.54"
+        },
+        "bg_viewport.png": {
+            "version": "1.0.54"
+        },
+        "box_btn_m.png": {
+            "version": "1.0.54"
+        },
+        "box_btn_s.png": {
+            "version": "1.0.54"
+        },
+        "box_input.png": {
+            "version": "1.0.54"
+        },
+        "box_select.png": {
+            "version": "1.0.54"
+        },
+        "box_select_lft.png": {
+            "version": "1.0.54"
+        },
+        "btn_anchor.png": {
+            "version": "1.0.54"
+        },
+        "btn_calendar.png": {
+            "version": "1.0.54"
+        },
+        "btn_launch.png": {
+            "version": "1.0.54"
+        },
+        "btn_next.png": {
+            "version": "1.0.54"
+        },
+        "btn_select.png": {
+            "version": "1.0.54"
+        },
+        "btn_toggle.png": {
+            "version": "1.0.54"
+        },
+        "btn_toggle_article-on.png": {
+            "version": "1.0.54"
+        },
+        "btn_toggle_article-or.png": {
+            "version": "1.0.54"
+        },
+        "btn_top.png": {
+            "version": "1.0.54"
+        },
+        "bul_h4.png": {
+            "version": "1.0.54"
+        },
+        "calendarjs_body.png": {
+            "version": "1.0.54"
+        },
+        "calendarjs_calpad.jpg": {
+            "version": "1.0.54"
+        },
+        "calendarjs_cells.png": {
+            "version": "1.0.54"
+        },
+        "calendarjs_popup.png": {
+            "version": "1.0.54"
+        },
+        "ico_anchor.png": {
+            "version": "1.0.54"
+        },
+        "ico_file.png": {
+            "version": "1.0.54"
+        },
+        "ico_graph-m.png": {
+            "version": "1.0.54"
+        },
+        "ico_graph-s.png": {
+            "version": "1.0.54"
+        },
+        "ico_h4_member_class.png": {
+            "version": "1.0.54"
+        },
+        "ico_h4_member_pay.png": {
+            "version": "1.0.54"
+        },
+        "ico_important-redstar.png": {
+            "version": "1.0.54"
+        },
+        "ico_input-checkbox.png": {
+            "version": "1.0.54"
+        },
+        "ico_input-radio.png": {
+            "version": "1.0.54"
+        },
+        "ico_join_o.png": {
+            "version": "1.0.54"
+        },
+        "ico_join_x.png": {
+            "version": "1.0.54"
+        },
+        "ico_menutrees.png": {
+            "version": "1.0.54"
+        },
+        "ico_menutrees_line.png": {
+            "version": "1.0.54"
+        },
+        "ico_praise1.png": {
+            "version": "1.0.54"
+        },
+        "ico_praise2.png": {
+            "version": "1.0.54"
+        },
+        "ico_praise3.png": {
+            "version": "1.0.54"
+        },
+        "ico_praise4.png": {
+            "version": "1.0.54"
+        },
+        "ico_praise5.png": {
+            "version": "1.0.54"
+        },
+        "ico_required.png": {
+            "version": "1.0.54"
+        },
+        "ico_status-complete.png": {
+            "version": "1.0.54"
+        },
+        "ico_status-progress.png": {
+            "version": "1.0.54"
+        },
+        "ico_transfer_automatic.png": {
+            "version": "1.0.54"
+        },
+        "ico_transfer_manual.png": {
+            "version": "1.0.54"
+        },
+        "ico_transfer_prepay.png": {
+            "version": "1.0.54"
+        },
+        "ico_value_false.png": {
+            "version": "1.0.54"
+        },
+        "ico_value_true.png": {
+            "version": "1.0.54"
+        },
+        "ico_voice.png": {
+            "version": "1.0.54"
+        },
+        "null_noimage_global.8bit.png": {
+            "version": "1.0.54"
+        },
+        "null_noimage_global.png": {
+            "version": "1.0.54"
+        },
+        "null_noimage_portrait.8bit.png": {
+            "version": "1.0.54"
+        },
+        "null_noimage_portrait.png": {
+            "version": "1.0.54"
+        },
+        "null_noimage_signature.png": {
+            "version": "1.0.54"
+        },
+        "paging_next.png": {
+            "version": "1.0.54"
+        },
+        "paging_prev.png": {
+            "version": "1.0.54"
+        },
+        "reload.png": {
+            "version": "1.0.54"
+        },
+        "signin_bg.jpg": {
+            "version": "1.0.54"
+        },
+        "signin_bg_tree.png": {
+            "version": "1.0.54"
+        },
+        "signin_footer_address.png": {
+            "version": "1.0.54"
+        },
+        "signin_footer_text.png": {
+            "version": "1.0.54"
+        },
+        "signin_header_logo.png": {
+            "version": "1.0.54"
+        },
+        "weat_bg.png": {
+            "version": "1.0.54"
+        }
+    }
+}
+

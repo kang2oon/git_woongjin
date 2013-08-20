@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* ----------------------------------------------------------------------------------------------- 
+ *	Motion-blue Publishing.Div
+ * Author	: 2007-07-21 by 2dea; ego@2dea.com
+ * Descript	: iTutor Mobile-Initial CSS
+ * Edit+	: 2012-08-25 by 2dea
+ * Comment	: Modified Line	-
+ ----------------------------------------------------------------------------------------------- */
+
+/* Global Selector */
+body {margin: 0px; background: Window; color: WindowText; font: 1em/1.125em '맑은 고딕', 'Malgun Gothic', 'AppleSDGothicNeo', 'AppleGothic', sans-serif; }
+
+/* Type Selector */
+h1, h2, h3, h4, h5, h6, blockquote, p, pre, ul, ol, li, dl, dt, dd, table, th, td, object, iframe, form, input, button, textarea, fieldset {margin: 0px; padding: 0px; }
+h1, h2, h3, h4, h5, h6 {font-weight: 900; font-family: '맑은 고딕', 'Malgun Gothic', 'AppleSDGothicNeo', 'AppleGothic', 'MGothic', sans-serif; }
+address {font-style: normal; }
+em {font-style: normal; font-weight: 700; }
+strong {font-weight: 900; }
+code, samp, kbd {font-family: 'Courier New', 'Courier', monospace; }
+q:before, q:after {content: ""; }
+br {letter-spacing: 0%; }
+ins {text-decoration: none; }
+del {display: none; }
+ul, ol {list-style: none; }
+table {empty-cells: show; border-collapse: collapse; }
+caption {font-weight: 900; }
+a {color: WindowText; font-size: inherit; text-decoration: none; }
+	a:hover, a:focus {text-decoration: underline; }
+img {border: none; vertical-align: middle; }
+hr {display: none; }
+iframe {border: none; }
+input {vertical-align: middle; font-size: 100%; }
+button {border: none; width: auto; height: auto; vertical-align: middle; background-color: transparent; background-repeat: no-repeat; color: ButtonText; font-size: 90%; cursor: pointer; }
+select {vertical-align: middle; font-size: 100%; }
+optgroup {font-weight: 900; }
+option {display: block !important; }
+textarea {vertical-align: middle; font-size: 100%; }
+label {vertical-align: middle; cursor: pointer; }
+fieldset {border: none; }
+legend {position: absolute; left: 0px; top: 0px; width: 0px; height: 0px; visibility: hidden; overflow: hidden; font-size: 0em; line-height: 0em; }
+
+/* New Elements Type Selector */
+section, nav, article, aside, hgroup, header, footer {display: block; }

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단(수리분석지)</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css?v=001" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D020203.js?v=0006"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+
+	// 탭바 이벤트 
+	$('#Contents>.container>.section').each(function(){
+
+		$(this).not(':first-child').children(':not(h2)').hide()
+		.andSelf().find('h2 .toggle-button').removeClass('open').text('보이기');
+
+
+
+		$(this).find('h2').click(function(e){
+
+			click_left = Number(e.clientX);
+			click_top = Number(e.clientY);
+
+			if(40>=click_top) {
+				if(Number($("#local > ul > li").eq(1).offset().left)>click_left) {
+					page_move('D020201.html');
+					return;
+				}
+				if(Number($("#local > ul > li").eq(2).offset().left)>click_left) {
+					page_move('D020202.html');
+					return;
+				}
+
+					location.reload();
+					return;
+			}
+				
+
+			$('#Contents>.container>.section').each(function(){
+
+				$(this).children(':not(h2)').hide().andSelf().find('h2 .toggle-button').removeClass('open').text('보이기');
+
+			});
+
+			var $switch = $(this).find('button.toggle-button');
+
+			if(! $switch.hasClass('open')) {
+				$switch.addClass('open').text('숨기기').closest('div.section').children(':not(h2)').show();
+			} else {
+				$switch.removeClass('open').text('보이기').closest('div.section').children(':not(h2)').hide();
+			}
+
+			tmpHeight = $(this).attr("height_value");
+
+			setTimeout(function() { 
+
+				window.scrollTo(0, tmpHeight);
+
+			}, 100);
+		});
+
+		$(this).find('> h2').has('span.control:not(.none)').addClass("has-control")
+			.find('span.control button').click(function(e){
+				e.stopPropagation();
+		});
+	});
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+
+
+//]]>
+</script>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<!-- 상단 네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li><a href="#" onclick="page_move('D020201.html');">종합</a></li>
+					<li><a href="#" onclick="page_move('D020202.html');">언어</a></li>
+					<li class="active"><a href="#" onclick="page_move('D020203.html');">수리</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<!-- 상단 네비 : 끝 -->
+
+	<div id="Contents" class="Weat_Result_Analysis_Detail">
+		<div class="container">
+			<!-- 정답률 그래프 : 시작 -->
+			<div class="section">
+				<h2 height_value='0'><strong class="wrap">정답률</strong> <button type="button" class="toggle-button blind open">숨기기</button></h2>
+
+				<div class="viewport">
+
+					<div class="weat_analysis_detail_graph">
+						<div class="example">
+							<ul>
+								<li><span class="icon">1. </span>전체평균정답률</li>
+								<li><span class="icon">2. </span>나의 정답률</li>
+							</ul>
+						</div>
+
+						<dl>
+							<dt>계산력</dt>
+							<dd>
+								<div class="diagram">
+									<div class="incorrect_chart">
+										<strong class="heading">O: 응답, X: 미응답</strong>
+
+										<ol>
+											<li class="incorrect" id="background_1_MA01">X</li>
+											<li class="incorrect" id="background_2_MA01">X</li>
+											<li class="incorrect" id="background_3_MA01">X</li>
+										</ol>
+									</div>
+
+									<div class="correct_chart">
+										<strong class="heading">정답률</strong>
+
+										<ul>
+											<li><span class="hiding">1. 전체평균정답률 : </span><span class="graph box"><span class="data" id="set_avgpoint_mark_MA01" style="width: 0%; "><span ></span></span></span></li>
+											<li><span class="hiding">2. 나의 정답률 : </span><span class="graph box"><span class="data" id="set_mypoint_mark_MA01" style="width: 0%; "><span></span></span></span></li>
+										</ul>
+									</div>
+								</div>
+
+							</dd>
+
+							<dt>이해력</dt>
+							<dd>
+								<div class="diagram">
+									<div class="incorrect_chart">
+										<strong class="heading">O: 응답, X: 미응답</strong>
+
+										<ol>
+											<li class="correct" id="background_1_MA02">O</li>
+											<li class="correct" id="background_2_MA02">O</li>
+											<li class="correct" id="background_3_MA02">O</li>
+										</ol>
+									</div>
+
+									<div class="correct_chart">
+										<strong class="heading">정답률</strong>
+
+										<ul>
+											<li><span class="hiding">1. 전체평균정답률 : </span><span class="graph box"><span class="data" id="set_avgpoint_mark_MA02" style="width: 0%; "><span></span></span></span></li>
+											<li><span class="hiding">2. 나의 정답률 : </span><span class="graph box"><span class="data" id="set_mypoint_mark_MA02" style="width: 0%; "><span></span></span></span></li>
+										</ul>
+									</div>
+								</div>
+
+							</dd>
+
+							<dt>추론력</dt>
+							<dd>
+								<div class="diagram">
+									<div class="incorrect_chart">
+										<strong class="heading">O: 응답, X: 미응답</strong>
+
+										<ol>
+											<li class="correct" id="background_1_MA03">O</li>
+											<li class="correct" id="background_2_MA03">X</li>
+											<li class="correct" id="background_3_MA03">O</li>
+										</ol>
+									</div>
+
+									<div class="correct_chart">
+										<strong class="heading">정답률</strong>
+
+										<ul>
+											<li><span class="hiding">1. 전체평균정답률 : </span><span class="graph box"><span class="data" id="set_avgpoint_mark_MA03" style="width: 0%; "><span></span></span></span></li>
+											<li><span class="hiding">2. 나의 정답률 : </span><span class="graph box"><span class="data" id="set_mypoint_mark_MA03" style="width: 0%; "><span></span></span></span></li>
+										</ul>
+									</div>
+								</div>
+
+							</dd>
+
+							<dt>문제해결력</dt>
+							<dd>
+								<div class="diagram">
+									<div class="incorrect_chart">
+										<strong class="heading">O: 응답, X: 미응답</strong>
+
+										<ol>
+											<li class="incorrect" id="background_1_MA04">X</li>
+											<li class="incorrect" id="background_2_MA04">O</li>
+											<li class="incorrect" id="background_3_MA04">X</li>
+										</ol>
+									</div>
+
+									<div class="correct_chart">
+										<strong class="heading">정답률</strong>
+
+										<ul>
+											<li><span class="hiding">1. 전체평균정답률 : </span><span class="graph box"><span class="data" id="set_avgpoint_mark_MA04" style="width: 0%; "><span></span></span></span></li>
+											<li><span class="hiding">2. 나의 정답률 : </span><span class="graph box"><span class="data" id="set_mypoint_mark_MA04" style="width: 0%; "><span></span></span></span></li>
+										</ul>
+									</div>
+								</div>
+
+							</dd>
+						</dl>
+					</div><br />
+				</div>
+			</div>
+			<!-- 정답률 그래프 : 끝 -->
+
+			<!-- 측정요인 : 시작 -->
+			<div class="section">
+				<h2 height_value='40'><strong class="wrap">측정요인</strong> <button type="button" class="toggle-button blind open">숨기기</button></h2>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width: 11%; " />
+								<col style="width: 12%; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<thead>
+							<tr>
+								<th scope="col"><span class="super">구분</span></th>
+								<th scope="col"><span class="super">문항</span></th>
+								<th scope="col">평가</th>
+							</tr>
+						</thead>
+
+						<tbody id='TB_DATA'>
+							<tr>
+								<td colspan=3>검색 데이터가 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 측정요인 : 끝 -->
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

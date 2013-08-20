@@ -1,0 +1,816 @@
+{
+    "ZTBSD_GM_214_LOGIN" : {
+        "REQ_VALUE" 	: ["I_PERNR", "I_REGNO", "I_TELF2", "I_OS_GUBUN", "I_UID_PHN", "I_DIVID2", "I_PERNR_T"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: ["S_EXPORTA"],
+        "RES_TABLE" 	: null,
+        "S_EXPORTA" 	: ["PERNR", "ENAME", "OBJID01", "STEXT01", "OBJID02", "STEXT02", "E_FLAG", "ADDGB"]
+    },
+    
+    "ZTBSD_GM_214_JOIN_CHECK" : {
+        "REQ_VALUE" 	: ["I_PERNR", "I_REGNO"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: ["S_EXPORTA"],
+        "RES_TABLE" 	: null,
+        "S_EXPORTA" 	: ["PERNR", "ENAME", "OBJID01", "STEXT01", "OBJID02", "STEXT02", "E_FLAG", "ADDGB"]
+    },
+    
+    "ZTBSD_GM_214_JOIN" : {
+        "REQ_VALUE" 	: ["I_PERNR", "I_REGNO", "I_TELF2", "I_OS_GUBUN", "I_UID_PHN", "I_TK_ID", "I_DIVID2"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    
+    "ZTBSD_GM_005_004" : {
+        "REQ_VALUE" 	: ["TUTOR", "NAME1", "KUNWE", "VBELN", "DAYWK", "AUART", "I_SORT", "CTYPE", "SORT_1", "SORT_2", "SORT_3", "L_GUBUN", "L_BOOKCHK", "I_MGUBUN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["VBELN", "KUNWE", "ZMAT1", "AUART", "AUDAT", "DAYWK", "QTIME", "ANGDT", "BNDDT", "STATS", "TELF1", "SORTF", "PSTLZ", "ORT01", "STRAS", "KATR1", "PARGE", "JINDO", "STMON", "KUNWE_TX", "ZMAT1_TX", "AUART_TX", "STATS_TX", "DAYWK_TX", "PARGE_TX", "JINDO_TX", "KATR1_TX", "REQGB", "REQGB_TX", "EDAYS", "CFCHK", "ABRUD", "MATNR", "KUNAG", "GBDAT", "PAYAU", "TELF2", "KLABC", "POINT", "DMBTR", "STCNT", "MATNR_TX", "KUNAG_TX", "HBDAT", "LDAYS", "WDATE", "ZBIGO", "CONTY", "ZMAGB", "STCD1", "EMAIL", "GWLDT", "STCD1_AG", "PERNR_TX", "PERNR", "VKBUR", "VKBUR_TX", "TELNR", "ATDAT", "DTDAT", "ORAMT", "CDAYS", "HADAY", "I_CHK", "MTYPE", "BAUID", "ZCRGB", "TELF1_P", "PSTLZ_P", "ORT01_P", "STRAS_P", "ZZVIG", "PENCHK", "ZZABR_G", "ZZABR_D", "ZZABR_H", "ZZABR", "BGRADE", "AUGRU", "GWLDT_P", "DISCHK", "STKZA", "COUPON", "SDATE", "EDATE", "B_CHK", "BOOK2_JIN", "BOOK2_ORG", "THUX", "STCD1_S", "CHK31", "LDATE", "M_CHK", "DAYWK_M", "QTIME_M", "CRDIF", "ZBIGO_M", "M502D"]
+    },
+
+	"ZTBSD_GM_001_012" : {
+        "REQ_VALUE" 	: ["VBELN", "TUTOR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: ["S_EXPORTA"],
+        "RES_TABLE" 	: null,
+        "S_EXPORTA" 	: ["VBELN", "KUNNR", "KUNWE", "TELF1" , "TELF2" , "PSTLZ" , "ORT01" , "STRAS" , "GBDAT" , "GBCHK" , "ZZLEV" , "KUNNR_TX" , "KUNWE_TX" , "EMAIL" , "KATR1" , "PARGE" , "TELF1_C" , "TELF2_C" , "PSTLZ_C" , "ORT01_C" , "STRAS_C" , "URL"]
+    },
+    
+    "ZTBSD_GM_214_ANSWER_SEARCH" : {
+        "REQ_VALUE" 	: ["I_ZMAT1", "I_DANGE", "I_JINDO", "I_STLKN", "I_TUTOR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["E_BF_JINDO", "E_BF_STLKN", "E_AF_JINDO", "E_AF_STLKN", "E_JINDO_TX"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["ZMAT1", "ZMAT1_TX", "DANGE", "DANGE_TX", "JINDO", "JINDO_TX", "STLKN", "PART1", "PART1_TX", "Q_NUM", "PHOTO", "TEXT1", "TEXT2"]
+    },
+    
+    "ZTBSD_GM_214_ANSWER_SCH_Z" : {
+        "REQ_VALUE" 	: ["I_GUBUN", "I_ZMAT1", "I_DANGE", "I_JINDO"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["ZMAT1", "ZMAT1_TX", "DANGE", "DANGE_TX", "JINDO", "JINDO_TX", "STLKN", "PART1", "PART1_TX", "Q_NUM", "PHOTO", "TEXT1", "TEXT2"]
+    },
+    
+    "ZTBSD_GM_214_ANSWER_SEARCH_B" : {
+        "REQ_VALUE" 	: ["I_ZMAT1", "I_DANGE", "I_JINDO", "I_BOOKS", "I_TUTOR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["E_JINDO_TX", "E_AF_BOOKS", "E_BF_BOOKS"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["ZMAT1", "ZMAT1_TX", "DANGE", "DANGE_TX", "JINDO", "JINDO_TX", "STLKN", "PART1", "PART1_TX", "Q_NUM", "PHOTO", "TEXT1", "TEXT2"]
+    },
+    
+    "ZTBSD_GM_214_SC_LIST" : {
+        "REQ_VALUE" 	: ["I_TUTOR", "NAME1", "I_WEEK", "I_SORT", "I_DAYWK", "I_COLL"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA", "T_EXPORTB", "T_EXPORTC"],
+        "T_EXPORTA" 	: ["VBELN", "TUTOR", "KUNNR", "KUNWE", "DAYWK", "QTIME", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ZMAT1", "MATNR", "MATNR_P", "JINDO", "JINDO_P", "KUNNR_TX", "KUNWE_TX", "TUTOR_TX", "ZMAT1_TX", "MATNR_TX", "JINDO_TX", "ROW_CNT", "DAYWK_O", "QTIME_O", "EXCLU", "NEXT_S", "MATNR_PTX", "JINDO_PTX", "JUNIOR_G", "JUNIOR_PG", "ZMAT1_P", "ZMAT1_N", "ZMAT1_PTX", "ZMAT1_NTX"],
+        "T_EXPORTB" : ["VBELN", "TUTOR", "KUNNR", "KUNWE", "DAYWK", "QTIME", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ZMAT1", "MATNR", "MATNR_P", "JINDO", "JINDO_P", "KUNNR_TX", "KUNWE_TX", "TUTOR_TX", "ZMAT1_TX", "MATNR_TX", "JINDO_TX", "ROW_CNT", "DAYWK_O", "QTIME_O", "EXCLU", "NEXT_S", "MATNR_PTX", "JINDO_PTX", "JUNIOR_G", "JUNIOR_PG"],
+        "T_EXPORTC" : ["VBELN", "TUTOR", "KUNNR", "KUNWE", "DAYWK", "QTIME", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ZMAT1", "MATNR", "MATNR_P", "JINDO", "JINDO_P", "KUNNR_TX", "KUNWE_TX", "TUTOR_TX", "ZMAT1_TX", "MATNR_TX", "JINDO_TX", "ROW_CNT", "DAYWK_O", "QTIME_O", "EXCLU", "NEXT_S", "MATNR_PTX", "JINDO_PTX", "JUNIOR_G", "JUNIOR_PG", "KU_CNT"]
+    },
+    
+    "ZTBSD_CHANGE_CUSTOMER" : {
+        "REQ_VALUE" 	: ["I_TUTOR", "VKORG", "CHILD", "URL"],
+        "REQ_STRUCT" 	: ["CUSTOMER"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "CUSTOMER" 	: ["STCD1", "KUNNR", "NAME1", "NAME2", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ADRNR", "SMTP_ADDR", "KUNPA", "GBDAT", "GBCHK", "PARGE", "KATR1", "KATR5", "STCD4"]
+    },
+    
+    "ZTBSD_GM_214_KATR1_TEXT" : {
+        "REQ_VALUE" 	: null,
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["SPRAS", "KATR1", "VTEXT"]
+    },
+    
+    "ZTBSD_GM_001_036" : {
+        "REQ_VALUE" 	: ["CHK", "YUA", "CHK2", "CHK3", "LDATE"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["TMDAT"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    
+    "ZTBSD_GM_001_003" : {
+        "REQ_VALUE" 	: null,
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["CON_CHK"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA", "T_EXPORTB", "T_EXPORTC"],
+        "T_EXPORTA" 	: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"],
+        "T_EXPORTB" 	: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"],
+        "T_EXPORTC" 	: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"]
+    },
+    
+    "ZTBSD_GM_001_018" : {
+        "REQ_VALUE" 	: ["ZMAT1"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"]
+    },
+    
+    "ZTBSD_GM_001_019" : {
+        "REQ_VALUE"		: ["MATNR", "MATHO", "GUBUN"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"]
+    },
+    
+    "ZTBSD_GM_214_JINDO_SEARCH" : {
+        "REQ_VALUE"		: ["VBELN", "MATNR"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA" 	: ["MATNR_U", "MATNR", "MAKTX", "HSQTY", "PRATA", "MVGR2", "ZZABR", "SEQNO", "SEQNO_TX"]
+    },       
+    
+    "ZTBSD_ADD_PROGRESS_SP_ST" : {
+        "REQ_VALUE"		: ["SPMAT", "COUNT"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["MATNR", "JINDO", "MATNR_TX", "JINDO_TX", "STDAT"]
+    },
+    
+    "ZTBSD_GM_001_002" : {
+        "REQ_VALUE"		: ["I_TUTOR"],
+        "REQ_STRUCT"	: ["S_IMPORTA"],
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: ["VBELN", "ATEXT"],
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null,
+        "S_IMPORTA"		: ["VBELN", "AUART", "VKORG", "VTWEG", "KUNAG", "KUNWE", "AUGRU", "MTYPE", "TUTOR", "INTRO", "ITUTOR", "IKUNNR", "AUDAT", "FBUDA", "FBUDE", "MATNR", "SPMAT", "STQTY", "DAYWK", "QTIME", "ANGDT", "BNDDT", "KNUMA", "USRID", "GDATE", "GJAMT", "GJMON", "AENAM", "STCD1", "PSTLZ", "NAME1", "MFLAG", "BAUID", "KUNDG", "ZMAT1", "ZBIGO", "ZZVIG", "PENGB", "AUGRU_PEN", "GWLDT_PEN", "SCHK", "SVKBUR", "STUTOR", "OVKBUR", "OTUTOR", "BGRADE", "JGUBUN", "BNETPR", "HJGIFT", "VBELN_BP", "CHO1", "CHO2", "VBELN_BK", "SPMAT2", "SPMAT3", "SPMAT4", "MATNR2", "MATNR3", "MATNR4", "DISCHK", "G006", "RSVBELN", "BSTCD1", "BANKL", "BANKN", "KOINH", "ATDAT", "SLEVT"],
+        "S_EXPORTA" : ["MATNR", "JINDO", "MATNR_TX", "JINDO_TX", "STDAT"]
+    },
+    
+    "ZTBHR_RFC_F4_ZIPCODE" : {
+        "REQ_VALUE"		: ["SORTF"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["PSTLZ", "SERNO", "SORTF", "ORT01", "ORT02", "STRAS", "ADDRS", "BSTRT", "ESTRT", "REGIO", "FZONE", "ZONE_D", "NEWID", "DEL"]
+    },
+    
+    "ZTBTR_BANK_LIST" : {
+        "REQ_VALUE"		: null,
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "ES_RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_BANKS"],
+        "T_BANKS"		: ["BANKL", "BANKA"]
+    },
+    
+    "ZTBTR_WB_WFXB" : {
+        "REQ_VALUE"		: ["I_VKORG"],
+        "REQ_STRUCT"	: ["I_ZTBTRSCM01"],
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: ["E_ZTBTRSCM02"],
+        "RES_TABLE"		: null,
+        "I_ZTBTRSCM01"	: ["BANKL", "BANKN", "STCD1", "KOINH"],
+        "E_ZTBTRSCM02"	: ["BANKL", "BANKN", "STCD1", "KOINH", "RETCD", "ERRTX"]
+    },
+    
+    "ZTBSD_GM_001_005" : {
+        "REQ_VALUE" 	: ["STCD1", "KUNWE"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: ["S_EXPORTA", "S_EXPORTB"],
+        "RES_TABLE" 	: null,
+        "S_EXPORTA" 	: ["STCD1", "KUNNR", "NAME1", "NAME2", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ADRNR", "SMTP_ADDR", "KUNPA", "GBDAT", "GBCHK", "PARGE", "KATR1", "KATR5", "STCD4", "SORTF", "STCD3", "KUNML", "IMESS_I", "IMESS_W", "IMESS_S", "CDATE", "CDAMT", "CMOON", "CHKBA", "CANUM", "STCD1_S"],
+        "S_EXPORTB"		: ["STCD1", "KUNNR", "NAME1", "NAME2", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ADRNR", "SMTP_ADDR", "KUNPA", "GBDAT", "GBCHK", "PARGE", "KATR1", "KATR5", "STCD4", "SORTF", "STCD3", "KUNML", "IMESS_I", "IMESS_W", "IMESS_S", "CDATE", "CDAMT", "CMOON", "CHKBA", "CANUM", "STCD1_S"]
+    },
+    
+    "ZTBSD_GM_005_002" : {
+        "REQ_VALUE" 	: ["NAME1", "SORTF"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: ["T_EXPORTA"],
+        "RES_TABLE" 	: null,
+        "T_EXPORTA" 	: ["KUNWE", "NAME1", "KATR1", "TELF1", "TELF2", "STRAS", "ORT01", "SORTF", "PSTLZ", "STCD1", "SORT2", "KATR1_TX", "GBDAT", "EMAIL", "ADRNR", "KATR5", "STCD4", "VBELN", "CHKBA", "CANUM", "BAUID", "COUPON"]
+    },
+    
+    "ZTBSD_RFC_CREATE_CUSTOMER" : {
+        "REQ_VALUE" 	: ["BUKRS", "VKORG", "VTWEG", "SPART", "KTOKD", "CHILD", "KOINH", "ZSTCD1", "BANKL", "BANKN", "ATSTA", "ATDAT", "CANUM"],
+        "REQ_STRUCT" 	: ["S_IMPORTA"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["KUNNR"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["STCD1", "KUNNR", "NAME1", "NAME2", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ADRNR", "SMTP_ADDR", "KUNPA", "GBDAT", "GBCHK", "PARGE", "KATR1", "KATR5", "STCD4"]
+    },
+    
+    "ZTBSD_GM_209_003" : {
+        "REQ_VALUE" 	: ["KUNWE", "VBELN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["KUNWE", "VBELN", "NAME1", "ZMAT1", "MATNR", "JINDO", "ZMAT1_TX", "MATNR_TX", "JINDO_TX"]
+    },
+    
+    "ZTBSD_GM_020_001" : {
+        "REQ_VALUE" 	: ["I_TUTOR"],
+        "REQ_STRUCT" 	: ["S_IMPORTA"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["VBELN", "REQGB", "ABRUD", "TUTOR", "ZMAT1", "MATNR", "JINDO", "LDATE", "DAYWK", "QTIME", "ZBIGO", "PENGB", "AUGRU_PEN", "GWLDT_PEN", "BANGB", "RDISCHK", "VBELN_BP", "PENTR", "CHO1", "CHO2", "JINDO2", "JINDO3", "JINDO4", "MATNR2", "MATNR3", "MATNR4"]
+    },
+    
+    "ZTBSD_GM_025_002" : {
+        "REQ_VALUE" 	: ["I_TUTOR"],
+        "REQ_STRUCT" 	: ["S_IMPORTA", "S_IMPORTB"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["VBELN", "AUART", "AUART_N", "VKORG", "VTWEG", "KUNAG", "KUNWE", "AUGRU", "ZMAT1", "MTYPE_P", "MTYPE", "TUTOR", "ITUTOR", "IKUNNR", "AUDAT", "FBUDA", "FBUDE", "MATNR", "SPMAT", "STQTY", "DAYWK", "QTIME", "ANGDT", "BNDDT", "KNUMA", "USRID", "GDATE", "GJAMT", "GJMON", "KWMENG", "VRKME", "STCD1", "PSTLZ", "NAME1", "BAUID", "KUNDG", "INTRO", "ZZVIG", "BGRADE", "RDISCHK", "DISCHK"],
+        "S_IMPORTB"		: ["VBELN", "REQGB", "ABRUD", "TUTOR", "ZMAT1", "MATNR", "JINDO", "LDATE", "DAYWK", "QTIME", "ZBIGO", "PENGB", "AUGRU_PEN", "GWLDT_PEN", "BANGB", "RDISCHK", "VBELN_BP", "PENTR", "CHO1", "CHO2", "JINDO2", "JINDO3", "JINDO4", "MATNR2", "MATNR3", "MATNR4"]
+    },
+    
+    "ZTBSD_GM_025_003" : {
+        "REQ_VALUE" 	: ["I_TUTOR"],
+        "REQ_STRUCT" 	: ["S_IMPORTA", "S_IMPORTB"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["VBELN", "AUART", "AUART_N", "VKORG", "VTWEG", "KUNAG", "KUNWE", "AUGRU", "ZMAT1", "MTYPE_P", "MTYPE", "TUTOR", "ITUTOR", "IKUNNR", "AUDAT", "FBUDA", "FBUDE", "MATNR", "SPMAT", "STQTY", "DAYWK", "QTIME", "ANGDT", "BNDDT", "KNUMA", "USRID", "GDATE", "GJAMT", "GJMON", "KWMENG", "VRKME", "STCD1", "PSTLZ", "NAME1", "BAUID", "KUNDG", "INTRO", "ZZVIG", "BGRADE", "RDISCHK", "DISCHK"],
+        "S_IMPORTB"		: ["VBELN", "REQGB", "ABRUD", "TUTOR", "ZMAT1", "MATNR", "JINDO", "LDATE", "DAYWK", "QTIME", "ZBIGO", "PENGB", "AUGRU_PEN", "GWLDT_PEN", "BANGB", "RDISCHK", "VBELN_BP", "PENTR", "CHO1", "CHO2", "JINDO2", "JINDO3", "JINDO4", "MATNR2", "MATNR3", "MATNR4"]
+    },
+    
+    "ZTBSD_GM_208_002" : {
+        "REQ_VALUE" 	: ["TUTOR", "NAME1"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["CHECK", "STATS", "STATS_TX", "VBELN", "ERDAT", "KUNWE", "KUNWE_TX", "KATR1", "KATR1_TX", "JINDO", "JINDO_TX", "SPMON", "GUBUN", "TUTOR", "PERCT", "I_CHK", "I_CHK2", "TEXT1", "TEXT2", "STMON", "ZMAT1", "ZMAT1_TX", "MTYPE", "AUART", "AUART_TX", "AUGRU", "GWLDT_P", "DISCHK", "PENCHK", "EDAYS", "SPMON_1", "ABRUD", "CHEC_3", "ABRUD_H", "S_GUBUN", "CAUSE", "ZCALLT", "ZCALLT_TX", "TEXT3"]
+    },
+    
+    "ZTBSD_GM_208_003" : {
+        "REQ_VALUE" 	: ["GUBUN", "SPMON", "TUTOR", "VBELN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: ["T_IMPORTA"],
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "T_IMPORTA"		: ["CHECK", "STATS", "STATS_TX", "VBELN", "ERDAT", "KUNWE", "KUNWE_TX", "KATR1", "KATR1_TX", "JINDO", "JINDO_TX", "SPMON", "GUBUN", "TUTOR", "PERCT", "I_CHK", "I_CHK2", "TEXT1", "TEXT2", "STMON", "ZMAT1", "ZMAT1_TX", "MTYPE", "AUART", "AUART_TX", "AUGRU", "GWLDT_P", "DISCHK", "PENCHK", "EDAYS", "SPMON_1", "ABRUD", "CHEC_3", "ABRUD_H", "S_GUBUN", "CAUSE", "ZCALLT", "ZCALLT_TX", "TEXT3"]
+    },
+    
+    "ZTBSD_GET_BALANCE_ORDER" : {
+        "REQ_VALUE" 	: ["VBELN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["DMBTR", "AMOUNT"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    
+    "ZTBSD_GM_021_SMART" : {
+        "REQ_VALUE" 	: ["KUNWE", "TUTOR", "VBELN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["VBELN", "GWLDT", "VBELN_PEN", "GWLDT_PEN", "ZMAT1", "ZMAT1_TX"]
+    },
+    
+    "ZTBSD_GM_021_001" : {
+        "REQ_VALUE" 	: null,
+        "REQ_STRUCT" 	: ["S_IMPORTA"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["VBELN", "REQGB", "ABRUD", "TUTOR", "LDATE", "ZBIGO", "CAUSE1", "CAUSE3", "LEVGB", "LEVDT", "ZCANCA", "BANGB", "VBELN_N", "AUGRU", "RDISCHK"]
+    },
+    
+    "ZTBSD_GM_028_002" : {
+        "REQ_VALUE" 	: ["VBELN", "REQGB", "ABRUD"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    
+    "ZTBSD_GM_025_004" : {
+        "REQ_VALUE" 	: null,
+        "REQ_STRUCT" 	: ["S_IMPORTA", "S_IMPORTB"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["VBELN"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["VBELN", "AUART", "AUART_N", "VKORG", "VTWEG", "KUNAG", "KUNWE", "AUGRU", "ZMAT1", "MTYPE_P", "MTYPE", "TUTOR", "ITUTOR", "IKUNNR", "AUDAT", "FBUDA", "FBUDE", "MATNR", "SPMAT", "STQTY", "DAYWK", "QTIME", "ANGDT", "BNDDT", "KNUMA", "USRID", "GDATE", "GJAMT", "GJMON", "KWMENG", "VRKME", "STCD1", "PSTLZ", "NAME1", "BAUID", "KUNDG", "INTRO", "ZZVIG", "BGRADE", "RDISCHK", "DISCHK"],
+        "S_IMPORTB"		: ["VBELN", "REQGB", "ABRUD", "TUTOR", "ZMAT1", "MATNR", "JINDO", "LDATE", "DAYWK", "QTIME", "ZBIGO", "PENGB", "AUGRU_PEN", "GWLDT_PEN", "BANGB", "RDISCHK", "VBELN_BP", "PENTR", "RSVBELN", "CHO1", "CHO2", "JINDO2", "JINDO3", "JINDO4", "MATNR2", "MATNR3", "MATNR4"]
+    },
+    "ZTBSD_GM_214_SC_MODI" : {
+        "REQ_VALUE"		: ["I_WEEK"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: ["T_IMPORTA"],
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null,
+        "T_IMPORTA"		: ["TUTOR", "KUNNR", "KUNWE", "VBELN", "DAYWK", "QTIME", "ZMAT1", "JINDO", "ZMAT1_TX", "JINDO_TX", "QTIME_J", "EXCLU"]
+    },
+     "ZTBSD_GM_214_SC_LIST_A" : {
+        "REQ_VALUE"		: ["I_TUTOR","NAME1"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["VBELN", "TUTOR", "KUNNR", "KUNWE", "DAYWK", "QTIME", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ZMAT1", "MATNR", "MATNR_P", "JINDO", "JINDO_P", "KUNNR_TX", "KUNWE_TX", "TUTOR_TX", "ZMAT1_TX", "MATNR_TX", "JINDO_TX", "ROW_CNT", "DAYWK_O", "QTIME_O", "EXCLU", "NEXT_S", "MATNR_PTX", "JINDO_PTX", "JUNIOR_G", "JUNIOR_PG", "KU_CNT", "ZMAT1_P", "ZMAT1_N", "ZMAT1_PTX", "ZMAT1_NTX"]        
+    },
+    "ZTBTR_PDA01_003" : {
+        "REQ_VALUE"		: ["I_TUTOR", "I_DAYWK", "I_STDNM", "I_CARD_IND"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: ["E_SPMON", "E_BALANCE"],
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["KUNNR", "NAME1", "VBELN", "ZMAT1", "MAKTX", "NETP0", "NETP1", "ITAMT"]
+    },
+    "ZTBTR_PDA01_004" : {
+        "REQ_VALUE"		: ["I_TUTOR", "I_SPMON"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: ["T_IMPORTA"],
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null,
+        "T_IMPORTA"		: ["VBELN", "DMBTR"]
+    },
+    "ZTBTR_PDA01_006" : {
+        "REQ_VALUE"		: null,
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["KUNNR", "NAME1"]
+    },
+    "ZTBTR_GET_CARD_STCD" : {
+        "REQ_VALUE"		: ["I_TUTOR", "I_CRDNO"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: ["E_STCD1", "E_OWNER", "E_STCD7"],
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null
+    },
+    "ZTBTR_TOTUR_CHILD_CHK" : {
+        "REQ_VALUE"		: ["I_BUKRS", "I_STCD1", "I_STDCD", "I_TUTOR"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null
+    },
+    "ZTBTR_PDA01_007" : {
+        "REQ_VALUE"		: null,
+        "REQ_STRUCT"	: ["S_IMPORTA"],
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: ["S_EXPORTA"],
+        "RES_TABLE"		: null,
+        "S_IMPORTA"		: ["TUTOR", "KUNNR", "CRDCD", "EDUFREE", "CRDNO", "VTERM", "ALMON", "OWNER", "STCD1", "APAMT", "APDAT", "APPNO", "PIAGR", "SIGN_IMG", "SIGN_IMG2"],
+        "S_EXPORTA"		: ["TUTOR", "KUNNR", "CRDCD", "EDUFREE", "CRDNO", "VTERM", "ALMON", "OWNER", "STCD1", "APAMT", "APDAT", "APPNO", "PIAGR", "SIGN_IMG", "SIGN_IMG2"]
+    },
+    "ZTBTR_PDA01_008" : {
+        "REQ_VALUE"		: ["I_SPMON"],
+        "REQ_STRUCT"	: ["S_IMPORTA"],
+        "REQ_TABLE"		: ["T_IMPORTA"],
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: null,
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: null,
+        "S_IMPORTA"		: ["TUTOR", "KUNNR", "CRDCD", "EDUFREE", "CRDNO", "VTERM", "ALMON", "OWNER", "STCD1", "APAMT", "APDAT", "APPNO", "PIAGR", "SIGN_IMG", "SIGN_IMG2"],
+        "T_IMPORTA"		: ["VBELN", "DMBTR"]
+    },
+    "ZTBTR_PDA02_003" : {
+        "REQ_VALUE"		: ["I_TUTOR", "I_DAYWK", "I_STDNM"],
+        "REQ_STRUCT"	: null,
+        "REQ_TABLE"		: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE"		: ["E_SPMON"],
+        "RES_STRUCT"	: null,
+        "RES_TABLE"		: ["T_EXPORTA"],
+        "T_EXPORTA"		: ["KUNNR", "NAME1", "VBELN", "ZMAT1", "MAKTX", "NETP0", "NETP1", "ITAMT", "ATRNFLG", "TSDAT", "TEDAT", "ATNGB"]
+    },
+    "ZTBTR_THINK_002" : {
+        "REQ_VALUE" : ["I_BUKRS", "I_STDCD", "I_VBELN", "I_KEYDT"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_IN"],
+        "T_IN"	: ["BUKRS", "STDCD", "VBELN", "BUDAT", "DMBTR", "INTXT"]
+    },
+    "ZTBTR_PDA02_001" : {
+        "REQ_VALUE" : ["I_KUNNR", "I_TUTOR"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["E_SPMON"],
+        "RES_STRUCT" : ["S_EXPORTA"],
+        "RES_TABLE" : ["T_EXPORTA"],
+        "S_EXPORTA"	: ["BANKL", "BANKA", "BANKN", "KOINH", "STCD1", "ATSTA", "ATSTA_TX", "ATDAT", "ERRCD", "ERRCD_TX", "ATNGB"],
+        "T_EXPORTA"	: ["VBELN", "ZMAT1", "MAKTX", "DAYWK", "QTIME", "ATRNFLG", "TSDAT", "TEDAT", "CURRAMT", "PREVFLG", "CURRFLG", "MTYPE", "DISCHK"]
+    },
+    "ZTBTR_PDA02_002" : {
+        "REQ_VALUE" : ["I_TUTOR"],
+        "REQ_STRUCT" : ["S_IMPORTA"],
+        "REQ_TABLE" : ["T_IMPORTA"],
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_IMPORTA"	: ["REQGB", "TUTOR", "KUNNR", "BANKL", "BANKA", "BANKN", "KOINH", "STCD1", "ATSTA", "ATSTA_TX", "ATDAT", "ERRCD", "ERRCD_TX", "ATNGB", "ATMON", "SIGN_NAME", "SIGN_IMG", "SIGN_IMG2"],
+        "T_IMPORTA"	: ["VBELN", "DMBTR"]
+    },
+    "ZTBTR_THINK_001" : {
+        "REQ_VALUE" : ["I_BUKRS", "I_TUTOR", "I_STDNM"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["E_SPMON"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_01", "T_02"],
+        "T_01" : ["BUKRS", "STDCD", "VBELN", "STDNM", "MAKTX", "NETP0", "NETP1", "ITAMT", "AUART", "MTYPE"],
+        "T_02"	: ["BUKRS", "STDCD", "VBELN", "STDNM", "MAKTX", "NETP0", "NETP1", "ITAMT", "AUART", "MTYPE"]
+    },
+    "ZTBTR_GET_VBELN_AUTO_REAL" : {
+        "REQ_VALUE" : ["I_BUKRS", "I_TUTOR", "I_STDCD", "I_VBELN", "I_KEYDT"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["E_BANKS", "E_BANKN", "E_KOINH", "E_BANKA", "E_STCD1"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_ZTBTRS0011"],
+        "T_ZTBTRS0011" : ["BUKRS", "BANKS", "KEYNO", "CTRNO", "KEYDT", "ETYPE", "ETEXT", "VBANN", "MBANN", "INDAT", "SQNUM", "APDAT", "CARDS", "CRDNO", "SEQNO", "APPNO", "APTIM", "SALES", "VBELN", "AUART", "ORDER", "BANKA", "TUTOR", "TUTXT", "KUNCD", "KUNNR", "NAME1", "PRCTR", "COLNR", "COLTX", "KKBER", "INNER", "RVPER", "OWNCD", "OWNER", "DMBTR", "DVAMT", "BLAMT", "DVDAT", "STDCD", "STDNM", "MAKTX", "NETP0", "NETP1", "ITAMT", "BELNR", "GJAHR", "I_DMBTR", "I_BLAMT", "S_TUTOR", "I_STAMT", "ABLAMT", "AMOUNT", "IDATE", "KVGR1", "BEZEI", "INCOD", "AUTXT", "XREF2", "CAFLG", "STDOC", "STDAT", "MSGTX", "ICONS", "DVCHK", "DVUSX", "TYPE", "MESSAGE", "MARK", "OBJID", "OBJIDT", "MTYPE", "VGBEL", "ZMAT1"]
+    },
+    "ZTBTR_SEND_REG_ACC_DACOM" : {
+        "REQ_VALUE" : ["IN_GUBUN", "I_TUTOR"],
+        "REQ_STRUCT" : ["S_ZTBTRSDC01"],
+        "REQ_TABLE" : ["T_ZTBTRTDC23"],
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["OUT_DTSEQ_REG", "OUT_DTSEQ_ACC"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_ZTBTRSDC01"	: ["BUKRS", "KUNNR", "VBELN", "VKORG", "BANKS", "BANKN", "KOINH", "STCD1", "ATDAT", "ATSTA", "ERRCD", "AUART", "ZTYPE", "DTDAT", "DTSEQ", "ZMSGC", "RQDAT", "ATTYP", "REQBR", "OTAMT", "OTTXT", "PAYNO", "ACSTA", "INDAT", "BELNR", "GJAHR", "SENDID", "RECVID", "UPCCD", "ZREQST", "ZMBANKN", "ORGNO", "WEBGU"],
+        "T_ZTBTRTDC23" : ["BUKRS", "DTDAT", "VKORG", "BANKS", "DTSEQ", "KUNNR", "VBELN", "OTAMT", "ERRCD", "ACSTA", "INDAT", "BELNR", "GJAHR", "ZFISTA", "ZFIMSG", "ERDAT", "ERTIM", "ERNAM", "UPDAT", "UPTIM", "UPNAM"]
+    },
+    "ZTBTR_PDA01_009" : {
+        "REQ_VALUE" : ["I_TUTOR", "I_APDAT_FROM", "I_APDAT_TO", "I_CRDNO", "I_APPNO"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA" : ["CRDNO", "APDAT", "APPNO", "CRDCD", "KUNNR", "TUTOR", "VKORG", "APAMT", "APAMT_C", "KUNNR_NM", "CRDCD_NM", "DVIND"]
+    },
+    "ZTBTR_PDA01_005" : {
+        "REQ_VALUE" : ["I_KUNNR", "I_TUTOR"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["E_SPMON"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA" : ["VBELN", "ZMAT1", "MAKTX", "NETP0", "NETP1", "ITAMT"]
+    },
+    "ZTBSD_GET_TEACHING_AIDS" : {
+        "REQ_VALUE" : ["VBELN", "MATNR", "MATGB"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA", "T_EXPORTB"],
+        "T_EXPORTA"	: ["STMAT", "STMAT_TX", "STYGB"],
+        "T_EXPORTB"	: ["STMAT", "STMAT_TX", "STYGB"]
+    },
+	"ZTBSD_CHANGE_PLAN_PROGRESS" : {
+        "REQ_VALUE" : ["VBELN", "COUNT", "GUBUN"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["REQGB", "MTYPE", "ZZVIG"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["VBELN", "SEQNO", "POSNR", "MATNR", "JINDO", "STDAT", "JMART", "JMTUT", "JMDAT", "RECGB", "ZMAT1", "ZMAT1_TX", "ZZABR_G", "MATNR_TX", "ZZABR_D", "JINDO_TX", "ZZABR_H", "JMART_TX", "JMTUT_TX", "CHGGB", "CLDAT", "STUOK", "ZZABR", "GWLDT", "AUART", "VBELN2", "REGINO", "TRANGB"]
+    },
+	"ZTBSD_CHANGE_PLAN_PROGRESS_B" : {
+        "REQ_VALUE" : ["VBELN", "MOBILE"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : ["S_EXPORTA"],
+        "RES_TABLE" : ["T_EXPORTA", "T_EXPORTB"],
+        "S_EXPORTA"	: ["VBELN", "MATNR", "AUART", "DAYWK", "QTIME", "PAYAU", "MATNR_TX", "AUART_TX", "DAYWK_TX"],
+        "T_EXPORTA"	: ["VBELN", "SEQNO", "STDAT", "MATNR", "JINDO", "CHECK", "SMAT1", "SMAT2", "SMAT3", "SMAT4", "JMDAT", "JMART", "MATNR_TX", "JINDO_TX", "SMAT1_TX", "SMAT2_TX", "SMAT3_TX", "SMAT4_TX", "JMART_TX", "MATNR_ATX", "JINDO_ATX", "SMAT1_ATX", "SMAT2_ATX", "SMAT3_ATX", "SMAT4_ATX"],
+        "T_EXPORTB"	: ["VBELN", "SEQNO", "STDAT", "MATNR", "JINDO", "CHECK", "SMAT1", "SMAT2", "SMAT3", "SMAT4", "JMDAT", "JMART", "MATNR_TX", "JINDO_TX", "SMAT1_TX", "SMAT2_TX", "SMAT3_TX", "SMAT4_TX", "JMART_TX", "MATNR_ATX", "JINDO_ATX", "SMAT1_ATX", "SMAT2_ATX", "SMAT3_ATX", "SMAT4_ATX"]
+    },
+    "ZTBSD_CHANGE_PROGRESS" : {
+        "REQ_VALUE" : ["CHK_S", "TUTOR"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : ["T_IMPORTA"],
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "T_IMPORTA"	: ["VBELN", "SEQNO", "POSNR", "MATNR", "JINDO", "RECGB", "CHGGB", "STDAT"]
+    },
+    "ZTBSD_CHANGE_PLAN_PROGRESS_B2" : {
+        "REQ_VALUE" : null,
+        "REQ_STRUCT" : ["S_IMPORTA"],
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_IMPORTA"	: ["VBELN", "SEQNO", "MATNR", "JINDO", "CHECK", "SMAT1", "SMAT2", "SMAT3", "SMAT4"]
+    },
+    "ZTBSD_SAVE_TEACHING_AIDS" : {
+        "REQ_VALUE" : null,
+        "REQ_STRUCT" : ["S_IMPORTA"],
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_IMPORTA"	: ["VBELN", "MATNR", "JINDO", "CHECK", "SMAT1", "SMAT2", "SMAT3", "SMAT4"]
+    },
+	"ZTBSD_GET_DANGE_BARO_2" : {
+        "REQ_VALUE" : ["GUBUN"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["MATNR", "MAKTX"]
+    },
+    
+    "ZTBSD_GM_208_001" : {
+        "REQ_VALUE" : ["TUTOR", "SPMON"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["CHECK", "STATS", "STATS_TX", "VBELN", "ERDAT", "KUNWE", "KUNWE_TX", "KATR1", "KATR1_TX", "JINDO", "JINDO_TX", "SPMON", "GUBUN", "TUTOR", "TUTOR_TX", "PERCT", "I_CHK", "I_CHK2", "TEXT1", "TEXT2", "STMON", "ZMAT1", "ZMAT1_TX", "MTYPE", "AUART", "AUART_TX", "AUGRU", "AUGRU_TX", "GWLDT_P", "DISCHK", "PENCHK", "EDAYS", "SPMON_1", "ABRUD", "CHEC_3", "ABRUD_H", "S_GUBUN", "CAUSE", "ZCALLT", "ZCALLT_TX", "TEXT3"]
+    },
+    "ZTBSD_GM_208_003" : {
+        "REQ_VALUE" : ["GUBUN", "SPMON", "TUTOR", "VBELN"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : ["T_IMPORTA"],
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "T_IMPORTA"	: ["CHECK", "STATS", "STATS_TX", "VBELN", "ERDAT", "KUNWE", "KUNWE_TX", "KATR1", "KATR1_TX", "JINDO", "JINDO_TX", "SPMON", "GUBUN", "TUTOR", "TUTOR_TX", "PERCT", "I_CHK", "I_CHK2", "TEXT1", "TEXT2", "STMON", "ZMAT1", "ZMAT1_TX", "MTYPE", "AUART", "AUART_TX", "AUGRU", "AUGRU_TX", "GWLDT_P", "DISCHK", "PENCHK", "EDAYS", "SPMON_1", "ABRUD", "CHEC_3", "ABRUD_H", "S_GUBUN", "CAUSE", "ZCALLT", "ZCALLT_TX", "TEXT3"]
+    },
+    "ZTBSD_GM_208_002" : {
+        "REQ_VALUE" : ["TUTOR", "NAME1", "DAYWK", "DANGI", "GUBUN"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["CHECK", "STATS", "STATS_TX", "VBELN", "ERDAT", "KUNWE", "KUNWE_TX", "KATR1", "KATR1_TX", "JINDO", "JINDO_TX", "SPMON", "GUBUN", "TUTOR", "TUTOR_TX", "PERCT", "I_CHK", "I_CHK2", "TEXT1", "TEXT2", "STMON", "ZMAT1", "ZMAT1_TX", "MTYPE", "AUART", "AUART_TX", "AUGRU", "AUGRU_TX", "GWLDT_P", "DISCHK", "PENCHK", "EDAYS", "SPMON_1", "ABRUD", "CHEC_3", "ABRUD_H", "S_GUBUN", "CAUSE", "ZCALLT", "ZCALLT_TX", "TEXT3"]
+    },
+    "ZTBSD_GM_021_001" : {
+        "REQ_VALUE" : ["I_TUTOR"],
+        "REQ_STRUCT" : ["S_IMPORTA"],
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_IMPORTA"	: ["VBELN", "REQGB", "ABRUD", "TUTOR", "LDATE", "ZBIGO", "CAUSE1", "CAUSE3", "LEVGB", "LEVDT", "ZCANCA", "BANGB", "VBELN_N", "AUGRU", "RDISCHK"]
+    },
+    "TBSD_GM_028_002" : {
+        "REQ_VALUE" : ["VBELN", "REQGB", "ABRUD"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null
+    },
+    "ZTBSD_GET_BALANCE_ORDER" : {
+        "REQ_VALUE" : ["VBELN", "KEYDT"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["DMBTR", "AMOUNT"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null
+    },
+    "ZTBSD_GM_021_SMART" : {
+        "REQ_VALUE" : ["KUNWE", "TUTOR", "VBELN"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["VBELN", "GWLDT", "VBELN_PEN", "GWLDT_PEN", "ZMAT1", "ZMAT1_TX"]
+    },
+    
+    "ZTBSD_GM_WEAT_001" : {
+        "REQ_VALUE" : ["NAME1", "GBDAT", "KUNNR"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : null,
+        "RES_TABLE" : ["T_EXPORTA"],
+        "T_EXPORTA"	: ["VKBUR_TX", "TUTOR_TX", "KUNNR", "NAME1", "KATR1_TX", "ORT01"]
+    },
+    "ZTBSD_GM_WEAT_003" : {
+        "REQ_VALUE" : null,
+        "REQ_STRUCT" : ["S_IMPORTA"],
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : ["KUNNR"],
+        "RES_STRUCT" : null,
+        "RES_TABLE" : null,
+        "S_IMPORTA"	: ["NAME1", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "SMTP_ADDR", "GBDAT", "GBCHK", "PARGE", "KATR1"]
+    },
+    "ZTBSD_GM_WEAT_004" : {
+        "REQ_VALUE" : ["KUNNR"],
+        "REQ_STRUCT" : null,
+        "REQ_TABLE" : null,
+        "RETURN"	: "RETURN",
+        "RES_VALUE" : null,
+        "RES_STRUCT" : ["S_EXPORTA"],
+        "RES_TABLE" : ["T_EXPORTA"],
+        "S_EXPORTA"	: ["KUNNR", "NAME1", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "SMTP_ADDR", "GBDAT", "GBCHK", "PARGE", "PARGE_TX", "KATR1", "KATR1_TX", "DATE1", "ZMATX", "MODIX"],
+        "T_EXPORTA"	: ["VKBUR_TX", "TUTOR_TX", "SDATE", "KJUMS", "SJUMS", "AJUMS", "BJUMS", "CJUMS", "POSNM", "KGUN2", "SGUN2", "AGUN2", "BGUN2", "CGUN2", "EGUN2"]
+    },
+    "ZTBSD_RFC_CHANGE_CUSTOMER" : {
+        "REQ_VALUE" 	: ["VKORG", "CHILD", "KOINH", "ZSTCD1", "BANKL", "BANKN", "ATSTA", "ATDAT", "CANUM"],
+        "REQ_STRUCT" 	: ["S_IMPORTA"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["STCD1", "KUNNR", "NAME1", "NAME2", "TELF1", "TELF2", "PSTLZ", "ORT01", "STRAS", "ADRNR", "SMTP_ADDR", "KUNPA", "GBDAT", "GBCHK", "PARGE", "KATR1", "KATR5", "STCD4", "CHILD", "VKORG"]
+    },
+    "ZTBSD_GM_214_JOIN_CANCEL" : {
+    	"REQ_VALUE" 	: ["I_PERNR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: ["E_OS_GUBUN", "E_BEGDA"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    "ZTBSD_GM_WEAT_005" : {
+        "REQ_VALUE" 	: null,
+        "REQ_STRUCT" 	: ["S_IMPORTA"],
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null,
+        "S_IMPORTA"		: ["KUNNR", "TUTOR", "POSNM", "KJUMS", "SJUMS", "AJUMS", "BJUMS", "CJUMS", "EJUMS", "STYPE", "VIEWX", "PINTX", "SDATE", "ENDYN", "KGUN2", "KGUN4", "SGUN2", "SGUN4", "AGUN2", "AGUN4", "BGUN2", "BGUN4", "CGUN2", "CGUN4", "EGUN2", "EGUN4"]
+    },
+    "ZTBSD_GM_214_SESSION" : {
+        "REQ_VALUE" 	: ["I_PERNR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    "ZTBSD_GM_214_SESSION_TOTAL" : {
+    	"REQ_VALUE" 	: ["I_TUTOR", "I_CATE", "F_TEXT"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    },
+    "ZTBTR_VACCT_BALANCE_FOR_TUTOR" : {
+    	"REQ_VALUE" 	: ["I_TUTOR", "I_KUNNR"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "ES_RETURN",
+        "RES_VALUE" 	: ["E_BALANCE", "E_BALANCE_TX"],
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: ["T_VACCT"],
+        "T_VACCT"		: ["BANKS", "BANKA", "VBANN", "MBANN", "INDAT", "SQNUM", "TUTOR", "KUNNR", "NAME1", "RVPER", "KUNCD", "DMBTR", "DVAMT", "BLAMT", "BELNR", "DVTYP"]
+    },
+    "ZTBSD_GM_214_PROM_CNT" : {
+    	"REQ_VALUE" 	: ["I_PERNR", "CNT", "GUBUN"],
+        "REQ_STRUCT" 	: null,
+        "REQ_TABLE" 	: null,
+        "RETURN"		: "RETURN",
+        "RES_VALUE" 	: null,
+        "RES_STRUCT" 	: null,
+        "RES_TABLE" 	: null
+    }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회비 자동이체 신청</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/B020402.js?v=0002"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Pay_Transfer_Form">
+		<div class="container">
+			<div class="section">
+				<h2 style="text-align:center;font-weight:200;" >자동이체 - <span class="string" id="NAME1"></span></h2>
+
+				<!-- 입력폼 : 시작 -->
+				<div class="viewport">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									과목
+								</strong>
+								<div class="field">
+									<ul class="inline-list" id="T_IMPORTA">
+									</ul>
+								</div>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_BANK">은행</label>
+								</strong>
+								<span class="field">
+									<select id="PAY_TRANSFER_BANK">
+										<option value="">선택해주세요.</option>
+									</select>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_BANK_NUMBER">계좌번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_BANK_NUMBER" id="PAY_TRANSFER_BANK_NUMBER" style="width: 10em; " onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};"/>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_PERSON"><span class="hyper">예금주</span></label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_PERSON" id="PAY_TRANSFER_PERSON" style="width: 10em; " value="" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_PERSON_SSNUM">주민번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_PERSON_SSNUM" id="PAY_TRANSFER_PERSON_SSNUM" style="width: 150px;" onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value="" />
+									<button type="button" class="button-style s-size global" onclick="load_ssn_member(this);">조회</button>
+									<button type="button" class="button-style s-size global reset_ssn none" onclick="reset_ssn();">재입력</button>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_DATE"><span class="hyper">자동이체일</span></label>
+								</strong>
+								<span class="field">
+									<select id="PAY_TRANSFER_DATE">
+										<option value="" selected="selected">선택</option>
+										<option value="15">15일</option>
+										<option value="21">21일</option>
+										<option value="26">26일</option>
+									</select>
+								</span>
+							</li>
+
+
+							<li class='none'>
+								<strong class="label">
+									<label for="">은행</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_BANK_TX" id="PAY_TRANSFER_BANK_TX" style="width: 10em;background-color:#dbdbdb; " disabled="disabled" />
+								</span>
+							</li>
+
+							<li class='none'>
+								<strong class="label">
+									<label for="">계좌번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_BANK_NUMBER_TX" id="PAY_TRANSFER_BANK_NUMBER_TX" style="width: 10em;background-color:#dbdbdb; " onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" disabled="disabled" />
+								</span>
+							</li>
+
+							<li class='none'>
+								<strong class="label">
+									<label for=""><span class="hyper">예금주</span></label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_PERSON_TX" id="PAY_TRANSFER_PERSON_TX" style="width: 10em;background-color:#dbdbdb; " disabled="disabled" />
+								</span>
+							</li>
+
+							<li class='none'>
+								<strong class="label">
+									<label for="">주민번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_PERSON_SSNUM_TX" id="PAY_TRANSFER_PERSON_SSNUM_TX" style="width: 10em;background-color:#dbdbdb; " onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" disabled="disabled" />
+								</span>
+							</li>
+
+							<li class='none'>
+								<strong class="label">
+									<label for=""><span class="hyper">자동이체일</span></label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_DATE_TX" id="PAY_TRANSFER_DATE_TX" style="width: 10em;background-color:#dbdbdb; " disabled="disabled" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_TRANSFER_NAME">신청인</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_TRANSFER_NAME" id="PAY_TRANSFER_NAME" style="width: 8em; " /> <span class="check-button"><input type="checkbox" id='PAY_TRANSFER_NAME_CHECK' class="graphic" onclick="if($(this).attr('checked')=='checked') {$('#PAY_TRANSFER_NAME').val($('#PAY_TRANSFER_PERSON').val());} else {$('#PAY_TRANSFER_NAME').val('');}" /><label for="PAY_TRANSFER_NAME_CHECK">예금주상동</label></span>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="agreement_form">
+						<div class="signature">
+							<em>보호자사인</em>
+							<input type="hidden" id="SIGNATURE" value="">
+							<span class="sign"><img id="imgEl" src="../image/null_noimage_signature.png" style="border:1px solid #000;" width="64" onclick="sign_drew();" /></span>
+						</div>
+					</div>
+
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="button" class="button-style m-size global" onclick="app_goCancel();">취소</button>
+								<button type="submit" class="button-style m-size submit" onclick="bankSumbit();">자동이체신청</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- 입력폼 : 끝 -->
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

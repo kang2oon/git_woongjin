@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css?v=001" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D030202.js?v=0012"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+
+
+//]]>
+</script>
+<style type="text/css">
+<!--
+
+.data {border-top-right-radius: 1px; border-bottom-right-radius: 1px; width: 0%; height: 10px; vertical-align: top; background: url('../image/ico_graph-s.png') repeat-x; background-size: auto 200%; }
+-->
+</style>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<!-- 상단 네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li id="navTO"><a href="#" onclick="page_move_code('D030201.html','TO');">종합</a></li>
+					<li id="navSE"><a href="#" onclick="page_move_code('D030202.html','SE');">감각운동</a></li>
+					<li id="navCO"><a href="#" onclick="page_move_code('D030202.html','CO');">인지</a></li>
+					<li id="navLA"><a href="#" onclick="page_move_code('D030202.html','LA');">언어</a></li>
+					<li id="navEM"><a href="#" onclick="page_move_code('D030202.html','EM');">사회정서</a></li>
+                    <li id="navMA"><a href="#" onclick="page_move_code('D030202.html','MA');">수리</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<!-- 상단 네비 : 끝 -->
+
+	<div id="Contents" class="Weat_Result_Analysis_Detail">
+		<div class="container">
+
+
+			<!-- 요인별 발달 수준 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">요인별 발달 수준 </strong> </h2>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width: 25%; " />
+                                <col style="width: 10%;  " />
+                                <col style="width: 15%; " />
+								<col style="width: 50%; " />
+							</colgroup>
+
+						<thead>
+							<tr>
+								<th scope="col">영역</th>
+								<th scope="col">수준</th>
+								<th scope="col">백분위</th>
+								<th scope="col">백분위 그래프</th>
+							</tr>
+						</thead>
+
+						<tbody id='TB_DATA'>
+							<tr>
+
+                                <td>대근육</td>
+                                <td>상</td>
+                                <td>78%</td>
+                                <td><div class="data" style="width: 70.92%"></div></td>
+
+<!--
+                                <td colspan="4">데이터가 없습니다.</td>
+-->
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 요인별 발달 수준  : 끝 -->
+
+
+
+
+			<!-- 향상 가이드 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">향상 가이드</strong> </h2>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width: 30%; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<thead>
+							<tr>
+								<th scope="col"><span class="super">구분</span></th>
+								<th scope="col">내용</th>
+							</tr>
+						</thead>
+
+						<tbody id='TB_MENT_DATA'>
+							<tr>
+								<td colspan="3">데이터가 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 향상 가이드 : 끝 -->
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>또또사랑 로그인</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+
+
+<script>
+	// 테스트 상태인지 설정
+	var isTest = true;
+    //
+	$(document).ready( function(){
+		app_startLoading();
+
+		var el = document.getElementById('JOIN_ID');
+		if( DEVICE_CHK ){
+			el.setAttribute('type', "number");
+		}else{
+			el.setAttribute('type', "text");
+		}
+
+		// 테스트 상태이면 아이디와 비밀번호를 폼에 자동으로 입력
+		if( isTest ){
+			testInsert();			
+		}
+		
+		// 아이디 체크
+		chkId();
+	});
+
+	// 아이디 / 비밀번호 자동 입력
+	function testInsert(){
+		$('#JOIN_ID').val( "17010504" );
+		$('#JOIN_PWD').val( "1111111" );
+	}
+
+	// 아이디 체크, 체크 후 반환도 같은 함수로 받음
+	function chkId( $id ){
+		if( $id==undefined ){
+			app_getLoginID( 'chkId' );
+		}else{
+			if( $id=="" ){
+			}else{
+				$('#JOIN_ID').val( $id );
+				$('#JOIN_SAVE').attr( 'checked', true );
+
+
+				$('input.graphic').each(function(){
+					var $form = $(this);
+					var target = $form.attr('id');
+					var $label = $('label[for="' + target + '"]');
+
+					$label.find('>span:first')
+					.find('>button').removeClass("graphic cbr-type").addClass(function(){
+						if($form.is(':disabled')) return "disabled";
+					}).addClass(function(){
+						if($form.is(':checked')) return "check";
+					}).parents('label').children().on('click', function(){
+						if($.browser.msie && $.browser.version < 9) $form.toArray()[0].click();
+					});
+
+				});
+			}
+			app_endLoading();
+		}
+	}
+
+	// 공백 제거
+	function trim( $text ){
+		var str = ($text==undefined)? '' : $text.replace( /\s/g, '' );
+		return str;
+	}
+
+	// 로그인 버튼 클릭 이벤트
+	function submitHandle(){
+
+		var id = trim( $('#JOIN_ID').val() );
+		var pwd = trim( $('#JOIN_PWD').val() );
+		var saveChk = $('#JOIN_SAVE').is(':checked');
+		
+		if( id.length==0 || id=='아이디(사번)' ){
+			app_alert( '아이디가 올바르지 않습니다.' );
+			return false;
+		}
+		
+		if( pwd.length==0 || pwd=='비밀번호'  ){
+			app_alert( '비밀번호가 올바르지 않습니다.' );
+			return false;
+		}
+		
+		var param = {
+			Function : 'ZTBSD_GM_214_LOGIN',
+			Parameter : {
+				I_PERNR : id,
+				I_REGNO : pwd
+			},
+			Success : 'LoginSuccess',
+			Error : 'LoginError'
+		};
+		
+		//*/
+		app_startLoading();
+		app_login( param, saveChk );
+	}
+
+	// 로그인 성공시 반환 함수
+	function LoginSuccess(e){
+		app_endLoading();
+		$('body').remove();
+	}
+
+    // 로그인 실패시 반환 함수
+	function LoginError(e){
+		if( isTest ){
+			testInsert();			
+		}else{
+			$('#JOIN_ID').val( '아이디(사번)' );
+			$('#JOIN_PWD').val( '비밀번호' );
+		}
+		//
+		//app_alert( '아이디/비밀번호를 확인해 주세요.' );
+		app_endLoading();
+	}
+	
+	// 신규가입 클릭 이벤트
+	function goJoin(){
+	    app_startLoading();
+	    window.location.href = 'join.html';
+	}
+	
+	// 페이지 새로고침( 개발시만 사용 )
+	var refresh = function(){
+        window.location.href = 'login.html' + '?dummy=' + (Math.random() * Math.random());
+    }
+	
+	
+
+</script>
+</head>
+
+<body id="signin" class="noscript">
+<div id="Document">
+	<!-- 타이틀 시작 -->
+	<div id="Header">
+		<h1 class="area-logo"><img src="../image/signin_header_logo.png" alt="또또사랑 101 service" /></h1>
+	</div>
+	<!-- 타이틀 끝 -->
+
+	<hr />
+
+	<!-- 입력폼 시작 -->
+	<div id="Contents">
+		<form name="FORM" id="FORM" method="post" action="javascript:void(0);" onsubmit="return submitHandle();">
+		<fieldset>
+			<legend>로그인 폼</legend>
+		
+			<div class="area-account">
+				<span class="form">
+					<span class="input">
+						<span class="id-box">
+							<label for="JOIN_ID" class="absolute hiding">아이디</label>
+							<input maxlength="8" name="JOIN_ID" id="JOIN_ID" placeholder="아이디(사번)" title="아이디(사번)" class="placeholder" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" />
+						</span>
+						<span class="pw-box">
+							<label for="JOIN_PWD" class="absolute hiding">비밀번호</label>
+							<input maxlength="7" type="password" name="JOIN_PWD" id="JOIN_PWD" placeholder="비밀번호" title="비밀번호" class="placeholder" />
+						</span>
+					</span>
+					<span class="submit">
+						<button type="submit">로그인</button>
+					</span>
+				</span>
+				<span class="joinGo">
+					<button type="button" class="hyper" onclick="goJoin();">아이튜터 신규가입</button>
+				</span>
+				<span class="check">
+					<input type="checkbox" name="JOIN_SAVE" id="JOIN_SAVE" class="graphic" /><label for="JOIN_SAVE">아이디(사번)저장</label>
+				</span>
+			</div>
+		</fieldset>
+		</form>
+	</div>
+	<!-- 입력폼 끝 -->
+
+	<hr />
+
+	<!-- 하단 시작 -->
+	<div id="Footer">
+		<dl>
+			<dt><img src="../image/signin_footer_text.png" alt="101 service" /></dt>
+			<dd class="longdesc"><em>1</em> : 언행일치</dd>
+			<dd class="longdesc"><em>0</em> : 불만제로</dd>
+			<dd class="longdesc"><em>1</em> : 한번의 행복</dd>
+		</dl>
+
+		<address class="blind">&copy; 2012 WoongJin Thinkbig Co.,LTD. All rights reserved</address>
+	</div>
+	<!-- 하단 끝 -->
+</div>
+</body>
+</html>

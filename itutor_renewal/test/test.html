@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>iCal-like Calendar (CSS+jQuery)</title>
+		
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=8"></script>
+<script type="text/javascript" src="../js/notice.js?v=13"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+
+        
+
+		<script>
+			$(document).ready(function(){
+
+
+
+
+
+
+
+
+
+
+
+			});
+</script>       
+
+<body>
+<body class="noscript">
+
+<div id="a">1111111</div>
+<div id="a">2222222222222</div>
+
+                            <li id="cDiscounts_li" class="none">
+                                <strong class="label">
+                                    약정할인
+                                </strong>
+                                <span class="field">
+                                    <span class="inline-group">
+                                        <span class="item">
+                                            <input type="checkbox" name="cDiscounts" id="cDiscounts_val" /><label for="cDiscounts_val">할인</label>
+                                        </span>
+                                    </span>
+                                </span>
+                            </li>  
+
+
+
+</body>
+    
+    <script type="text/javascript">
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+alert($("#a").eq(1).text())
+    
+	$.extend({
+		getDateAdd: function(number, dateType){
+			var today = new Date();
+			var dateAdd = "";
+			
+			number = parseInt(number);
+
+			switch (dateType){
+				case "Y" :
+					dateAdd = new Date(today.setYear(today.getFullYear() + number));
+					break;
+				case "M" :
+					dateAdd = new Date(today.setMonth(today.getMonth() + number));
+					break;
+				case "D" :
+					dateAdd = new Date(today.setDate(today.getDate() + number));
+					break;
+			}
+
+
+			return dateAdd.getFullYear() + "-" + $.addZero(dateAdd.getMonth() + 1) + "-" + $.addZero(dateAdd.getDate());
+		},
+		addZero: function(number){
+			return parseInt(number, 10) < 10 ? "0" + number : number;
+		}
+	});
+
+/*
+ alert($.getDateAdd(1, "Y"))
+ alert($.getDateAdd(5, "M"));
+ alert($.getDateAdd("-1", "D"));
+     
+ */
+//숫자를 디지털 숫자형으로 반환
+var getDigitNum = function($n) {
+	if (Number($n) < 10) {
+		return '0' + String($n);
+	} else {
+		return String($n);
+	}
+};
+    
+ 	var today = new Date();
+    var dateAdd = "";
+    var result = "";
+
+    console.log(today)
+
+
+
+for(count=10;count>0;count--)
+{
+    
+
+        dateAdd = new Date(today.setMonth(today.getMonth() - 1));
+        
+ 		dateList = String(dateAdd.getFullYear()) + getDigitNum(dateAdd.getMonth() + 1);
+        dateListStr = String(dateAdd.getFullYear()) +"년 " + getDigitNum(dateAdd.getMonth() + 1 )+"월";
+        
+        addDateOpt = "<option value='"+dateList+"' >" + dateListStr + "</option>";  
+
+        console.log(addDateOpt)
+
+}
+    
+
+    
+    
+</script>
+</html>

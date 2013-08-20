@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회원정보 과목입회</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js"></script>
+<script type="text/javascript" src="../js/CalendarUtil.js"></script>
+<script type="text/javascript" src="../js/B010300.js?v=0004"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+    var $ = jQuery;
+
+    $(window).scroll(function(){
+        $('#Document #Aside button.top-button').hide();
+
+        if($(this).scrollTop() < 40) {
+            $('#Document #Aside button.top-button').fadeOut('fast');
+        } else {
+            $('#Document #Aside button.top-button').delay('100').fadeIn();
+        }
+    });
+
+    $('#Aside button.top-button').click(function(){getUrl('#Document')});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+    <div id="Contents" class="Join_Class">
+        <div class="container">
+            <div class="section">
+                <h2><strong class="wrap">입회유형</strong></h2>
+
+
+                <div class="viewport">
+                    <div class="form-select">
+                        <ul>
+                            <li><input type="radio" name="JOIN_CLASS" id="JOIN_CLASS1" class="" value="1" /><label for="JOIN_CLASS1"> 일반</label></li>
+                            <li><input type="radio" name="JOIN_CLASS" id="JOIN_CLASS2" class="" value="2" /><label for="JOIN_CLASS2"> 장기</label></li>
+                            <li><input type="radio" name="JOIN_CLASS" id="JOIN_CLASS3" class="" value="3" /><label for="JOIN_CLASS3"> 책읽기장기</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<hr />
+
+            <div class="section">
+                <h2><strong class="wrap">학습정보</strong></h2>
+
+
+                <div class="viewport">
+                    <div class="form-list">
+                        <ul>
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_SUBJECT">과목</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="JOIN_SUBJECT">
+                                        <option value="select0" selected="selected">선택하세요</option>
+                                    </select>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_STEP1">단계</label>
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select id="JOIN_STEP1" style="width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <select id="JOIN_STEP1_NUM" style="width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                    <!--
+                                    <input type="text" name="JOIN_STEP1_NUM" id="JOIN_STEP1_NUM" placeholder="호수" style="width: 70px; " />
+                                    <button type="button" id="JOIN_STEP1_BTN" class="button-style s-size global">검색</button>
+                                    -->
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_STEP2">단계</label>
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select id="JOIN_STEP2" style=" width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <select id="JOIN_STEP2_NUM" style="width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                    <!--
+                                    <input type="text" name="JOIN_STEP2_NUM" id="JOIN_STEP2_NUM" placeholder="호수" style="width: 70px; " />
+                                    <button type="button" id="JOIN_STEP2_BTN" class="button-style s-size global">검색</button>
+                                    -->
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_STEP3">단계</label>
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select id="JOIN_STEP3" style=" width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <select id="JOIN_STEP3_NUM" style="width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                    <!--
+                                    <input type="text" name="JOIN_STEP3_NUM" id="JOIN_STEP3_NUM" placeholder="호수" style="width: 70px; " />
+                                    <button type="button" id="JOIN_STEP3_BTN" class="button-style s-size global">검색</button>
+                                    -->
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_STEP4">단계</label>
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select id="JOIN_STEP4" style=" width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <select id="JOIN_STEP4_NUM" style="width: 205px; ">
+                                                <option value="select0" selected="selected">선택</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                    <!--
+                                    <input type="text" name="JOIN_STEP4_NUM" id="JOIN_STEP4_NUM" placeholder="호수" style="width: 70px; " />
+                                    <button type="button" id="JOIN_STEP4_BTN" class="button-style s-size global">검색</button>
+                                    -->
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_CAUSE">입회사유</label>
+                                </strong>
+                                <span class="field">
+                                    <select id="JOIN_CAUSE">
+                                        <option value="select0" selected="selected">선택</option>
+                                        <option value="101">회원소개</option>
+                                        <option value="102">회원형제</option>
+                                        <option value="201">교사권유</option>
+                                        <option value="301">무진</option>
+                                        <option value="302">이동영화관</option>
+                                        <option value="303">마트행사</option>
+                                        <option value="304">어머니교실</option>
+                                        <option value="305">창의력교실</option>
+                                        <option value="306">공연/전시회</option>
+                                        <option value="307">논술/경시대회</option>
+                                        <option value="401">TV/라디오광고</option>
+                                        <option value="402">신문/잡지/지역지</option>
+                                        <option value="403">홍보인쇄물</option>
+                                        <option value="501">기타</option>
+                                        <option value="040">책읽기</option>
+                                        <option value="007">희망한글</option>
+                                        <option value="006">백혈병</option>
+                                        <option value="100">방학특강</option>
+                                        <option value="046">유선관리</option>
+                                        <option value="047">유선관리(궁것질)</option>
+                                    </select>
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_DATE">학습일</label>
+                                </strong>
+                                <span class="field" id="JOIN_PERIOD_INPUT_GROUP">
+                                    <input type="text" name="JOIN_DATE" id="JOIN_DATE" value="" readonly="readonly" placeholder="선택" />
+                                    <button type="button" id="JOIN_DATE_BTN" class="calendar-button blind">달력</button>
+                                    <input type="text" name="JOIN_DATE_PRINTDAY" id="JOIN_DATE_PRINTDAY" value="" readonly="readonly" style="width: 60px; margin-left: 5px; " />
+                                </span>
+                                <span class="field none" id="JOIN_PERIOD_SELECT_GROUP">
+                                    <select id="JOIN_PERIOD_SELECT">
+                                    </select>
+                                    <input type="text" name="JOIN_DATE_PRINTDAY" id="JOIN_DATE_PRINTDAY" value="" readonly="readonly" style="width: 60px; margin-left: 5px; " />
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="label">
+                                    <label for="JOIN_TIME" >수업시간</label>
+                                </strong>
+                                <span class="field">
+                                    <input type="text" name="JOIN_TIME_TEXT" id="JOIN_TIME_TEXT" value="" readonly="readonly" placeholder="선택" />
+                                    <button type="button" id="JOIN_TIME_BTN" class="button-style s-size global">시간선택</button>
+                                    <!--
+                                    <select id="JOIN_TIME_HOUR">
+                                    </select>
+                                    <select id="JOIN_TIME_MIN">
+                                    </select>
+                                    -->
+                                </span>
+                            </li>
+
+                            <li id="STUDY_CNT" class="none">
+                                <strong class="label">
+                                    수업횟수
+                                </strong>
+                                <span class="field" >
+                                </span>
+                            </li>
+
+                            <li id="PEN" class="none">
+                                <strong class="label">
+                                    전자펜
+                                </strong>
+                                <span class="field">
+                                    <span class="inline-group">
+                                        <span class="item">
+                                            <input type="checkbox" name="JOIN_SALE" id="JOIN_SALE" class="graphic" /><label for="JOIN_SALE">구매</label>
+                                        </span>    
+                                        <span class="item" id="PAYTYPE">
+                                            <input type="checkbox" name="JOIN_SALE_PAY" id="JOIN_SALE_PAY" /><label for="JOIN_SALE_PAY">할부선택</label>
+                                        </span>    
+                                    </span>
+                                </span>
+                            </li>
+
+                            <li id="SMS" class="none">
+                                <strong class="label">
+                                    씽크U SMS정책
+                                </strong>
+                                <span class="field">
+                                    <span class="block-group">
+                                        <span class="block">
+                                            <select style="width: 100%; " id="JOIN_SMS1">
+                                                <option value="select0" selected="selected">선택하세요</option>
+                                                <option value="1">"OO이의 O일차 학습이 완료되었습니다. 칭찬해 주세요!"</option>
+                                                <option value="2">"OO이의 학습 수행이 50% 미만입니다. 학습 독려해 주세요!"</option>
+                                                <option value="3">"오늘은 씽크U 선생님과의 학습일 입니다. 반갑게 만나요"</option>
+                                                <option value="4">"씽크U 방문수업이 완료되었습니다. 분석지를 확인해 주시고 칭찬해주세요!"</option>
+                                                <option value="5">"이전 주 학습이 완료되었습니다. 꾸준히 학습한 OO이 칭찬해 주세요!"</option>
+                                            </select>
+                                        </span>
+                                        <span class="block">
+                                            <select style="width: 100%; " id="JOIN_SMS2">
+                                                <option value="select0" selected="selected">선택하세요</option>
+                                                <option value="1">"OO이의 O일차 학습이 완료되었습니다. 칭찬해 주세요!"</option>
+                                                <option value="2">"OO이의 학습 수행이 50% 미만입니다. 학습 독려해 주세요!"</option>
+                                                <option value="3">"오늘은 씽크U 선생님과의 학습일 입니다. 반갑게 만나요!"</option>
+                                                <option value="4">"씽크U 방문수업이 완료되었습니다. 분석지를 확인해 주시고 칭찬해주세요!"</option>
+                                                <option value="5">"이전 주 학습이 완료되었습니다. 꾸준히 학습한 OO이 칭찬해 주세요!"</option>
+                                            </select>
+                                        </span>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="performing">
+                        <div class="bottom center">
+                            <span class="wrap">
+                                <button type="submit" onclick="submitHandle();" class="button-style m-size submit">입회등록</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Aside">
+<hr />
+
+        <div class="container">
+            <button type="button" class="top-button blind">Top</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

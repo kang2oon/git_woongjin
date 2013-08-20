@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>신규회원가입(부모)</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/C010101.js?v=0006"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function (){
+
+	// 터치시 top버튼 보이게 설정.
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside button.top-button').show();
+	});
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		} else {
+//			$('#Document #Aside button.top-button').hide();
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Join_Member">
+		<div class="container">
+			<!-- 부모정보입력폼  시작-->
+			<div class="section">
+				<h2><strong class="wrap">부모정보입력</strong> <span class="check-button"><input type="checkbox" name="MEMBER_P_CLONE" id="MEMBER_P_CLONE" class="graphic" onclick="set_children_data(this);" /><label for="MEMBER_P_CLONE">자녀상동</label></span></h2>
+
+
+				<div class="viewport">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_SSNUMBER">주민번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="MEMBER_P_SSNUMBER" id="MEMBER_P_SSNUMBER" style="width: 150px; " onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" />
+									<button type="button" class="button-style s-size global" onclick="load_ssn_member(this);">조회</button>
+									<button type="button" class="button-style s-size global reset_ssn none" onclick="reset_ssn('MEMBER');">재입력</button>
+									<input type="hidden" name="MEMBER_SSNUMBER" id="MEMBER_SSNUMBER" value="" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_NAME">이름/성별</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="MEMBER_P_NAME" id="MEMBER_P_NAME" />
+									<span class="inline-group">
+										<span class="item"><input type="radio" name="MEMBER_P_SEX" id="MEMBER_P_SEX1" class="graphic" value="1" /><label for="MEMBER_P_SEX1">남</label></span>
+										<span class="item"><input type="radio" name="MEMBER_P_SEX" id="MEMBER_P_SEX2" class="graphic" value="2" /><label for="MEMBER_P_SEX2">여</label></span>
+									</span>
+								</span>
+							</li>
+
+							<li id="IDNUMBER_LI">
+								<strong class="label">
+									<label for="MEMBER_IDNUMBER">고객번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="MEMBER_IDNUMBER" id="MEMBER_IDNUMBER" disabled readonly style="width: 150px; " />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_BIRTHDAY">생년월일</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="MEMBER_P_BIRTHDAY" id="MEMBER_P_BIRTHDAY" onclick="app_openCalendar('insert_birthday_date');" disabled placeholder="달력에서 선택해 주세요" />
+									<button type="button" onclick="app_openCalendar('insert_birthday_date');" class="calendar-button blind">달력</button>
+									<span class="inline-group">
+										<span class="item"><input type="radio" name="MEMBER_P_BIRTHDAY_TYPE" id="MEMBER_P_BIRTHDAY_TYPE1" class="graphic" value="1" /><label for="MEMBER_P_BIRTHDAY_TYPE1">양</label></span>
+										<span class="item"><input type="radio" name="MEMBER_P_BIRTHDAY_TYPE" id="MEMBER_P_BIRTHDAY_TYPE2" class="graphic"  value="2" /><label for="MEMBER_P_BIRTHDAY_TYPE2">음</label></span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_TEL1">전화번호</label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_P_TEL1">
+										<option value="" selected>선택</option>
+										<option value="02">02</option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>
+										<option value="070">070</option>
+									</select>
+									<input type="text" name="MEMBER_P_TEL2" id="MEMBER_P_TEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_CEL1">휴대전화</label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_P_CEL1">
+										<option value="" selected>선택</option>
+										<option value="010" >010</option>
+										<option value="011" >011</option>
+										<option value="016" >016</option>
+										<option value="017" >017</option>
+										<option value="018" >018</option>
+										<option value="019" >019</option>
+									</select>
+									<input type="text" name="MEMBER_P_CEL" id="MEMBER_P_CEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="MEMBER_P_EMAIL1">이메일</label>
+								</strong>
+								<span class="field">
+									<span class="block-group">
+										<span class="block">
+											<input type="text" name="MEMBER_P_EMAIL1" id="MEMBER_P_EMAIL1" style="width: 90px; " />
+											<span class="string">@</span>
+											<select id="MEMBER_P_EMAIL2" style="width: 117px; " onchange="fn_mail()">
+												<option value="" selected>선택하세요</option>
+												<option value="self">기타메일</option >
+												<option value="naver.com">naver.com</option>
+												<option value="nate.com">nate.com</option>
+												<option value="hanmail.net">hanmail.net</option>
+												<option value="hotmail.com">hotmail.com</option>
+												<option value="dreamwiz.com">dreamwiz.com</option>
+												<option value="yahoo.co.kr">yahoo.co.kr</option>
+												<option value="empal.com">empal.com</option>
+												<option value="unitel.co.kr">unitel.co.kr</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="korea.com">korea.com</option>
+												<option value="chol.com">chol.com</option>
+											</select>
+										</span>
+										<span class="none">
+											<input type="text" id="etctext" class="text01"  maxlength="20" style="width:100%;"/>
+										</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									주소
+								</strong>
+								<span class="field">
+									<span class="block-group">
+										<span class="block">
+											<input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS1" style="width: 50px; " disabled />
+											<input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS2" style="width: 50px; " disabled />
+											<button type="button" class="button-style s-size global" onclick="button_post();">우편번호</button>
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS3" style="width: 100%; " disabled />
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_P_ADDRESS" id="MEMBER_P_ADDRESS4" style="width: 100%; " />
+										</span>
+									</span>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 부모정보입력폼  끝-->
+
+			<!-- 저장버튼  시작-->
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="submit" class="button-style m-size submit" onclick="validity_all();">저장</button>
+					</span>
+				</div>
+			</div>
+			<!-- 저장버튼  끝-->
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!-- 
+
+
+		우편번호검색 페이지는 자바스크립트 파일 없음.
+		현재 페이지에서 정의됨.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>우편번호검색</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+
+<script>
+    
+    var pageParams; // 페이지 파라미터를 담을 변수
+    
+    // 시작
+    $(document).ready(function(){
+       var container = $('tbody');
+       app_getRequestParameter( 'setData' );
+    });
+    
+    // 이전페이지에서 파라미터를 받아온다.
+    var setData = function( $data ){
+        if(String($data)!="undefined" && !!$data && String($data)!="") {
+            $data = $data.replace(/'/g, '"');
+            pageParams = JSON.parse( $data );
+            init();
+        };
+    }
+    
+    var init = function(){
+      app_endLoading();
+      
+      // 검색 버튼 이벤트 정의
+      $('button').click(findZipHandle);
+    };
+    
+	// 검색버튼 클릭시
+    var findZipHandle = function(){
+        app_startLoading('로딩중');
+        
+        var str = $('#SEARCH_QUERY').val().replace(/\s/,'');
+        
+        // 검색어체크
+        if(str.length<1 || str=='지번입력'){
+            app_alert('검색어를 입력하세요.');
+            app_endLoading();
+            return false;
+        }
+        
+        var data = {SORTF: str};
+        loader.load( {
+            Function: "ZTBHR_RFC_F4_ZIPCODE",
+            Parameter: data,
+            Success: function($data){
+                if( !!$data && $data.replace(/\s/g,'').length>0 ){
+                    var data = JSON.parse($data).Parameter;
+                    if( !!data ){
+                        setZipCode(data.T_EXPORTA);
+                    }else{
+                        setZipCode(null);
+                    }
+                }else{
+                    app_endLoading();
+                }
+            },
+            Error: function($data){
+                app_endLoading();
+                msgCall( " ERROR :: \n",  $data);
+            }
+        });
+    };
+    
+	// 우편번호 선택시
+    var selectZip = function( ort01, stras, code ){
+        var obj = {
+            ORT01 : ort01,
+            STRAS : stras,
+            PSTLZ : code
+        };
+        //히스토리 삭제를 위해 실행.2013.03.29 NDH 
+        app_goCancel();
+        
+        // getParameter로 넘겨받은 데이터참조
+        pageParams.zipCode.data = obj;
+        app_changePage( pageParams.zipCode.returnUrl, pageParams, false );
+    };
+    
+	// 우편번호 테이블 생성
+    var setZipCode = function( $list ){
+        $('tbody').empty();
+        if( !!$list ){
+            var i=0, len=$list.length, html='', val, addr, obj;
+            for(;i<len;i+=1){
+                obj = $list[i];
+                val = obj.ORT01 + ' ' + obj.STRAS;
+                html += '<tr>';
+                html += '<td class="left"><a href="javascript:selectZip(\''+obj.ORT01+'\',\''+obj.STRAS+'\',\''+obj.PSTLZ+'\')" >'+val+'</label>';
+                html += '<td><a href="javascript:selectZip(\''+obj.ORT01+'\',\''+obj.STRAS+'\',\''+obj.PSTLZ+'\')" >'+obj.PSTLZ+'</a></td>';
+                html += '</tr>';
+            }
+            //
+            $('tbody').append(html);
+        }else{
+            $('tbody').append('<tr><td>검색결과가 없습니다.</td></tr>');
+        }
+        app_endLoading();
+    };
+
+    
+</script>
+
+</head>
+
+<body class="noscript">
+<div id="Document">
+    <div id="Contents" class="Search_Zipcode">
+        <div class="container">
+            <div class="section">
+				<!-- 검색창 / 버튼 부분 시작 -->
+                <div class="searching">
+                    <div class="form">
+                        <span class="label"><label for="SEARCH_QUERY">주소검색</label></span>
+                        <span class="input"><input type="text" name="SEARCH_QUERY" id="SEARCH_QUERY" placeholder="예) 역삼동, 화도읍, 장유면" title="지번 입력" class="placeholder" /></span>
+                        <span class="submit"><button type="submit" class="button-style m-size submit">검색</button></span>
+                    </div>
+                </div>
+				<!-- 검색창 / 버튼 부분 끝 -->
+
+				<!-- 검색결과 시작 -->
+                <div class="viewport">
+                    <div class="dtype1">
+                        <table border="1" class="col">
+                            <colgroup>
+                                <col style="width: auto; " />
+                                <col style="width: 85px; " />
+                            </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">주소</th>
+                                <th scope="col">우편번호</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- 자바스크립트 동적생성
+                            <tr>
+                                <td class="left"><a href="#">서울특별시 마포구 서교동</a></td>
+                                <td><a href="#">121-210</a></td>
+                            </tr>
+                            -->
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+				<!-- 검색결과 끝 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

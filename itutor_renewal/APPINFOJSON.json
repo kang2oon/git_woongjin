@@ -1,0 +1,38 @@
+{
+    "android" :
+    {
+    	"develop" :
+    	{
+    		"version" : "2.0.2.5",
+    		"url" : "http://mdev.woongjin.com/itutor/androidApp_dev/iTutor_dev.apk"	
+    	},
+        "admin" :
+        {
+            "version" : "2.0.2.1",
+            "url" : "http://211.55.28.74:8080/itutor/androidApp_admin/iTutor_admin.apk"
+        },
+        "user" :
+        {
+            "version" : "2.0.2.1",
+            "url" : "http://211.55.28.74:8080/itutor/androidApp/iTutor.apk"
+        }
+    },
+    "ios" :
+    {
+    	"develop" :
+    		{
+    			"version" : "2.0.2.4",
+    			"url" : "http://mdev.woongjin.com/itutor/iosApp_dev/iTutor_test.plist"	
+    		},
+        "admin" :
+        {
+            "version" : "2.0.2.8",
+            "url" : "http://mdev.woongjin.com/itutor/iosApp_Admin/iTutor_admin.plist"
+        },
+        "user" :
+        {
+            "version" : "2.0.2.4",
+            "url" : "http://211.55.28.74:8080/itutor/iphoneApp/iTutor.plist"
+        }
+    }
+}

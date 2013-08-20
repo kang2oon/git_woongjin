@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회원정보 과목입회</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/B010602.js?v=0004"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+	// top버튼 클릭시
+	$('#Aside button.top-button').click(function(){getUrl('#Document')});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Join_Class">
+		<div class="container">
+			<!-- 입력정보 시작 -->
+			<div class="section">
+				<div class="viewport">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">회원명</strong>
+								<span class="field">
+									<span id="KUNWE_TX" class="string"></span>
+								</span>
+							</li>
+							<li>
+								<strong class="label">학년</strong>
+								<span class="field">
+									<span id="KATR1_TX" class="string"></span>
+								</span>
+							</li>
+							<li>
+								<strong class="label">학습진도</strong>
+								<span class="field">
+									<span id="JINDO_TX" class="string"></span>
+								</span>
+							</li>
+							<li>
+								<strong class="label">
+									<label for="a">휴회예상월</label>
+								</strong>
+								<span class="field">
+									<select id="SEL_SPMON">
+									</select>
+								</span>
+							</li>
+							<li>
+								<strong class="label">
+									<label for="b">휴회가능성</label>
+								</strong>
+								<span class="field">
+									<select id="SEL_PERCT">
+									    <option value="select0">선택</option>
+									    <option value="20">20</option>
+									    <option value="60">60</option>
+									    <option value="100">100</option>
+									</select>
+								</span>
+							</li>
+						</ul>
+					</div>
+					<div class="teacherAdvice">
+						<strong><label for="textarea">요청사유 및 교사상담내용</label></strong>
+						<textarea name="TEXT1" id="TEXT1"></textarea>
+					</div>
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button id="cancelBtn" type="button" class="button-style m-size submit">취소</button>
+								<button id="saveBtn" type="submit" class="button-style m-size submit">저장</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 입력정보 끝 -->
+		</div>
+	</div>
+
+	<div id="Aside">
+<hr />
+
+		<div class="container">
+			<button type="button" class="top-button blind">Top</button>
+		</div>
+	</div>
+</div>
+</body>
+</html>

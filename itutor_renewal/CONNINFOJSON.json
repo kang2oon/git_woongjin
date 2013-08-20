@@ -1,0 +1,47 @@
+{
+	"develop" :
+	{
+		"sap" :
+		{
+			"host_ip" : "211.55.28.74",
+			"host_port" : "8001",
+			"sap_ip" : "190.1.2.132",
+			"client_no" : "310",
+			"system_no" : "00",
+			"user_id" : "17010504",
+			"user_passwd" : "passwd"
+		},
+		"soap" : "http://itutor.think-u.co.kr/www/ws/iTutor.asmx",
+		"soap_notice" : "http://lovews.thinkbig.co.kr/HeadNoticeInfo.asmx"
+	},
+	"admin" :
+	{
+		"sap" :
+		{
+			"host_ip" : "211.55.28.74",
+			"host_port" : "8001",
+			"sap_ip" : "190.1.2.141",
+			"client_no" : "100",
+			"system_no" : "00",
+			"user_id" : "ITutor",
+			"user_passwd" : "ITutor"
+		},
+		"soap" : "http://m.think-u.co.kr/www/ws/iTutor.asmx",
+		"soap_notice" : "http://lovews.thinkbig.co.kr/HeadNoticeInfo.asmx"		
+	},
+	"user" :
+	{
+		"sap" :
+		{
+			"host_ip" : "211.55.28.74",
+			"host_port" : "8001",
+			"sap_ip" : "190.1.2.141",
+			"client_no" : "100",
+			"system_no" : "00",
+			"user_id" : "ITutor",
+			"user_passwd" : "ITutor"
+		},
+		"soap" : "http://m.think-u.co.kr/www/ws/iTutor.asmx",
+		"soap_notice" : "http://lovews.thinkbig.co.kr/HeadNoticeInfo.asmx"		
+	}
+}

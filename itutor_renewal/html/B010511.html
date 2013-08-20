@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>바로셈 진도 수정</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/B010511.js?v=00006" ></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+// TOP Button
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+	// top버튼 클릭시
+	$('#Aside button.top-button').click(function(){getUrl('#Document')});
+});  
+//]]>
+</script>
+
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<!-- 진도표시 시작-->
+	<div id="Header">
+		<div class="container">
+			<h1></h1>
+		</div>
+		<hr />
+	</div>
+	<!-- 진도표시 끝-->
+
+	<div id="Contents" class="Jindo_Inquire">
+		<div class="container">
+			<div class="section">
+				<!-- 사용안함 시작-->
+				<div class="none">
+				    <ul>
+                        <li>
+                             <span id="orgLabel" ></span>
+                        </li>
+                        <li>
+                             <span id="newLabel" ></span>
+                        </li>
+                    </ul>
+				</div>
+				<!-- 사용안함 끝-->
+				
+				<!-- 검색 UI 시작 -->
+				<div class="jindo_radioButton">
+					<input type="radio" name="GUBUN_RADIO" id="radio1" class="graphic" value="X" />
+					<label for="radio1">표준진도</label>
+					<input type="radio" name="GUBUN_RADIO" id="radio2" class="graphic" value="N" />
+					<label for="radio2" style="margin-left:20px;">수정진도</label>
+				</div>
+				
+				<div class="fluid_selectbox">
+					<select style="width:100%;">
+					</select>
+				</div>
+				
+				<div class="baromodi_searchbox">
+					<div class="baromodiWrapper">
+						<div>
+                            <label for="numSearch">
+                            <input type="text" name="numSearch" id="numSearch" style="width: 100%;" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" />
+                            </label>
+                        </div>
+                        <div id="FIND_X" class="btnwrap none">
+                            <button type="submit" class="button-style m-size submit">검색</button>
+                        </div>
+					</div>
+					<div>
+					    <div id="FIND_N" class="btnwrap center" style="padding-top: 4px;padding-right: 2.5px;padding-left: auto;" >
+                            <button id="mainBtn" type="submit" class="button-style m-size submit">주교재 검색</button>
+                            <button id="subBtn" type="submit" class="button-style m-size submit">부교재 검색</button>
+                        </div>
+					</div>
+				</div>
+				<!-- 검색 UI 끝 -->
+				
+				<!-- 진도 리스트 시작 -->
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+							<colgroup>
+								<col style="width:auto;" />
+								<col style="width:30%;" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">선택</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button id="saveBtn" type="submit" class="button-style m-size submit">저장</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- 진도 리스트 끝 -->
+			</div>
+		</div>
+	</div>
+	<!-- 하단top버튼 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼 끝 -->
+</div>
+</body>
+</html>

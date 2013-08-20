@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>학부모상담</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/A020400_msg.js?d=2"></script>
+<script type="text/javascript" src="../js/A020400.js?d=12"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script	type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script	type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+</head>
+
+<body class="noscript">
+
+
+<!-- 호수조회  :  시작 -->
+<div id="Popup" style="display:none;">
+    <div id="popHeader">
+        <div class="container">
+            <h1>호수조회</h1>
+        </div>
+        <hr />
+    </div>
+
+    <div id="popContents" style="border:0px;">
+        <div class="container" style="border:0px;">
+
+            <div class="change_progress">
+                <div id="jindo_tree" class="menutrees">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popFooter">
+        <hr />
+        <div class="container">
+            <div class="performing">
+                <div class="bottom center">
+                    <span class="wrap jindo_button">
+                        <button type="button" class="button-style m-size global" onclick="jindo_windows_close();">취소</button>
+                        <button type="submit" class="button-style m-size submit" onclick="jindo_windows_check_end();">확인</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 호수조회  :  끝 -->
+
+
+<!-- 기본구조 : 시작 -->
+<div id="Document">
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li><a href="javascript:void(0);">지난주학습점검</a></li>
+					<li><a href="javascript:void(0);">이번주학습정보</a></li>
+					<li class="active"><a href="javascript:void(0);">학부모상담</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	
+	<!-- 상단네비 : 시작 -->
+	<div id="Contents" class="Learn_Manage">
+		<div class="container none">
+			<div id="#ZMAT1#" class="section">
+				<h2>
+                    <strong class="wrap #subject_txt_color#">#ZMAT1_TX#</strong>
+               <!-- <span class="control"><button type="button" class="prev-button blind">이전</button><button type="button" class="next-button blind">다음</button></span> --> 
+                    <button type="button" class="toggle-button blind">보이기</button>
+                </h2>
+			</div>
+		</div>
+	</div>
+	<!-- 상단네비 : 끝 -->
+	
+	<!-- 하단top버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="moveSubjectTop()">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼 : 끝 -->
+
+	<!-- 하단메뉴 : 시작 -->
+	<div id="Footer" class="none">
+		<hr />
+		<div class="container">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button id="memo" type="button" class="button-style m-size global">메모</button>
+						<button id="send" type="button" class="button-style m-size global">전송</button>
+						<button id="end" type="button" class="button-style m-size global">학습종료</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 하단메뉴 : 끝 -->
+</div>
+<!-- 기본구조 : 끝 -->
+
+
+<!-- 씽크빅 템플릿 : 시작 -->
+<div id="template_body" class="none">
+	<div class="viewport">
+		<!-- 사용안함 :: 기획 변경되어 제외처리됨
+		<div class="selecting">
+			<button type="button" class="button-style s-size global">진도변경</button>
+		</div>
+		 -->
+            <div class="selecting">
+                <button type="button" class="button-style s-size global" onclick="jindo_windows();">호수조회</button>
+            </div>
+	
+		<div class="learning">
+			<!-- 자바스크립트로 동적생성 ::::::
+			<div class="section">
+				<h3><strong class="wrap">유정이가 지난주 배운 내용이예요</strong></h3>
+
+				<div class="article">
+					<h4><em class="wrap">DB 타이틀~</em></h4>
+					<div class="content">
+						한글을 이루는 낱자인 자음자와 모음자가 
+					</div>
+				</div>
+			</div>
+
+			<div class="study_tip">
+				<div class="postit">
+					<dl>
+						<dt><strong>학습팁</strong></dt>
+						<dd>
+							<div class="content">&middot; 읽기 : 낱자 익히기<br />
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			 -->
+		</div>
+		
+	</div>
+</div>
+<!-- 씽크빅 템플릿 : 끝 -->
+
+<!-- 씽크U 템플릿 : 시작 -->
+<div id="template_body_u" class="none">
+	<div class="viewport">
+		<div class="selecting">
+			<select id="week_month_select">
+				<option value="1">주간상담안</option>
+				<option value="2">월간상담안</option>
+				<!-- 데이터가 없어 주석처리함.
+				<option value="3">12주상담안</option>
+				<option value="4">계통도</option>
+				-->
+			</select>
+            <button id="hosu_search_u_weak"  type="button" class="button-style s-size global" onclick="jindo_windows();">호수조회</button>
+            <select id="hosu_search_u_month" >
+            </select>
+		</div>
+        
+	</div>
+</div>
+<!-- 씽크U 템플릿 : 끝 -->
+
+
+
+<!-- 씽크U 주간 탬플릿 : 시작 -->
+<div id="template_week" class="none">
+	<div class="learning" id="contentsBody">
+		<div id="WEEK_TOP_DIV" class="section">
+			<h3><strong class="wrap">이번주는 이렇게 공부했어요</strong></h3>
+	
+			<div class="article">
+				<div class="hiligh-box Learn_Manage_Weekly">
+					<div id="scoreColumn" class="column">
+						<div class="postit">
+							<h4 id="scoreTitle" class="title"></h4>
+							<div class="content">
+								<div class="score">
+									<div class="wrap" id="score" >
+										<!-- 동적 생성함.
+											<em><span >100</span>점</em>
+										-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+					<div id="countColumn" class="column">
+						<div class="postit">
+							<h4 class="title" id="langTitle"></h4>
+							<div class="content">
+								<div id="count" class="count">
+									<div class="wrap" id="lang">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div id="STUDY_TOP_DIV" class="hiligh-box">
+					<div class="postit">
+						<h4 class="title">이번주에 공부한 내용</h4>
+						<div class="content">
+							<div class="text" id="STUDY">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div id="NEXT_STUDY_TOP_DIV" class="section">
+			<h3><strong class="wrap">다음주에는 이런 내용을 배워요!</strong></h3>
+	
+			<div class="article">
+				<div class="content" id="NEXT_STUDY">
+				</div>
+			</div>
+		</div>
+	
+		<div id="MENT_TOP_DIV" class="section">
+			<h3><strong class="wrap" id="NAME"></strong></h3>
+	
+			<div class="article">
+				<div class="content" id="MENT" >
+					<!-- 칭찬은 고래도 춤추게 한다죠. <br /> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 씽크U 주간 탬플릿 : 끝 -->
+
+
+<!-- 씽크U 월간 탬플릿 : 시작 -->
+<div id="template_month" class="none">
+	<div id="contentsBody" class="learning">
+		<div id="MONTH_TOP_DIV" class="section">
+			<h3><strong id="MEMBER_NAME" class="wrap"></strong></h3>
+	
+			<div class="article full-article">
+				<div class="hiligh-box Learn_Manage_Monthly">
+					<div class="column">
+						<div class="postit">
+							<h4 id="MON" class="title"></h4>
+							<div class="content">
+								<div class="score">
+									<div id='score' class="wrap">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="column">
+						<div class="postit">
+							<h4 class="title" id="ANSWER_TITLE" ></h4>
+							<div class="content">
+								<div id="count" class="count">
+									<div class="wrap" id="ANSWER_CNT">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div id="MENT_TOP_DIV" class="hiligh-box">
+					<div class="postit">
+						<h4 class="title">이런 부분에 관심을 가져주세요.</h4>
+						<div class="content">
+							<div class="text" id="MENT">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div id="NEXT_STUDY_TOP_DIV" class="section">
+			<h3><strong class="wrap">다음주에는 이런 내용을 배워요!</strong></h3>
+	
+			<div class="article full-article"><!-- 아래 여백이 없을 때 full-article 클래스 추가 -->
+				<div id="NEXT_STUDY" class="dtype1">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- 씽크U 월간 탬플릿 : 끝 -->
+
+
+
+
+
+
+
+
+
+<!-- 씽크U 월간 테이블 탬플릿 -->
+<div id="template_table" class='none'>
+	<!-- 일반과목 -->
+	<div id="DEFAULT">
+		<table id="MTABLE" border="1" class="col tfixed"><!-- 영어 등 일반 테이블 템플릿 -->
+			<colgroup>
+				<col style="width: 40px; " />
+				<col style="width: 40px; " />
+				<col style="width: auto; " />
+			</colgroup>
+
+			<thead>
+				<tr>
+					<th scope="col">단계</th>
+					<th scope="col">호</th>
+					<th scope="col">학습주제</th>
+				</tr>
+			</thead>
+	
+			<tbody>
+				<tr>
+					<td id="STAGE_NAME">#STAGE_NAME#</td>
+					<td id="EDITION_NAME">#EDITION_NAME#</td>
+					<td class="contents" id="EDITION_SUBJECT1">#EDITION_SUBJECT1#</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- 사회과학 -->
+	<div id="SOSC">
+			<table id="MTABLE" border="1" class="col tfixed"><!-- 사회과학 테이블 템플릿 -->
+				<colgroup>
+					<col style="width: 40px; " />
+					<col style="width: 30px; " />
+					<col style="width: 40px; " />
+					<col style="width: auto; " />
+				</colgroup>
+
+			<thead>
+				<tr>
+					<th scope="col">단계</th>
+					<th scope="col">호</th>
+					<th scope="col">과목</th>
+					<th scope="col">학습주제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="#SE1#">
+					<td rowSpan="2" id="STAGE_NAME">#STAGE_NAME#</td>
+					<td rowSpan="2" id="EDITION_NAME">#EDITION_NAME#</td>
+					<td id="SO_EDITION_SUBJECT1">#SO_EDITION_SUBJECT1#</td>
+					<td id="SO_EDITION_SUBJECT2" class="contents">#SO_EDITION_SUBJECT2#</td>
+				</tr>
+				<tr id="#SE2#">
+					<td id="SC_EDITION_SUBJECT1">#SC_EDITION_SUBJECT1#</td>
+					<td id="SC_EDITION_SUBJECT2" class="contents">#SC_EDITION_SUBJECT2#</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- 국어 -->
+	<div id="KORN">
+		<table id="MTABLE" border="1" class="col tfixed"><!-- 국어 테이블 템플릿 -->
+				<colgroup>
+					<col style="width: 30px; " />
+					<col style="width: 30px; " />
+					<col style="width: auto; " />
+					<col style="width: auto; " />
+					<col style="width: auto; " />
+				</colgroup>
+
+			<thead>
+				<tr>
+					<th rowspan="2" scope="col">단계</th>
+					<th rowspan="2" scope="col">호</th>
+					<th colspan="3" scope="colgroup">학습주제</th>
+				</tr>
+				<tr>
+					<th scope="col">읽기</th>
+					<th scope="col">쓰기</th>
+					<th scope="col"><span>듣기/말하기/어휘</span></th>
+				</tr>
+			</thead>
+		
+			<tbody>
+			
+				<tr>
+					<td id="STAGE_NAME">#STAGE_NAME#</td>
+					<td id="EDITION_NAME">#EDITION_NAME#</td>
+					<td id="EDITION_SUBJECT1" class="contents">#EDITION_SUBJECT1#</td>
+					<td id="EDITION_SUBJECT2" class="contents">#EDITION_SUBJECT2#</td>
+					<td id="EDITION_SUBJECT3" class="contents">#EDITION_SUBJECT3#</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- 모달창 컨테이너 시작 -->
+<div id="Dialog">
+</div>
+<!-- 모달창 컨테이너 끝 -->
+
+<!-- 메모모달 템플릿 시작 -->
+<div id="modal_memo" class="none">
+		<div class="wrapper">
+			<div id="dialHeader" class="dialog-header">
+				<h1>고객약속</h1>
+			</div>
+	
+			<div id="dialContents" class="dialog-contents">
+				<div class="memo_form">
+					<label for="MEMO_FORM"><textarea id="TEXTAREA" name="MEMO_FORM" id="MEMO_FORM" rows="8" cols="30"></textarea></label>
+				</div>
+			</div>
+	
+			<div id="dialFooter" class="dialog-footer">
+				<div class="performing">
+					<div class="bottom center">
+						<span class="wrap">
+							<button id="CANCEL" type="button" class="button-style pop-size cancel" onclick="javascript:void(0);">취소</button>
+							<button id="VOICE" type="button" class="button-style pop-size global" onclick="javascript:void(0);"><span class="voice_memo">음성메모</span></button>
+							<button id="SAVE" type="submit" class="button-style pop-size submit" onclick="javascript:void(0);">저장</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<hr />
+</div>
+<!-- 메모모달 템플릿 끝 -->
+
+<!-- 칭찬메세지모달 템플릿 시작 -->
+<div id="modal_end" class="none">
+	<div class="wrapper">
+			<div id="dialHeader" class="dialog-header">
+				<h1>칭찬이 아이를 기쁘게 합니다.</h1>
+			</div>
+	
+			<div id="dialContents" class="dialog-contents">
+				<div class="praise_form">
+					<div class="list">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+	
+			<div id="dialFooter" class="dialog-footer">
+				<div class="performing">
+					<div class="bottom center">
+						<span class="wrap">
+							<button id="SUBMIT" type="submit" class="button-style pop-size submit" >확인</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<hr />
+</div>
+<!-- 칭찬메세지모달 템플릿 끝 -->
+
+<!-- 데이터없음 템플릿 시작 -->
+<div id="template_none" class="none">
+    <div id="contentsBody" class="learning" style="text-align: center; vertical-align: middle;padding:20px">
+        <p>#msg#</p>
+    </div>
+</div>
+<!-- 데이터없음 템플릿 끝 -->
+
+
+
+<script>
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+    $(document).ready(function (){
+        $(window).scroll(function(){
+//            $('#Document #Aside button.top-button').hide();
+//            $('#Document #Aside button.top-button').delay('100').fadeIn();
+        });
+    });
+    
+</script>
+
+
+
+</body>
+</html>

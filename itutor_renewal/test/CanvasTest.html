@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>canvas test</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+    
+    /**
+     * 페이지 시작
+     *  */
+    $(document).ready(function(){
+        getSignImg(); // 이미지 가져오기
+    });
+    
+    /**
+     * 싸인 데이터 가져오기
+     *  */
+    var getSignImg = function(){
+        //var src = "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";
+        //setSignImg( src );
+        
+        // ** 사인이미지 요청, 파라미터로 반환함수명 전달
+        app_setSign( 'setSignImg' );
+    };
+    
+    /**
+     * 싸인 데이터 적용
+     *  */
+    var setSignImg = function( data ){
+        // 테스트용 : 전달받은 데이터 div에 표시
+        $('#receiveDv').append(data);
+        //
+        var src = 'data:image/jpg;base64,'+ data;
+        
+        // ** 캔버스에 그리기
+        drawCanvas( src );
+        
+        // ** 이미지 태그에 적용
+        addImageSrc( src );
+    };
+    
+    /**
+     * 캔버스에 그리기
+     *  */
+    var drawCanvas = function( src ){
+        //
+        var cnvs = $('#canvasEl').get(0);
+        var ctx = cnvs.getContext('2d');
+        
+        // 초기화
+        ctx.clearRect( 0, 0, cnvs.width, cnvs.height );
+        ctx.beginPath();
+        
+        // 생성및 그리기
+        var image = new Image();
+        image.src = src;
+        image.onload = function(){
+            ctx.drawImage( image, 0, 0, cnvs.width, cnvs.height );
+            image = null;
+        };
+    };
+    
+    /**
+     * 이미지 태그 소스에 넣기
+     *  */
+    var addImageSrc = function( src ){
+        // 적용
+        $('#imgEl').attr('src', src);
+    };
+    
+</script>
+</head>
+
+<body class="noscript">
+    <div id="Document">
+    <div id="Contents" class="Join_Class">
+        <div class="container">
+            <!-- 캔버스 -->
+            <div class="section">
+                <strong >캔버스</strong>
+                <canvas id="canvasEl" style="border:1px solid #000;" width="64" height="64" ></canvas>
+            </div>
+            
+            <!-- 이미지 -->
+            <div class="section">
+                <strong>이미지 태그</strong>
+                <img id="imgEl" style="border:1px solid #000;" width="64" height="64">
+            </div>
+            <div id="receiveDv" class="section">
+                
+            </div>
+        </div>
+    </div>
+    </div>    
+</body>
+</html>

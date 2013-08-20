@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name = "format-detection" content = "telephone=no">
+<title> 신규가입 </title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/join.js?v=9"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+
+<script>
+    
+    // 로그인 페이지로 이동할 주소.
+    var loginUrl = "login_admin.html";
+    
+</script>
+
+</head>
+
+<body id="signin" class="noscript">
+<div id="Document">
+	<!-- 타이틀 시작 -->
+	<div id="Header" style="background-image:none;">
+		<h1 style="font-size:214.3%">신규가입</h1>
+	</div>
+	<!-- 타이틀 끝 -->
+	<hr />
+	<!-- 입력폼 시작 -->
+	<div id="Contents" class="new_join_container">
+			<fieldset>
+				<legend>신규가입</legend>
+				<div class="area-account">
+					<span class="form">
+						<span class="input">
+							<span class="id-box">
+								<label for="JOIN_ID" class="absolute hiding">교사번호</label>
+								<input maxlength="8" type="text" name="JOIN_ID" id="JOIN_ID" placeholder="교사번호" title="교사번호" class="placeholder" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" />
+							</span>
+							<span class="pw-box">
+								<label for="JOIN_PWD" class="absolute hiding">주민번호</label>
+								<input maxlength="13" type="text" name="JOIN_PWD" id="JOIN_PWD" placeholder="주민번호" title="주민번호" class="placeholder" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" />
+							</span>
+						</span>
+						<span class="submit">
+							<button id="JOIN_BTN" type="submit"></button>
+						</span>
+					</span>
+					<div class="horizon_button">
+						<div id="DELETE_DIV" class="btn_left none">
+							<span class="joinGo">
+								<button id="DELETE_BTN" type="button" class="hyper">해지</button>
+							</span>
+						</div>
+						<div id="CANCEL_DIV" class="btn_right none">
+							<span class="joinGo">
+								<button id="CANCEL_BTN" type="button" class="hyper">취소</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="txt_mmeber_confirm none">
+				</div>
+			</fieldset>
+	</div>
+	<!-- 입력폼 끝 -->
+
+	<hr />
+
+	<!-- 하단 시작 -->
+	<div id="Footer">
+		<dl>
+			<dt><img src="../image/signin_footer_text.png" alt="101 service" /></dt>
+			<dd class="longdesc"><em>1</em> : 언행일치</dd>
+			<dd class="longdesc"><em>0</em> : 불만제로</dd>
+			<dd class="longdesc"><em>1</em> : 한번의 행복</dd>
+		</dl>
+
+		<address class="blind">&copy; 2012 WoongJin Thinkbig Co.,LTD. All rights reserved</address>
+	</div>
+	<!-- 하단 끝 -->
+</div>
+</body>
+</html>

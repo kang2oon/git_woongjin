@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>WEAT 로그인</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D010100.js?v=0003"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body id="weatin" class="noscript">
+<div id="Document">
+	<div class="weat-header">
+		<h1><img src="../image/weat_bg.png" alt="WEAT" width="100%" /></h1>
+	</div>
+	<div class="weat-form">
+		<ul>
+			<!-- 회원명 검색 : 시작 -->
+			<li>
+				<strong class="label">
+					<label for="WEAT_FORM_NAME">회원이름</label>
+				</strong>
+				<span class="field">
+					<input type="text" name="WEAT_FORM_NAME" id="WEAT_FORM_NAME" onKeyPress="$('#WEAT_FORM_NUM').val('');" />
+				</span>
+				<strong class="label">
+					<label for="WEAT_FORM_BIRTH">생년월일</label>
+				</strong>
+				<span class="field">
+					<input type="text" name="WEAT_FORM_BIRTH" readonly id="WEAT_FORM_BIRTH" onclick="$('#WEAT_FORM_NUM').val('');app_openCalendar('set_birth');" /> <button type="button" class="blind calendar-button" onclick="app_openCalendar('set_birth');">달력</button>
+				</span>
+			</li>
+			<!-- 회원명 검색 : 끝 -->
+			
+			<!-- 회원번호 검색 : 시작 -->
+			<li>
+				<strong class="label">
+					<label for="WEAT_FORM_NUM">회원번호</label>
+				</strong>
+				<span class="field">
+					<input type="text" name="WEAT_FORM_NUM" id="WEAT_FORM_NUM" maxlength="8" onKeyPress="$('#WEAT_FORM_NAME').val('');$('#WEAT_FORM_BIRTH').val('');if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value="20287531" />
+				</span>
+			</li>
+			<!-- 회원번호 검색 : 끝 -->
+		</ul>
+		
+		<!-- 검색버튼 : 시작 -->
+		<div class="submit"><button type="submit" class="button-style l-size submit"  onclick="search_database();">등록 및 조회</button></div>
+		<!-- 검색버튼 : 끝 -->
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

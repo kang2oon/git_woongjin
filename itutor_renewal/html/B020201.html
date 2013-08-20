@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>카드결제 카드정보입력</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/B020201.js?v=0004"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Pay_Card_Form">
+		<div class="container">
+			<div class="section">
+				<div class="viewport">
+					
+					<!-- 정보표시 : 시작 -->
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									회원명
+								</strong>
+								<span class="field">
+									<span class="string" id="NAME1"></span>
+								</span>
+							</li>
+
+<!--카드명_주석처리 2013.04.03 NDH
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_NAME">카드명</label>
+								</strong>
+								<span class="field">
+									<select id="PAY_CARD_NAME">
+										<option value="" selected="selected">선택</option>
+									</select>
+								</span>
+							</li>
+-->
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_EDUFREE">에듀프리</label>
+								</strong>
+								<span class="field">
+									<span class="inline-group">
+										<span class="item"><input type="radio" name="PAY_CARD_EDUFREE" id="PAY_CARD_EDUFREE1" value=" " checked="checked" class="graphic" /><label for="PAY_CARD_EDUFREE1">미사용</label></span>
+										<span class="item"><input type="radio" name="PAY_CARD_EDUFREE" id="PAY_CARD_EDUFREE2" value="X" class="graphic" /><label for="PAY_CARD_EDUFREE2">사용</label></span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_NUMBER">카드번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_CARD_NUMBER" id="PAY_CARD_NUMBER" style="width: 10em; "  onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value="" maxlength="16" />
+									<input type="hidden" id="CARD_E_OWNER" value="">
+									<input type="hidden" id="CARD_E_STCD1" value="">
+									<button type="button" class="button-style s-size global" onclick="load_card();">조회</button>
+									<button type="button" class="button-style s-size global reset_card none" onclick="reset_card();">재입력</button>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_PERIOD_YEAR">유효기간</label>
+								</strong>
+								<span class="field">
+									<select id="eDate">
+									</select><span class="string">월/</span>
+									<select id="eYear">
+									</select><span class="string">년</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_SUM">금액</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_CARD_SUM" id="PAY_CARD_SUM" class="right" style="width: 10em; " disabled readonly /><span class="string">원</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_INSTALLMENT">할부</label>
+								</strong>
+								<span class="field">
+									<select id="PAY_CARD_INSTALLMENT">
+										<option value="" selected="selected">선택</option>
+										<option value="00">일시불</option>
+										<option value="02">2개월</option>
+										<option value="03">3개월</option>
+										<option value="05">5개월</option>
+										<option value="06">6개월</option>
+										<option value="12">12개월</option>
+									</select>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_PERSON"><span class="hyper">카드소유주</span></label>
+								</strong>
+								<span class="field">
+									<input type="text" name="PAY_CARD_PERSON" id="PAY_CARD_PERSON" style="width: 10em; " value="" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<label for="PAY_CARD_PERSON_SSNUM">주민번호</label>
+								</strong>
+								<span class="field">
+									<input type="text" maxlength="13" name="PAY_CARD_PERSON_SSNUM" id="PAY_CARD_PERSON_SSNUM" style="width: 10em; " onfocus="this.value=checkDigit(this.value)" onblur="this.value=checkDigit(this.value)" onKeyPress="if ((event.keyCode<48)||(event.keyCode>57)){event.returnValue=false;};" value=""/>
+									<button type="button" class="button-style s-size global" onclick="tutorChildChk();">조회</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+					<!-- 정보표시 : 끝 -->
+
+					<!-- 하단버튼부 : 시작 -->
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="button" class="button-style m-size global" onclick="app_goCancel();">취소</button>
+								<button type="submit" class="button-style m-size submit" onclick="cardSubmit();">승인요청</button>
+							</span>
+						</div>
+					</div>
+					<!-- 하단버튼부 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 하단 Top버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 Top버튼 : 끝 -->
+</div>
+</body>
+</html>

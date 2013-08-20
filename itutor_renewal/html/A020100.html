@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,	user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>학습관리	전주학습점검</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css"	/>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script	type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script	type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script	type="text/javascript" src="../js/json2.js?v0004"></script>
+<script	type="text/javascript" src="../js/common.js" ></script>
+<script	type="text/javascript" src="../js/connect.js" ></script>
+<script	type="text/javascript" src="../js/A020400_msg.js?d=2"></script>
+<script	type="text/javascript" src="../js/A020100.js?v=039"></script>
+<script	type="text/javascript" src="../js/A020100_b.js?v=037"></script>
+<script	type="text/javascript" src="../js/A020100_u.js?v=037"></script>
+<script	type="text/javascript" src="../js/extension.js"></script>
+<script	type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script	type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+
+<script	type="text/javascript">
+$(document).ready(function (){
+
+	// top버튼 터치시 보이게 설정
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside	button.top-button').show();
+	});
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		  if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		  }	else {
+//			  $('#Document #Aside button.top-button').hide();
+//			  $('#Document #Aside button.top-button').delay('100').fadeIn();
+//		  }
+	});
+});
+
+
+</script>
+</head>
+
+<body class="noscript">
+
+<!-- 호수조회 시작 -->
+<div id="Popup"	style="display:none;">
+	<div id="popHeader">
+		<div class="container">
+			<h1>호수조회</h1>
+		</div>
+		<hr	/>
+	</div>
+
+	<div id="popContents" style="border:0px;" LISTMAX="" LISTNO="">
+		<div class="container" style="border:0px;">
+
+			<div class="change_progress">
+				<div id="jindo_tree" class="menutrees">
+				</div>
+			</div>
+
+			<div class="answers" style="display:none;">
+				<div style="padding: 5px; text-align: center; "><select	id="popContents_DANGE" style="display:"	onchange="answer_windows_jindo_reload(this.value);"></select> <button type="button"	class="prev-button blind" onclick="prev_answers('#ZMAT1#');">◀</button> <select id="popContents_JINDO"	style="display:" onchange="answer_reload();"></select> <button type="button" class="next-button	blind" onclick="next_answers('#ZMAT1#');">▶</button></div>
+				
+				<div class="dtype1">
+					<table border="1" class="col">
+						<colgroup>
+							<col style="width: 50px; " />
+							<col style="width: auto; " />
+						</colgroup>
+
+					<thead>
+						<tr>
+							<th	scope="col">No</th>
+							<th	scope="col">정답/해설</th>
+						</tr>
+					</thead>
+					<tbody id='ANSWER_TB'>
+						<tr><td	colspan=2 style="text-align:center;"></td></tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popFooter">
+		<hr	/>
+		<div class="container">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap jindo_button">
+						<button	type="button" class="button-style m-size global" onclick="jindo_windows_close();">취소</button>
+						<button	type="submit" class="button-style m-size submit" onclick="jindo_windows_check_end();">확인</button>
+					</span>
+					<span class="wrap answer_button">
+						<button	type="button" class="button-style m-size global" onclick="answer_windows_close();">확인</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 호수조회 끝 -->
+
+<!-- 기본구조 : 시작 -->
+<div id="Document">
+	<!-- 상단네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local"	class="area-lnb">
+				<ul>
+					<li	class="active"><a href='#' onclick="changePage_check('A020100.html');return	false;"	data-ajax="false">지난주학습점검</a></li>
+					<li><a href='#'	onclick="changePage_check('A020300.html');return false;" data-ajax="false">이번주학습정보</a></li>
+					<li><a href='#'	onclick="changePage_check('A020400.html');return false;" data-ajax="false">학부모상담</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 상단네비 : 끝 -->
+
+	<!-- 씽크빅/씽크U템플릿 컨테이너 : 시작 -->
+	<div id="Contents" class="Learn_Manage">
+		<div class="container">
+		</div>
+	</div>
+	<!-- 씽크빅/씽크U템플릿 컨테이너 : 끝 -->
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr	/>
+		<div class="container">
+			<button	type="button" class="top-button	blind" onclick="top_scroll();return	false;">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+<!-- 기본구조 : 끝 -->
+
+
+<!-- 씽크빅	템플릿 : 시작 -->
+<div id="section_tmp" style="display:none;">
+<input type="hidden" id="#ZMAT1#_next_s" class="menu#INDEX#"  value="#NEXT_S#" style="display:none;"  />
+	<div class="section	menu#INDEX#" id="#ZMAT1#_section" menu_index="#INDEX#" dataload_dange="false" zmat1="#ZMAT1#" ZMAT1_TX="#ZMAT1_TX#"	DANGE="#DANGE#"	JINDO="#JINDO#"	DANGE_TX="#DANGE_TX#" JINDO_TX="#JINDO_TX#"	STLKN="#STLKN#"	LISTMAX="0"	LISTNO="1" CATEGORY="B"	COURSE_CODE="" DANGE_JINDO_TEXT="" RECORD_NO="0" LAST_DANGE="" LAST_JINDO="" BOOK="" FOOTER_USED=""	style="margin:0px;">
+
+		<h2	id="#ZMAT1#_head" class="menu#INDEX#">#ZMAT1_TX#&nbsp;&nbsp;<em	id="#ZMAT1#_DANGE_JINDO_TEXT" class="menu#INDEX#"></em>	<span class="control"><button type="button"	class="prev-button blind" onclick="prev('#ZMAT1#');">◀</button><button	type="button" class="next-button blind"	onclick="next('#ZMAT1#');">▶</button></span> <button type="button"	class="toggle-button blind">숨기기</button></h2>
+
+		<div class="viewport #ZMAT1#_DATACONTENT" style="display:none;">
+
+			<div class="selecting">
+				<button	type="button" class="button-style s-size global" onclick="jindo_windows('#ZMAT1#');">호수조회</button>
+				<select	id="#ZMAT1#_DANGE" class="menu#INDEX#" onchange="DANGE_change('#ZMAT1#',this.value);"  style="display:none;"></select>
+				<select	id="#ZMAT1#_JINDO" class="menu#INDEX#" onchange="JINDO_change('#ZMAT1#','','');"  style="display:none;"></select> 
+				<select	id="#ZMAT1#_BOOK" class="menu#INDEX#" onchange="JINDO_change_big();"  style="display:none;">
+					<option	value="001"	selected>권수 1</option>
+					<option	value="002">권수 2</option>
+					<option	value="003">권수 3</option>
+				</select> 
+			</div>
+
+			<div class='answer_tb'>
+				<div class="dtype1">
+					<table border="1" class="col">
+					<colgroup>
+						<col style="width: 50px; " />
+						<col style="width: auto; " />
+					</colgroup>
+					<thead>
+						<tr>
+							<th	scope="col">No</th>
+							<th	scope="col">정답/해설</th>
+						</tr>
+					</thead>
+					<tbody id='#ZMAT1#_ANSWER_TB' class="menu#INDEX#">
+						<tr><td	colspan=2 style="text-align:center;"></td></tr>
+					</tbody>
+					</table>
+				</div>
+				<div class="wrong_answers">
+					<dl>
+						<dt><strong>맞은문제수</strong></dt>
+						<dd>
+							<input type="hidden" id="#ZMAT1#_check_data" class="menu#INDEX#" name="#ZMAT1#_check_data" value="">
+							<input type="hidden" id="#ZMAT1#_check_record" class="menu#INDEX#" name="#ZMAT1#_check_record" value="">
+							<select	id="#ZMAT1#_check" class="menu#INDEX#" name="#ZMAT1#_check"	ONCHANGE="$('##ZMAT1#_check_data').val(this.value);">
+								<option	value="C">성적선택해주세요</option>
+							</select>
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+		</div>
+		<div class="viewport #ZMAT1#_NOT_DATACONTENT" style="display:none;text-align:center;padding-top:24px;padding-bottom:24px;">
+		</div>
+	</div>
+</div>
+<!-- 씽크빅	템플릿 : 끝	-->
+
+
+<!-- 씽크U 템플릿 :	시작 -->
+<div id="section_u_tmp"	style="display:none;">
+<input type="hidden" id="#ZMAT1#_next_s" class="menu#INDEX#"  value="#NEXT_S#" style="display:none;"  />
+	<div class="section	menu#INDEX#" id="#ZMAT1#_section" menu_index="#INDEX#" dataload_dange="false" zmat1="#ZMAT1#" ZMAT1_TX="#ZMAT1_TX#"	DANGE="#DANGE#"	JINDO="#JINDO#"	DANGE_TX="#DANGE_TX#" JINDO_TX="#JINDO_TX#"	STLKN="#STLKN#"	LISTMAX="0"	LISTNO="1" CATEGORY="U"	COURSE_CODE="#COURSE_CODE#"	DANGE_JINDO_TEXT=""	 RECORD_NO="0" LAST_DANGE="" LAST_JINDO="" FOOTER_USED="" style="margin:0px;">
+
+		<h2	id="#ZMAT1#_head" class="menu#INDEX#">#ZMAT1_TX#&nbsp;&nbsp;<em	id="#ZMAT1#_DANGE_JINDO_TEXT" class="menu#INDEX#"></em>	<span class="control"><button type="button"	class="prev-button blind" onclick="prev('#ZMAT1#');">◀</button><button	type="button" class="next-button blind"	onclick="next('#ZMAT1#');">▶</button></span> <button type="button"	class="toggle-button blind">숨기기</button></h2>
+
+		<div class="viewport ThinkU	#ZMAT1#_DATACONTENT">
+
+			<input type="hidden" id="#ZMAT1#_check_data" name="#ZMAT1#_check_data" value="">
+			<select	id="#ZMAT1#_DANGE" class="menu#INDEX#" onchange="DANGE_change('#ZMAT1#',this.value);"  style="display:none;"></select>
+			<select	id="#ZMAT1#_JINDO" class="menu#INDEX#" onchange="JINDO_change('#ZMAT1#','','');"  style="display:none;"></select>
+			<select	id="#ZMAT1#_JINDO_ALL" class="menu#INDEX#"	style="display:none;"></select>
+
+			<div class="selecting">
+				<button	type="button" class="button-style s-size global" onclick="jindo_windows('#ZMAT1#');">호수조회</button>
+				<button	type="button" class="button-style s-size global" onclick="answer_windows('#ZMAT1#',false);">정답지</button>
+
+				<div class="message">
+					<p>★계획을	수립한 단계/호만 보여집니다.</p>
+				</div>
+			</div>
+			<div class="learning">
+				<div class="section">
+					<h3>
+						<strong	class="wrap">학습내용</strong>
+						<ins class="select_level" style="display:none;">선택한 레벨	<em	id="cls_level"><span>1</span></em></ins>
+					</h3>
+					<div class="article">
+						<div class="content" id="#ZMAT1#_STUDY_SUBJECT">
+						</div>
+						<div class="content" id="#ZMAT1#_STUDY_SUBJECT2" style="display:none;">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tabling">
+				<div class="dtype1">
+					<table border="1" class="col">
+					<caption class="hiding">학습점검 표</caption>
+					<thead>
+						<tr>
+							<th	scope="col">일차</th>
+							<th	scope="col">완료시간</th>
+							<th	scope="col">점수</th>
+							<th	scope="col">학습상태</th>
+						</tr>
+					</thead>
+					<tbody id='#ZMAT1#_STUDY_TB' class="menu#INDEX#">
+						<tr><td	colspan=4 style="text-align:center;">데이터가 없습니다.</td></tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<input type="hidden" value="" id="#ZMAT1#_STUDY_STATUS_LIST">
+						<input type="hidden" value="" id="#ZMAT1#_STUDY_DAY_SEQ_LIST">
+						<input type="hidden" value="" id="#ZMAT1#_STUDY_POP_OPEN_YN_LIST">
+						<button	type="button" class="button-style m-size submit" onclick="uMoney('#ZMAT1#');">U머니	주기</button>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="viewport #ZMAT1#_NOT_DATACONTENT" style="display:none;text-align:center;padding-top:24px;padding-bottom:24px;">
+			데이터가 없습니다.
+		</div>
+	</div>
+</div>
+<!-- 씽크U 템플릿 :	끝 -->
+
+<!-- 한자 모달 컨테이너	: 시작 -->
+<div id="Dialog">
+</div>
+<!-- 한자 모달 컨테이너	: 끝 -->
+
+
+<!-- 한자 모달 템플릿 :	시작 -->
+<div id="modal_hanja" class="none">
+
+	<div class="wrapper">
+		<div id="dialHeader" class="dialog-header">
+			<h1>씽크빅 선생님!</h1>
+		</div>
+
+		<div id="dialContents" class="dialog-contents">
+			<div class="daily_check">
+				<div class="message">
+					<p>교재점검	후 일차	별 <br />학습완료 여부를 체크해	주세요.</p>
+				</div>
+
+				<div class="form">
+					<table border="1">
+						<colgroup>
+							<col style="width: auto; " />
+							<col style="width: auto; " />
+							<col style="width: auto; " />
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th	scope="col">일차</th>
+								<th	scope="col">완료</th>
+								<th	scope="col">미완료</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<th	scope="row">1일차</th>
+								<td><input type="radio"	name="HANJA_1_DAY" id="HANJA_1_DAY2" value=" " checked="checked" /></td>
+								<td><input type="radio"	name="HANJA_1_DAY" id="HANJA_1_DAY1" value=" " /></td>
+							</tr>
+							<tr>
+								<th	scope="row">2일차</th>
+								<td><input type="radio"	name="HANJA_2_DAY" id="HANJA_2_DAY2" value=" " checked="checked" /></td>
+								<td><input type="radio"	name="HANJA_2_DAY" id="HANJA_2_DAY1" value=" " /></td>
+							</tr>
+							<tr>
+								<th	scope="row">3일차</th>
+								<td><input type="radio"	name="HANJA_3_DAY" id="HANJA_3_DAY2" value=" " checked="checked" /></td>
+								<td><input type="radio"	name="HANJA_3_DAY" id="HANJA_3_DAY1" value=" " /></td>
+							</tr>
+							<tr>
+								<th	scope="row">4일차</th>
+								<td><input type="radio"	name="HANJA_4_DAY" id="HANJA_4_DAY2" value=" " checked="checked" /></td>
+								<td><input type="radio"	name="HANJA_4_DAY" id="HANJA_4_DAY1" value=" " /></td>
+							</tr>
+							<tr>
+								<th	scope="row">5일차</th>
+								<td><input type="radio"	name="HANJA_5_DAY" id="HANJA_5_DAY2" value=" " checked="checked" /></td>
+								<td><input type="radio"	name="HANJA_5_DAY" id="HANJA_5_DAY1" value=" " /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<div id="dialFooter" class="dialog-footer">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button	type="button" class="button-style pop-size global" onclick="modal_hanja_cancel();">취소</button>
+						<button	type="submit" class="button-style pop-size submit" onclick="modal_hanja_save();">확인</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 한자 모달 템플릿 :	끝 -->
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>이번주학습정보</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/json2.js?"></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/connect.js?d=4" ></script>
+<script type="text/javascript" src="../js/CalendarUtil.js"></script>
+<script type="text/javascript" src="../js/A020400_msg.js?d=2"></script>
+<script type="text/javascript" src="../js/A020300.js?v=34"></script>
+<script type="text/javascript" src="../js/A020300_b.js?v=34"></script>
+<script type="text/javascript" src="../js/A020300_u.js?v=35"></script>
+<script type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+
+<script type="text/javascript" src="../js/extension.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function (){
+	// top버튼 터치시 보이게 설정
+    $('#Document').on('touchmove',function(e){ 
+        $('#Document #Aside button.top-button').show();
+    });
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+    $(window).scroll(function(){
+//        if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//        } else {
+//            $('#Document #Aside button.top-button').hide();
+//            $('#Document #Aside button.top-button').delay('100').fadeIn();
+//        }
+    });
+});
+
+</script>
+<noscript>
+    
+</noscript>
+</head>
+
+
+<body class="noscript">
+
+<!-- 호수조회  :  시작 -->
+<div id="Popup" style="display:none;">
+    <div id="popHeader">
+        <div class="container">
+            <h1>호수조회</h1>
+        </div>
+        <hr />
+    </div>
+
+    <div id="popContents" style="border:0px;">
+        <div class="container" style="border:0px;">
+
+            <div class="change_progress">
+                <div id="jindo_tree" class="menutrees">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popFooter">
+        <hr />
+        <div class="container">
+            <div class="performing">
+                <div class="bottom center">
+                    <span class="wrap jindo_button">
+                        <button type="button" class="button-style m-size global" onclick="jindo_windows_close();">취소</button>
+                        <button type="submit" class="button-style m-size submit" onclick="jindo_windows_check_end();">확인</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 호수조회  :  끝 -->
+
+<!-- 보강호 모달 시작 -->
+<div id="Dialog" style="display:none;">
+    <div class="wrapper">
+        <div id="dialHeader" class="dialog-header">
+            <h1>명원이의 학습결과입니다.</h1>
+        </div>
+
+        <div id="dialContents" class="dialog-contents">
+            <div class="strengthen_level">
+                <div class="recommend">
+                    <strong class="title">보강호의 권장레벨</strong>
+                    <em class="level">Level <span>1&amp;2</span></em>
+                </div>
+
+                <div class="list">
+                    <ul>
+                        <li><input type="radio" name="cls_level_radio" id="STRENGTHEN_LEVEL1" class="graphic" value="1"/><label for="STRENGTHEN_LEVEL1">Level 1 (교재3-13쪽) 학습하기</label></li>
+                        <li><input type="radio" name="cls_level_radio" id="STRENGTHEN_LEVEL2" class="graphic" value="2"/><label for="STRENGTHEN_LEVEL2">Level 2 (교재15-25쪽) 학습하기</label></li>
+                        <li><input type="radio" name="cls_level_radio" id="STRENGTHEN_LEVEL3" class="graphic" value="3"/><label for="STRENGTHEN_LEVEL3">Level 1, 2 모두 학습하기</label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="dialFooter" class="dialog-footer">
+            <div class="performing">
+                <div class="bottom center">
+                    <span class="wrap">
+                        <button type="submit" class="button-style pop-size submit" onclick="openLevel_windows_save();">저장</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<hr />
+</div>
+<!-- 보강호 모달 끝 -->
+
+<!-- 기본구조 시작 -->
+<div id="Document">
+	
+	<!-- 상단네비 : 시작 -->
+    <div id="Nav">
+        <div class="container">
+            <div id="local" class="area-lnb">
+                <ul>
+                    <li><a href='#' onclick="changePage_check('A020100.html');return false;" data-ajax="false">지난주학습점검</a></li>
+                    <li class="active"><a href='#' onclick="changePage_check('A020300.html');return false;" data-ajax="false">이번주학습정보</a></li>
+                    <li><a href='#' onclick="changePage_check('A020400.html');return false;" data-ajax="false">학부모상담</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 상단네비 : 끝 -->
+    
+    <!-- 씽크빅/씽크U템플릿 컨테이너 : 시작 -->
+    <div id="Contents" class="Learn_Manage">
+        <div class="container">
+        </div>
+    </div>
+    <!-- 씽크빅/씽크U템플릿 컨테이너 : 끝 -->
+    
+    <!-- 하단 top 버튼 : 시작 -->
+    <div id="Aside">
+		<hr />
+        <div class="container">
+            <button type="button" class="top-button blind" onclick="top_scroll();return false;">Top</button>
+        </div>
+    </div>
+    <!-- 하단 top 버튼 : 끝 -->
+</div>
+<!-- 기본구조 끝 -->
+
+<!-- 씽크빅	템플릿 : 시작 -->
+<div id="section_tmp" style="display:none;">
+<input type="hidden" id="#ZMAT1#_next_s" class="menu#INDEX#"  value="#NEXT_S#" style="display:none;"  />
+    <div class="section menu#INDEX#" id="#ZMAT1#_section" menu_index="#INDEX#" dataload_dange="false" zmat1="#ZMAT1#" ZMAT1_TX="#ZMAT1_TX#" DANGE="#DANGE#" JINDO="#JINDO#" DANGE_TX="#DANGE_TX#" JINDO_TX="#JINDO_TX#" LAST_DANGE="" LAST_JINDO="" LISTMAX="0" LISTNO="1" CATEGORY="B" DANGE_JINDO_TEXT="" FOOTER_USED="" style="margin:0px;">
+
+        <h2 id="#ZMAT1#_head" class="menu#INDEX#">#ZMAT1_TX#&nbsp;&nbsp;<em id="#ZMAT1#_DANGE_JINDO_TEXT" class="menu#INDEX#"></em> <span class="control"><button type="button" class="prev-button blind" onclick="prev('#ZMAT1#');">◀</button><button type="button" class="next-button blind" onclick="next('#ZMAT1#');">▶</button></span> <button type="button" class="toggle-button blind">숨기기</button></h2>
+
+        <div class="viewport">
+
+            <div class="selecting">
+                <button type="button" class="button-style s-size global" onclick="jindo_windows('#ZMAT1#');">호수조회</button>
+            </div>
+
+            <select id="#ZMAT1#_DANGE" class="menu#INDEX#" onchange="DANGE_change('#ZMAT1#',this.value);" style="display:none;">
+            </select> 
+            <select id="#ZMAT1#_JINDO" class="menu#INDEX#" onchange="JINDO_change('#ZMAT1#','','');" style="display:none;">
+            </select>
+
+            <div class="learning #ZMAT1#_DATACONTENT">
+                <div class="section" id="#ZMAT1#_MENT_GBN_A_DV">
+                    <h3><strong class="wrap">이렇게 지도하세요!</strong></h3>
+
+                    <div class="article">
+                        <div class="hiligh-box">
+                            <div class="postit">
+                                <h4 class="title #ZMAT1#_MENT_GBN_A"></h4>
+                                <div class="content">
+                                    <div class="text #ZMAT1#_DETAIL_A"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_math_B" style="display:none;">
+                    <h3><strong class="wrap" >티칭 포인트</strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_B"></div>
+
+                        <div class="article-toggle-button"><button type="button" class="close" onclick="detail_open(this);"><span>더보기</span></button></div>
+                    </div>
+
+                    <div class="article attach-article #ZMAT1#_detail_layer" style="margin-top:10px;">
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B1"><em class="wrap">티칭 포인트 상세</em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B1"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B2"><em class="wrap">주요 설명 방법</em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B2"></div>
+                    </div>
+                </div>
+
+                <div class="section study_tip #ZMAT1#_category_math" style="display:none;">
+                    <div class="hiligh-box">
+                        <div class="postit">
+                            <h3 class="title"><em class="#ZMAT1#_MENT_GBN_C"></em></h3>
+                            <div class="content">
+                                <div class="text #ZMAT1#_DETAIL_C"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_language" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_DETAIL_TITLE_A"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_A"></div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_language" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_DETAIL_TITLE_B"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_B"></div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_language" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_DETAIL_TITLE_C"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_C"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="section #ZMAT1#_category_chinese" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_MENT_GBN_B"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_B"></div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_chinese" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_MENT_GBN_C"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_C"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="section #ZMAT1#_category_koreanmaster" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_MENT_GBN_A"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_A"></div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_koreanmaster" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_DETAIL_B"></strong></h3>
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_B1"></div>
+                    </div>
+
+                    <div class="article #ZMAT1#_detail_layer" style="margin-top:10px;">
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B1_1"><em class="wrap">&nbsp;</em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B1_1"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B1_2"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B1_2"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B1_3"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B1_3"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_B1_4"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_B1_4"></div>
+                    </div>
+                </div>
+
+                <div class="section #ZMAT1#_category_koreanmaster" style="display:none;">
+                    <h3><strong class="wrap #ZMAT1#_DETAIL_C"></strong></h3>
+
+                    <div class="article">
+                        <div class="content #ZMAT1#_DETAIL_C1"></div>
+                    </div>
+                    <div class="article #ZMAT1#_detail_layer" style="margin-top:10px;">
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_C1_1"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_C1_1"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_C1_2"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_C1_2"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_C1_3"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_C1_3"></div>
+                        <h4 class="#ZMAT1#_DETAIL_TITLE_C1_4"><em class="wrap"></em></h4>
+                        <div class="content #ZMAT1#_DETAIL_C1_4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viewport #ZMAT1#_NOT_DATACONTENT" style="display:none;text-align:center;padding-top:24px;padding-bottom:24px;">
+                데이터가 없습니다.
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 씽크빅	템플릿 : 끝 -->
+
+
+<!-- 씽크U 템플릿 :	시작 -->
+<div id="section_u_tmp" style="display:none;">
+<input type="hidden" id="#ZMAT1#_next_s" class="menu#INDEX#"  value="#NEXT_S#" style="display:none;"  />
+    <div class="section menu#INDEX#" id="#ZMAT1#_section" menu_index="#INDEX#" dataload_dange="false" zmat1="#ZMAT1#" ZMAT1_TX="#ZMAT1_TX#" DANGE="#DANGE#" JINDO="#JINDO#" DANGE_TX="#DANGE_TX#" JINDO_TX="#JINDO_TX#" LAST_DANGE="" LAST_JINDO="" STLKN="#STLKN#" LISTMAX="0" LISTNO="1" CATEGORY="U" COURSE_CODE="#COURSE_CODE#" DANGE_JINDO_TEXT="" FOOTER_USED="" style="margin:0px;height:400;">
+
+        <h2 id="#ZMAT1#_head" class="menu#INDEX#">#ZMAT1_TX#&nbsp;&nbsp;<em id="#ZMAT1#_DANGE_JINDO_TEXT" class="menu#INDEX#"></em> <span class="control"><button type="button" class="prev-button blind" onclick="prev('#ZMAT1#');">◀</button><button type="button" class="next-button blind" onclick="next('#ZMAT1#');">▶</button></span> <button type="button" class="toggle-button blind">숨기기</button></h2>
+
+
+
+        <div class="viewport ThinkU #ZMAT1#_DATACONTENT">
+            <div class="selecting">
+                <button type="button" class="button-style s-size global" onclick="jindo_windows('#ZMAT1#');">호수조회</button>
+                <button type="button" class="button-style s-size global" onclick="study_click('#ZMAT1#');">학습내용확인</button>
+            </div>
+            
+            <select id="#ZMAT1#_DANGE" class="menu#INDEX#" onchange="DANGE_change('#ZMAT1#',this.value);" style="display:none;"></select>
+            <select id="#ZMAT1#_JINDO" class="menu#INDEX#" onchange="JINDO_change('#ZMAT1#',this.value,'');"  style="display:none;"></select>
+            <select id="#ZMAT1#_JINDO_ALL" class="menu#INDEX#"  style="display:none;"></select>
+
+            <div class="learning">
+                <div class="section">
+                    <div class="article">
+                        <div class="content summary" id="#ZMAT1#_STUDY_SUBJECT">
+                        </div>
+                        <div class="content summary" id="#ZMAT1#_STUDY_SUBJECT2" style=";">
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <div class="hiligh-box This_Week_Form">
+                            <div class="column">
+                                <div class="postit">
+                                    <h3 class="title">방문날짜</h3>
+                                    <div class="content">
+                                        <div class="input">
+                                            <div class="wrap">
+                                                <label for="THIS_WEEK_DATE"><input type="text" name="THIS_WEEK_DATE" id="#ZMAT1#_visit_date" value="" readonly="readonly" class="date" /></label>
+                                                <button type="button" class="calendar-button blind" onclick="app_openCalendar('visit_date_insert');" id="#ZMAT1#_date_picker">달력</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="postit #ZMAT1#_goal_score_div">
+                                    <h3 class="title">목표점수</h3>
+                                    <div class="content">
+                                        <div class="input">
+                                            <input type='hidden' id='#ZMAT1#_goal_score_back'>
+                                            <input type='hidden' id='#ZMAT1#_goal_score_back2'>
+                                            <div class="wrap">
+                                                <dl>
+                                                    <dt><label for="THIS_WEEK_SCORE1" id="#ZMAT1#_goal_score_text">사회</label></dt>
+                                                    <dd><input type="tel" maxlength="3" name="THIS_WEEK_SCORE1" id="#ZMAT1#_goal_score" value="" class="score"  onclick="this.value=this.value;" onblur="if($('##ZMAT1#_section').attr('REVISE_YN')=='N') {this.value=$('##ZMAT1#_goal_score_back').val();} else {if(parseInt(this.value)>100){this.value=$('##ZMAT1#_goal_score_back').val();}}" />점</dd>
+
+                                                    <dt class="#ZMAT1#_goal_score2_div" style="display:none;"><label for="THIS_WEEK_SCORE2" id="#ZMAT1#_goal_score2_text">과학1</label></dt>
+                                                    <dd class="#ZMAT1#_goal_score2_div" style="display:none;"><input type="tel" maxlength="3" name="THIS_WEEK_SCORE2" id="#ZMAT1#_goal_score2" value="" class="score" onclick="this.value=this.value;" onblur="if($('##ZMAT1#_section').attr('REVISE_YN')=='N') {this.value=$('##ZMAT1#_goal_score_back2').val();} else {if(parseInt(this.value)>100){this.value=$('##ZMAT1#_goal_score_back2').val();}}"/>점</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="postit #ZMAT1#_week_leve_div" style="display:none;">
+                                    <h3 class="title">권장레벨</h3>
+                                    <div class="content">
+                                        <div class="input">
+                                            <div class="wrap">
+                                                <dl>
+                                                    <dt><label for="THIS_WEEK_LEVEL">레벨</label></dt>
+                                                    <dd><input type="text" name="THIS_WEEK_LEVEL" id="#ZMAT1#_cls_level" value="" class="score" onclick="openLevel_windows();" readonly/></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="postit #ZMAT1#_week_leveDS_div" style="display:none;">
+                                    <h3 class="title">과정테스트</h3>
+                                    <div class="content">
+                                        <div class="input">
+                                            <div class="wrap">
+                                                <dl>
+                                                    <dt><label id="edition_type_comment">독서호는 과정테스트가 없습니다.</label></dt>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabling">
+                <div class="dtype1">
+                    <table border="1" class="col">
+                    <colgroup>
+                        <col style="width: 40px; " />
+                        <col style="width: auto; " />
+                        <col style="width: 40px; " />
+                        <col style="width: auto; " />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">일차</th>
+                            <th scope="col">날짜</th>
+                            <th scope="col">요일</th>
+                            <th scope="col">약속시간</th>
+                        </tr>
+                    </thead>
+                    <tbody id='#ZMAT1#_STUDY_TB'>
+                        <tr><td colspan=4 style="text-align:center;">데이터가 없습니다.</td></tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="performing">
+                <div class="bottom center">
+                    <span class="wrap">
+                        <button type="submit" class="button-style m-size submit" id="#ZMAT1#_FINISH_TEXT" onclick="plan_submit('#ZMAT1#');">계획약속하기</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="viewport #ZMAT1#_NOT_DATACONTENT" style="display:none;text-align:center;padding-top:24px;padding-bottom:24px;">
+            데이터가 없습니다.
+        </div>
+
+
+    </div>
+</div>
+<!-- 씽크U 템플릿 :	시작 -->
+
+<!-- 미사용 : 시작 -->
+<div id="section_hide" style="display:none;"></div>
+<div id="jindo_windows_hide" style="display:none;"></div>
+
+<div id="Dialog">
+</div>
+<!-- 미사용 : 끝 -->
+
+
+</body>
+</html>

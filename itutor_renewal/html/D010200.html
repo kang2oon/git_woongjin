@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D010200.js?v=0003"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Weat_Register_Search_Result">
+		<div class="container">
+			<div class="section">
+				<div class="viewport">
+					<!-- 리스트 컨테이너 : 시작 -->
+					<div class="title-list" id="dataList">
+					</div>
+					<!-- 리스트 컨테이너 : 끝 -->
+					
+					<!-- 리스트 템플릿 : 시작 -->
+					<div class="title-list none" id="tmpList">
+						<ul>
+							<li>
+								<strong class="title">#NAME1#(#KATR1_TX#)</strong>
+								<div class="content">
+									<ul>
+										<li>
+											<strong class="term">지국명</strong>
+											<span class="desc">#VKBUR_TX#</span>
+											<span class="string-slash">/</span>
+											<strong class="term">교사명</strong>
+											<span class="desc">#TUTOR_TX#</span>
+										</li>
+										<li>
+											<strong class="term">주소</strong>
+											<span class="desc">#ORT01#</span>
+										</li>
+									</ul>
+
+									<div class="send">
+										<button type="button" class="button-style s-size global" onclick="detail_info('#KUNNR#');">상세정보</button>
+										<button type="button" class="button-style s-size global" onclick="detail_weat('#KUNNR#');">상세응시이력</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 리스트 템플릿 : 끝 -->
+					
+					
+					<!-- 회원 등록 버튼 : 시작 -->
+					<div class="explain">
+						<div class="message">
+							<p>
+								WEAT등록을 위하는 고객의 이름을 누르세요.<br />
+								<strong class="ins">원하는 회원이 없으면, 신규회원으로 등록해주세요.</strong>
+							</p>
+						</div>
+
+						<div class="send">
+							<button type="button" class="button-style l-size global" onclick="memberSubmit();">WEAT 신규회원 등록</button>
+						</div>
+					</div>
+					<!-- 회원 등록 버튼 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

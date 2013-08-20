@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D010400.js?v=0008"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Weat_History">
+		<div class="container">
+			<!-- 회원정보 : 시작 -->
+			<div class="section">
+				<h2><strong class="wrap">회원정보</strong></h2>
+
+				<div class="viewport">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									학생명
+								</strong>
+								<span class="field">
+									<span class="string" id="NAME1"></span> <button type="button" class="button-style s-size global" onclick="detail_info();">상세정보</button>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									주민번호
+								</strong>
+								<span class="field">
+									<span class="string" id="GBDAT"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									주소
+								</strong>
+								<span class="field">
+									<span class="string" id="address_info"></span>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="button" class="button-style m-size global" onclick="answerSubmit();">WEAT 답안등록</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 회원정보 : 끝 -->
+
+			<div class="section">
+				<h2><strong class="wrap">회원님의 WEAT 응시이력</strong></h2>
+				
+				<!-- 응시이력 : 시작 -->
+				<div class="viewport">
+					<div class="title-list">
+						<ul id="weat_history">
+							<li>
+								<div class="content">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 응시이력 : 끝 -->
+				
+				<!-- 응시이력템플릿 : 시작 -->
+				<div class="content none">
+					<ul id="temp_weat_history">
+						<li>
+							<div class="content">
+								<ul>
+									<li>
+										<strong class="term">지국명</strong>
+										<span class="desc">#VKBUR_TX#</span>
+										<span class="string-slash">/</span>
+										<strong class="term">교사명</strong>
+										<span class="desc">#TUTOR_TX#</span>
+									</li>
+									<li>
+										<strong class="term">평가시행일</strong>
+										<span class="desc">#SDATE#</span>
+									</li>
+									<li>
+										<strong class="term">언어(T점수)</strong>
+										<span class="desc"><a onclick="result_view('LA','#POSNM#','#KIDS_LA#');" class="anchor box">#KJUMS#</a></span>
+										<span class="string-slash">/</span>
+										<strong class="term">수리(T점수)</strong>
+										<span class="desc"><a onclick="result_view('MA','#POSNM#','#KIDS_MA#');" class="anchor box">#SJUMS#</a></span>
+										<span class="string-slash">/</span>
+										<strong class="term">인지</strong>
+										<span class="desc"><a onclick="result_view('CO','#POSNM#','#KIDS_CO#');" class="anchor box">#AJUMS#</a></span>
+										<span class="string-slash">/</span>
+										<strong class="term">감각운동</strong>
+										<span class="desc"><a onclick="result_view('SE','#POSNM#','#KIDS_SE#');" class="anchor box">#BJUMS#</a></span>
+										<span class="string-slash">/</span>
+										<strong class="term">사회정서</strong>
+										<span class="desc"><a onclick="result_view('EM','#POSNM#','#KIDS_EM#');" class="anchor box">#CJUMS#</a></span>                                                                                                                        
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 응시이력템플릿 : 끝 -->
+			</div>
+		</div>
+	</div>
+
+	<div id="Aside">
+<hr />
+
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+</div>
+<div id="Dialog">
+</div>
+
+<div id="modal_history_age" class="none">
+
+	<div class="wrapper">
+		<div id="dialHeader" class="dialog-header">
+			<h1>WEAT 응시 연령</h1>
+		</div>
+
+		<div id="dialContents" class="dialog-contents">
+			<div class="select_list">
+				<div class="form">
+					<ul>
+						<li><input type="radio" name="WEAT_HISTORY_AGE" id="WEAT_HISTORY_AGE1" value="1" /> <label for="WEAT_HISTORY_AGE1">13개월 ~ 60개월(만4세) 까지</label></li>
+						<li><input type="radio" name="WEAT_HISTORY_AGE" id="WEAT_HISTORY_AGE2" value="2" /> <label for="WEAT_HISTORY_AGE2">6세(만5세) ~ 초등</label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="dialFooter" class="dialog-footer">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="button" class="button-style pop-size global" onclick="modal_history_cancel();">취소</button>
+						<button type="submit" class="button-style pop-size submit" onclick="modal_history_save();">확인</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

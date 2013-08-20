@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/D010500.js?v=0002"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Weat_Member">
+		<div class="container">
+			<div class="section">
+				<!-- 회원정보 : 시작 -->
+				<div class="viewport">
+					<input type="hidden" id="MODIX" value="">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									회원번호
+								</strong>
+								<span class="field">
+									<span class="string" id="KUNNR"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									진행수업
+								</strong>
+								<div class="field">
+									<ul class="inline-list" id="ZMATX">
+									</ul>
+								</div>
+							</li>
+
+							<li>
+								<strong class="label">
+									학생명
+								</strong>
+								<span class="field">
+									<span class="string" id="NAME1"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									생년월일
+								</strong>
+								<span class="field">
+									<span class="string" id="GBDAT"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<span class="super">학년/성별</span>
+								</strong>
+								<span class="field">
+									<span class="string"><span id="KATR1_TX"></span>/<span id="PARGE"></span></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									전화번호
+								</strong>
+								<span class="field">
+									<span class="string" id="TELF1"></span>
+								</span> 
+							</li>
+							<li>
+								<strong class="label">
+									휴대폰
+								</strong>
+								<span class="field">
+									<span class="string" id="TELF2"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									이메일
+								</strong>
+								<span class="field">
+									<span class="string" id="SMTP_ADDR"></span>
+								</span>
+							</li>
+							<li>
+								<strong class="label">
+									<span class="hyper">등록수정일</span>
+								</strong>
+								<span class="field">
+									<span class="string" id="DATE1"></span>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="button" class="button-style m-size global" onclick="app_goCancel();">취소</button>
+								<button type="button" class="button-style m-size global" onclick="editSubmit();">수정</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- 회원정보 : 끝 -->
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>

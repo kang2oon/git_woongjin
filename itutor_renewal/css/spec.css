@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* ----------------------------------------------------------------------------------------------- 
+ *	2dea.Com Publishing.Div
+ * Author	: 2009-09-09 by 2dea
+ * Descript	: iTutor Mobile-Special CSS
+ * Edit+	: 2010-08-25 by 2dea
+ * Comment	: Modified Line	-
+ ----------------------------------------------------------------------------------------------- */
+
+/* [!] Properties ordering
+	content			: Value("string");
+	display			: Value;
+	float			: Value;
+	clear			: Value;
+	position		: Value;
+	z-index			: Value;
+	left			: Value;
+	right			: Value;
+	top				: Value;
+	bottom			: Value;
+	margin			: Value;
+	border			: Value[width style];
+	padding			: Value;
+	box-sizing		: Value;
+	box-shadow		: Value;
+	min-width		: Value;
+	min-height		: Value;
+	width			: Value;
+	hieght			: Value;
+	max-width		: Value;
+	max-height		: Value;
+	visibility		: Value;
+	overflow		: Value;
+	white-space		: Value(normal | nowrap{word-break: nowrap; } | pre | pre-line | pre-wrap | inherit);
+	text-overflow	: Value(clip | ellipsis | "string");
+	text-align		: Value;
+	text-justify	: Value;
+	vertical-align	: Value(baseline | sub | super | length | percentage);
+	border-color	: Value;
+	background-color: Value;
+	background		: Value[color position size(length | percentage | cover | contain) repeat origin clip attachment image];
+	color			: Value;
+	opacity			: Value;
+	font-style		: Value;
+	font-weight		: Value;
+	font-size		: Value;
+	font-family		: Value;
+	line-height		: Value;
+	font			: Value[style variant weight size/line-height family];
+	letter-spacing	: Value;
+	word-spacing	: Value;
+	word-break		: Value(normal{word-break: keep-all; } | break-all | hyphenate);
+	word-wrap		: Value(normal | break-word{word-break: break-word; });
+	text-indent		: Value;
+	text-transform	: Value;
+	text-decoration	: Value;
+	text-outline	: Value;
+	text-shadow		: Value;
+	list-style		: Value;
+	table-layout	: Value(auto | fixed);
+	empty-cells		: Value(show | hide);
+	border-collapse	: Value(separate | collapse);
+	border-spacing	: Value;
+	border-radius	: Value;
+	cursor			: Value;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: none;
+*/
+
+/* Special-Style Selector */
+.longdesc {display: block; position: absolute; left: -10240px; width: 1px; height: 1px; overflow: hidden; }
+.heading, .hiding {margin: 0px !important; padding: 0px !important; width: 0px !important; height: 0px !important; visibility: hidden !important; overflow: hidden !important; font-size: 0em !important; line-height: 0em !important; letter-spacing: -2em !important; }
+
+.testing {outline: thick solid #F00 !important; }
+.debuging {position: relative !important; outline: thick solid #C00; }
+.debuging:after {content: ""; display: block; position: absolute; z-index: 1000; left: 13px; top: 0px; width: 90px; height: 50px; background: #F00; }
+/* .alpha {display: block; position: fixed !important; position: absolute; z-index: 99; left: 0px; top: 0px; width: 100%; height: 100%; background: #000; opacity: 0.3; filter: alpha(opacity=30); } */
+
+.rtl {direction: rtl; }
+
+.none {display: none !important; }
+.inline {display: inline !important; }
+.block {display: block !important; }
+.inblock {display: inline-block !important; }
+.tcell {display: table-cell !important; vertical-align: middle; }
+
+.float {float: left !important; }
+.clear {clear: both !important; }
+.floating {display: inline-block; }
+html>/**/body .floating {display: block; }
+html>/**/body .floating:after {content: ""; display: block; clear: both; height: 0px; visibility: hidden; }
+
+.static {position: static !important; }
+.relative {position: relative !important; }
+.absolute {position: absolute !important; }
+.fixed {position: fixed !important; }
+
+.break {margin: 0px !important; padding: 0px !important; }
+.enter {margin-top: 0px !important; }
+
+.outdent {padding-left: 1em; text-indent: -1em; }
+.indent {padding-left: 10px !important; }
+.semi-indent {padding-left: 5px !important; }
+
+.noline {border: 0px none !important; }
+.noline-t {border-top: 0px none !important; }
+.noline-r {border-right: 0px none !important; }
+.noline-b {border-bottom: 0px none !important; }
+.noline-l {border-left: 0px none !important; }
+
+.size-quarter {width: 24% !important; }
+.size-half {width: 48% !important; }
+.size-double {width: 74% !important; }
+.size-whole {width: 98% !important; }
+
+.hidden {visibility: hidden !important; }
+.visible {visibility: visible !important; }
+
+.auto {overflow: auto; }
+
+.pre {white-space: pre !important; }
+.nowrap {white-space: nowrap !important; }
+
+.left, .lt {text-align: left !important; }
+.right, .rt {text-align: right !important; }
+.center, .ct {text-align: center !important; }
+.justify, .jt {text-align: justify !important; }
+
+.abstop {vertical-align: text-top !important; }
+.absbtm {vertical-align: text-bottom !important; }
+.absmid {vertical-align: middle !important; }
+
+.nobg {background-repeat: no-repeat !important; background-position: -10240px -10240px !important; }
+
+.gray {color: darkgrey !important; }
+
+.normal {font-style: normal; font-variant: normal; font-weight: normal; }
+.oblique, .italic, .i {font-style: italic !important; }
+.small-caps {font-variant: small-caps !important; }
+.bold, .b {font-weight: bold !important; }
+
+.blind {font-size: 0em; line-height: 0em; text-indent: -10240px; }
+.xsmall, .xs {font-size: 0.75em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+.small, .s {font-size: 0.9em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+.medium, .m {font-size: 1em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+.large, .l {font-size: 1.16em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+.xlarge, .xl {font-size: 1.25em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+.xxlarge, .xxl {font-size: 1.33em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; line-height: 1.168em; }
+
+.type-en, :lang(en) {font-family: 'Tahoma', 'Geneva', 'Verdana', 'Arial', sans-serif; }
+.type-serif {font-family: 'Georgia', 'Times New Roman', serif; }
+.type-monospace {font-family: 'Consolas', 'Courier New', 'Lucida Console', monospace; }
+.type-em {font-family: 'Century Gothic', 'Arial Black', sans-serif; }
+.type-ko {font-family: '굴림', 'Gulim', '돋움', 'Dotum', '맑은 고딕', 'Malgun Gothic', 'AppleGothic', sans-serif; }
+.type-serif-ko {font-family: '바탕', 'Batang', '궁서', 'Gungsuh', 'AppleMyumgjo', serif; }
+.type-monospace-ko {font-family: '굴림체', 'Gulimche', '돋움체', 'Dotumche', '바탕체', 'Batangche', '궁서체', 'Gungsuhche', monospace; }
+.type-zh, :lang(zh) {font-family: 'MS Song', '굴림', 'Gulim', sans-serif; }
+.type-ja, :lang(ja) {font-family: 'MS Gothic', '굴림', 'Gulim', sans-serif; }
+
+.type-num, .num .url {font-size: 0.9em; font-family: 'Tahoma', 'Geneva', 'Verdana', 'AppleGothic', sans-serif; }
+.type-kit {font-size: 0.9em; font-family: '돋움', 'Dotum', 'AppleGothic', sans-serif; }
+
+.paragraph, .par {line-height: 1.5em !important; }
+.classic-line {line-height: 1.418em !important; }
+.general-line {line-height: 1.333em !important; }
+.modern-line {line-height: 1.25em !important; }
+.default-line {line-height: 1.168em !important; }
+
+.super {letter-spacing: -1px !important; }
+.hyper {letter-spacing: -2px !important; }
+.super-word {word-spacing: -1px !important; }
+.hyper-word {word-spacing: -2px !important; }
+
+.capitalize {text-transform: capitalize !important; }
+.uppercase {text-transform: uppercase !important; }
+.lowercase {text-transform: lowercase !important; }
+
+.ins, .u {text-decoration: underline !important; }
+.del, .strike {text-decoration: line-through !important; }
+.upbar {text-decoration: overline !important; }
+.nobar {text-decoration: none !important; }
+
+.decimal {list-style: decimal inside !important; }
+
+.tfixed {table-layout: fixed !important; }
+
+.hand {cursor: pointer !important; }
+.help {cursor: help !important; }

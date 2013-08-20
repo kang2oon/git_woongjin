@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<title>jQuery treeview</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#red").treeview({
+			persist : "location",
+			collapsed : true,
+			unique : true,
+		toggle: function() {
+			window.console && console.log("%o was toggled", this);
+		}
+	});
+});
+</script>
+
+
+</head>
+
+<body>
+
+<div id="main">
+	<ul id="red" class="treeview-red">
+		<li><span>A단계</span>
+			<ul>
+				<li>
+					<a href="#1">
+						<label for="chk1">
+							<input type="radio" id="chk1" name="chk1" /> Item 1.0
+						</label>
+					</a>
+				</li>
+
+				<li>
+					<a href="#1">
+						<label for="chk3">
+							<input type="radio" id="chk3" name="chk3" /> Item 3.0
+						</label>
+					</a>
+				</li>
+
+			</ul>
+		</li>
+		<li><span>B단계</span>
+			<ul>
+				<li class="open hover">
+					<a href="#1">
+						<label for="chk1">
+							<input type="radio" id="chk1" name="chk1" /> Item 1.0
+						</label>
+					</a>
+				</li>
+
+				<li>
+					<a href="#1">
+						<label for="chk3">
+							<input type="radio" id="chk3" name="chk3" /> Item 3.0
+						</label>
+					</a>
+				</li>
+
+			</ul>
+		</li>
+
+	</ul>
+</div>
+ 
+</body>
+</html>

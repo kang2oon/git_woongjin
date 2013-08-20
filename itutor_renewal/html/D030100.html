@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=00" ></script>
+<script type="text/javascript" src="../js/D030100.js?v=03"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+    
+    
+                
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<!--  상단 네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li id="navSE" class="active"><a href="#" onclick="move_area('SE');">감각운동</a></li>
+					<li id="navCO"><a href="#" onclick="move_area('CO');">인지</a></li>   
+					<li id="navLA"><a href="#" onclick="move_area('LA');">언어</a></li>
+					<li id="navEM"><a href="#" onclick="move_area('EM');">사회정서</a></li>
+                    <li id="navMA" class="none"><a href="#" onclick="move_area('MA');">수리</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<!--  상단 네비 : 끝 -->
+
+	<div id="Contents" class="Weat_Answers">
+		<div class="container">
+			<div class="informing">
+				<p>응시영역은 모든 문항의 답안체크를 해야 <br />분석지가 출력됩니다.</p>
+			</div>
+
+			<div class="section">
+				<h2>
+					<strong class="wrap section_name">감각운동</strong>
+				</h2>
+				<input type="hidden" id="area_code" value="SE" />
+                <input type="hidden" id="grade_term" />
+
+				<div class="viewport">
+					<!-- 응시 미응시 : 시작 -->
+					<div class="absolute-select">
+						<select id="apply_chk" class="apply_chk">
+                            <option value="Y">응시</option>
+							<option value="N" selected >미응시</option>
+						</select> 
+					</div>
+					<!-- 응시 미응시 : 끝 -->
+					
+					<!-- 답안리스트 : 시작 -->
+					<div class="dtype1">
+						<table border="1" class="col top">
+							<colgroup>
+								<col style="width: 14%; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+							<thead>
+								<tr>
+									<th scope="row">문항</th>
+									<th scope="row" id="colsData">답안체크 및 정답</th>
+								</tr>
+							</thead>
+	
+							<tbody id='TB_DATA'>
+								<tr>
+									<td colspan=2>검색 데이터가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 답안리스트 : 끝 -->
+
+					<!-- 하단 버튼부 : 시작 -->
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="submit" class="button-style m-size submit" id="submitButton">다음</button>
+							</span>
+						</div>
+					</div>
+					<!-- 하단 버튼부 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+
+<script type="text/javascript">
+         $("#Nav .area-lnb  ul  li").width("23%");
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회원 상세</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<style type="text/css">
+#local {position: fixed; width: 100%; height: 40px; background: #000; color: #FFF; }
+.dtype1 {padding-top: 28px; }
+table.col th, table.col td {text-align: left !important; }
+</style>
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="../js/json2.js?v0004"></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/connect.js" ></script>
+<script type="text/javascript" src="../js/CalendarUtil.js"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<noscript>
+	
+</noscript>
+</head>
+
+<body class="noscript">
+	<select id="A000006414_JINDO"></select>
+<br><Br><a href='#' onclick='location.reload();'>새로고침</a>
+</body>
+</html>
+<script>
+	course_code="KORN";
+	ZMAT1_SELECT_DATA="A000006414";
+	object_tmp = "#"+ZMAT1_SELECT_DATA+"_JINDO";
+
+	alert("Load Start");
+	var param = {
+			in_course_code : course_code,
+			in_erp_order_no : ZMAT1_SELECT_DATA,
+			in_menu_code : 'CL02'
+	}
+
+	loader.service({
+		Function : 'sp_it_cls_edition_menu_s_r',
+		Parameter : param,
+		CursorCnt : '2',
+		Success: function(data){
+
+			alert("Success start");
+			SELECTED_DANGE_NAME = "";
+			SELECTED_REVISE_YN = "";
+			temp_max_num=0;
+
+			alert($(data).find('Table').length);
+			if( $(data).find('Table').length>0 ){
+				$(data).find('Table').each(function(){
+
+					tmp_STAGE_NAME	= $(this).find( 'STAGE_NAME' ).text();
+					tmp_DANGE_SEQ	= $(this).find( 'EDITION_SEQ' ).text();
+					tmp_DANGE_NAME	= $(this).find( 'EDITION_NAME' ).text();
+					tmp_EDITION_SEQ	= $(this).find( 'EDITION_SEQ' ).text();
+					tmp_SELECTED	= $(this).find( 'DEFAULT_YN' ).text();
+					tmp_REVISE_YN	= $(this).find( 'REVISE_YN' ).text();
+					tmp_ORDER_SEQ	= $(data).find('Table1').find('ORDER_SEQ').text();
+					tmp_STUDY_SUBJECT	= $(this).find( 'STUDY_SUBJECT' ).text();
+					tmp_LVL_OPTION	= $(this).find( 'LVL_OPTION' ).text();
+
+					if("O단계"==tmp_STAGE_NAME) {
+
+						$(object_tmp).append("<option value='"+tmp_DANGE_NAME+"' LVL_OPTION='"+tmp_LVL_OPTION+"' STUDY_SUBJECT='"+tmp_STUDY_SUBJECT+"' REVISE_YN='"+tmp_REVISE_YN+"' EDITION_SEQ='"+tmp_EDITION_SEQ+"' ORDER_SEQ='"+tmp_ORDER_SEQ+"'>"+tmp_DANGE_NAME+"</option>");
+						temp_max_num=temp_max_num+1
+					}
+
+					if(tmp_SELECTED=="Y") {
+						SELECTED_DANGE_NAME	=tmp_DANGE_NAME;
+					}
+				});
+
+				$(object_tmp).val(SELECTED_DANGE_NAME).attr("selected", "selected");
+
+			}
+			alert("Load End");
+
+		},
+		Error: function($e){
+		}
+	});
+</script>

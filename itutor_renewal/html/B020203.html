@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>회비 카드결제 약관동의</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0016" ></script>
+<script type="text/javascript" src="../js/B020203.js?v=0002"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	
+	<!-- 결재내용확인 : 시작 -->
+	<div id="Contents" class="Pay_Card_Form">
+		<div class="container">
+			<div class="section">
+				<div class="viewport">
+					<input type="hidden" value="" id="E_SPMON">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label">
+									회원명
+								</strong>
+								<span class="field">
+									<span class="string" id="NAME1"></span>
+								</span>
+							</li>
+
+<!-- 카드명_주석처리 2013.04.03 NDH
+							<li>
+								<strong class="label">
+									카드명
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_NAME"></span>
+								</span>
+							</li>
+-->
+
+							<li>
+								<strong class="label">
+									에듀프리
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_EDUFREE"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									카드번호
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_NUMBER"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									유효기간
+								</strong>
+								<span class="field">
+									<span class="string" id="CARD_USE_DATE"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									금액
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_SUM"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									할부기간
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_INSTALLMENT"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									<span class="hyper">카드소유주</span>
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_PERSON"></span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label">
+									주민번호
+								</strong>
+								<span class="field">
+									<span class="string" id="PAY_CARD_PERSON_SSNUM"></span>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="agreement_form">
+						<div class="signature">
+							<em>보호자사인</em>
+							<span class="sign"><img id="imgEl" src="../image/null_noimage_signature.png" style="border:1px solid #000;" width="64"  /></span>
+						</div>
+					</div>
+
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="submit" class="button-style m-size submit" onclick="allotmentSubmit();">배분</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 결재내용확인 : 끝 -->
+	
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+</body>
+</html>
