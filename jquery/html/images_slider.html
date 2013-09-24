@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Images Slider &lt; jQuery_Test</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<script type="text/javascript" src="/inc/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/inc/js/coin-slider.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#coin-slider').coinslider({ width: 557, height:281, navigation: true, delay: 50000, links : false, navigation: true, hoverPause: true });
+		});
+	</script>
+
+</head>
+<body>
+<div class="slide_images">
+	<div id='coin-slider'>
+		<a href="javascript:void(0);">
+			<img src='/images/picture1.jpg' >
+			<span>
+				Description for img01
+			</span>
+		</a>
+
+		<a href="javascript:void(0);">
+			<img src='/images/picture2.jpg' >
+			<span>
+				Description for img02
+			</span>
+		</a>
+
+		<a href="javascript:void(0);">
+			<img src='/images/picture3.jpg' >
+			<span>
+				Description for img03
+			</span>
+		</a>
+	</div>
+</div>
+
+<div style="width:557px;margin:50px auto;">
+	<pre>
+width: 565, // width of slider panel
+height: 290, // height of slider panel
+spw: 7, // squares per width
+sph: 5, // squares per height
+delay: 3000, // delay between images in ms
+sDelay: 30, // delay beetwen squares in ms
+opacity: 0.7, // opacity of title and navigation
+titleSpeed: 500, // speed of title appereance in ms
+effect: '', // random, swirl, rain, straight
+navigation: true, // prev next and buttons
+links : true, // show images as links
+hoverPause: true // pause on hover
+	</pre>
+</div>
+
+</body>
+</html>

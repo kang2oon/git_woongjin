@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>NEWS TICKER &lt; jQuery_Test</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<script type="text/javascript" src="/inc/js/jquery-1.6.0.min.js"></script> <!-- 뉴스티커는 1.6.0에서만 작동 ??? -->
+	<script type="text/javascript" src="/inc/js/jquery.ticker.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			 // start the ticker 
+			$('#js-news').ticker();
+		});
+	</script>
+</head>
+<body>
+	<ul id="js-news" class="js-hidden">
+		<li class="news-item"><a href="javascript:void(0);">jQuery News Ticker now has support for multiple tickers per page!</a></li>
+		<li class="news-item">jQuery News Ticker now has support for right-to-left languages!</li>
+		<li class="news-item">jQuery News Ticker now has support for loading content via an RSS feed!</li>
+		<li class="news-item">jQuery News Ticker now has an optional fade effect between items!</li>
+		<li class="news-item">New updates have been made to jQuery News Ticker! Check below for more details!</li>
+		<li class="news-item">jQuery News Ticker is now compatible with jQuery 1.3.2! See below for further details and for latest download.</li>
+		<li class="news-item">Further updates to jQuery News Ticker are coming soon!</li>
+	</ul>
+</body>
+</html>

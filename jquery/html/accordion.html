@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Basic &lt; jQuery_Test</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<script type="text/javascript" src="/inc/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/inc/js/jquery.accordion.js"></script>
+
+	<script type="text/javascript">
+	jQuery().ready(function(){
+		// simple accordion
+		jQuery('#list1a').accordion({
+			autoheight: true
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="basic" id="list1a">
+		<a>There is one obvious advantage:</a>
+		<div>
+			<p>
+				You've seen it coming!<br/>
+				Buy now and get nothing for free!<br/>
+				Well, at least no free beer. Perhaps a bear,<br/>
+				if you can afford it.
+			</p>
+		</div>
+		<a>Now that you've got...</a>
+		<div>
+			<p>
+				your bear, you have to admit it!<br/>
+				No, we aren't selling bears.
+			</p>
+		</div>
+		<a>Rent one bear, ...</a>
+		<div>
+			<p>
+				get two for three beer.
+			</p>
+			<p>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				And now, for something completely different.<br/>
+				Period.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
