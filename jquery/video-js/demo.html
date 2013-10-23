@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.js"></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "/video/f4player.swf";
+//	videojs.options.flash.swf = "video-js.swf";
+  </script>
+
+
+</head>
+<body>
+
+  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+    <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+	<object id="f4Player" width="852" height="480" type="application/x-shockwave-flash" data="/video/f4player.swf"> 
+			<param name="movie" value="/video/f4player.swf" /> 
+			<param name="quality" value="high" /> 
+			<param name="menu" value="false" /> 
+			<param name="scale" value="noscale" /> 
+			<param name="allowfullscreen" value="true"> 
+			<param name="allowscriptaccess" value="always"> 
+			<param name="swlivevonnect" value="true" /> 
+			<param name="cachebusting" value="false"> 
+			<param name="flashvars"   value="skin=/video/mySkin.swf&thumbnail=http://video-js.zencoder.com/oceans-clip.png&video=http://video-js.zencoder.com/oceans-clip.mp4"/> 
+			<a href="http://www.adobe.com/go/flashplayer/">Download it from Adobe.</a>
+		</object>
+  </video>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Table Sortable Test</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<script type="text/javascript" src="/inc/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/inc/js/jquery.tablesorter.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() 
+			{ 
+				$("#myTable").tablesorter( {sortList: [[0,0], [2,0]]} ); // [cell_sq, (0:asc, 1:desc)] - 기본 정렬 설정
+			} 
+		);
+	</script>
+</head>
+<body>
+
+	<table id="myTable" class="tablesorter"> 
+	<thead> 
+	<tr> 
+		<th>Last Name</th> 
+		<th>First Name</th> 
+		<th>Email</th> 
+		<th>Due</th> 
+		<th>Web Site</th> 
+	</tr> 
+	</thead> 
+	<tbody> 
+	<tr> 
+		<td>Smith</td> 
+		<td>John</td> 
+		<td>jsmith@gmail.com</td> 
+		<td>$50.00</td> 
+		<td>http://www.jsmith.com</td> 
+	</tr> 
+	<tr> 
+		<td>Bach</td> 
+		<td>Frank</td> 
+		<td>fbach@yahoo.com</td> 
+		<td>$50.00</td> 
+		<td>http://www.frank.com</td> 
+	</tr> 
+	<tr> 
+		<td>Doe</td> 
+		<td>Jason</td> 
+		<td>jdoe@hotmail.com</td> 
+		<td>$100.00</td> 
+		<td>http://www.jdoe.com</td> 
+	</tr> 
+	<tr> 
+		<td>Conway</td> 
+		<td>Tim</td> 
+		<td>tconway@earthlink.net</td> 
+		<td>$50.00</td> 
+		<td>http://www.timconway.com</td> 
+	</tr> 
+	</tbody> 
+	</table>		
+
+</body>
+</html>

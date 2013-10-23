@@ -20,7 +20,7 @@
 				mousestop	:	true,
 				speed : 1000,
 				interval : 3000,
-				max_items : 1,
+				max_items : 1
 			});
 
 			$('#vertical-ticker1').totemticker({
@@ -32,7 +32,17 @@
 				mousestop	:	true,
 				speed : 500,
 				interval : 5000,
-				max_items : 1,
+				max_items : 1
+			});
+
+			$("#stop1").click(function(){
+				$(this).hide();
+				$("#start1").show();
+			});
+
+			$("#start1").click(function(){
+				$(this).hide();
+				$("#stop1").show();
 			});
 		});
 	</script>
@@ -62,6 +72,6 @@
 		<li>U Smile</li>
 	</ul>
 
-	<p><a href="#" id="ticker-previous1">Previous</a> / <a href="#" id="ticker-next1">Next</a> / <a id="stop1" href="#">Stop</a> / <a id="start1" href="#">Start</a></p>
+	<p><a href="#" id="ticker-previous1">Previous</a> / <a href="#" id="ticker-next1">Next</a> / <a id="stop1" href="#">Stop</a> <a id="start1" href="#" style="display:none;">Start</a></p>
 </body>
 </html>

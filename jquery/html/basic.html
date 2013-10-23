@@ -16,6 +16,11 @@
 	  $(".show").click(function(){
 		$("p").show();
 	  });
+
+	  $( "a" ).click(function( event ) {
+		$(this).addClass( "test" );
+		alert( "Thanks for visiting!" );
+	  });
 	});
 	</script>
 </head>
@@ -24,5 +29,7 @@
 	<p>Click me away!</p>
 	<p>Click me too!</p>
 	<p class="show">All Show</p>
+	<br/>
+	<a href="javascript:void(0);">alert</a>
 </body>
 </html>

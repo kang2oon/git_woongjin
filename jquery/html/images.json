@@ -1,0 +1,22 @@
+[
+	{
+		"img": "/images/slide-civil-1.jpg",
+		"thumb": "/images/slide-civil-1.jpg",
+		"url": "http://www.naver.com"
+	},
+	{
+		"img": "/images/slide-env-1.jpg",
+		"thumb": "/images/slide-env-1.jpg",
+		"url": "http://www.daum.net"
+	},
+	{
+		"img": "/images/slide-civil-2.jpg",
+		"thumb": "/images/slide-civil-2.jpg",
+		"url": "http://www.google.com"
+	},
+	{
+		"img": "/images/slide-env-2.jpg",
+		"thumb": "/images/slide-env-2.jpg",
+		"url": "http://www.kang2oon.com"
+	}
+]

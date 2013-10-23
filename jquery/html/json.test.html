@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery.getJSON demo</title>
+<style>
+img {
+height: 100px;
+float: left;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+
+<div id="images"></div>
+
+<script>
+	(function() {
+//	var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+//	$.getJSON( flickerAPI, {
+//	tags: "landscape wide",
+//	tagmode: "any",
+//	format: "json"
+//	})
+//	.done(function( data ) {
+//	$.each( data.items, function( i, item ) {
+//	$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+//	if ( i === 100 ) {
+//	  return false;
+//	}
+//	});
+//	});
+		$.getJSON( "test.json", function( data ) {
+			var items = [];
+			$.each( data, function( index, val ) {
+				items.push( "<li id='" + index + "'>" + val.Manufacturer + ","  + val.Sold + ","  + val.Month + "</li>" );
+			});
+
+			$( "<ul/>", {
+				"class": "my-new-list",
+				html: items.join( "" )
+			}).appendTo( "body" );
+		});
+	})();
+</script>
+
+</body>
+</html>

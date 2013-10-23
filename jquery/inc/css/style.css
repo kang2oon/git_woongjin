@@ -15,6 +15,11 @@ input[type='checkbox'], input[type='radio']{border:none;}
 /**/
 .fleft {float: left;}
 
+.test{font-weight:bold;font-size:18px;}
+
+.close_bar{position:absolute;width:100%;bottom:0;background:#000;color:#fff;text-align:right;}
+	.close_bar div{padding:5px 10px;}
+
 /* List Page */
 table.smp_list{width:95%;border-collapse:collapse;margin:30px auto;}
 table.smp_list th, table.smp_list td{border:1px #ccc;border-style:solid none solid solid;padding:3px 5px;}
@@ -282,4 +287,43 @@ ol.bjqs-markers li.active-marker a, ol.bjqs-markers li a:hover{background: #999;
 	text-align:left;
 	font-size:12px;
 	font-weight:normal;
+}
+
+/* bxslider */
+.slider{position:relative;width:500px;margin:30px auto;}
+.bx-controls-direction{top:-120px !important;}
+#bx-pager{text-align:center;}
+#bx-pager a img {padding: 3px;border: solid #ccc 1px;width:50px;height:50px;}
+#bx-pager a.active img {border: solid #5280DD 1px;}
+
+/* Table Sortable */
+table.tablesorter thead tr .header {
+	background-image: url(/images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(/images/desc.gif);
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(/images/asc.gif);
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #e6EEEE;
+	border: 1px solid #ccc;
+	font-size: 8pt;
+	padding: 4px 50px 4px 4px;
+}
+th {font-weight: bold;}
+td, th {display: table-cell;vertical-align: inherit;padding:4px;border:1px solid #ccc;}
+table.tablesorter {
+	font-family: arial;
+	font-size: 8pt;
+	text-align: left;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
 }

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* Common */
+html, body, textarea{font-family:'Nanum Gothic';font-size:12px;margin:0;padding:0;line-height:160%;}
+div{position:relative;}
+caption{display:none;}
+textarea{padding:3px 5px;border:1px solid #ccc;}
+select, 
+input[type='text'], input[type='file']{border:1px solid #ccc;font-family:'Nanum Gothic';font-size:12px;}
+input[type='checkbox'], input[type='radio']{border:none;}
+
+/**/
+.fleft {float: left;}
+
+.test{font-weight:bold;font-size:18px;}
+
+.close_bar{position:absolute;width:100%;bottom:0;background:#000;color:#fff;text-align:right;}
+	.close_bar div{padding:5px 10px;}
+
+/* List Page */
+table.smp_list{width:95%;border-collapse:collapse;margin:30px auto;}
+table.smp_list th, table.smp_list td{border:1px #ccc;border-style:solid none solid solid;padding:3px 5px;}
+table.smp_list th{background:#333;color:#fff;}
+table.smp_list th:first-child, table.smp_list td:first-child{text-align:center;border-left:none;}
+table.smp_list tr:nth-child(even){background:#e4e4e4;}

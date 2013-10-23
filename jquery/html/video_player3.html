@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Video Player Test3</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<script type="text/javascript" src="/inc/jwplayer/jwplayer.js" ></script>
+
+</head>
+<body>
+	<div id="myElement">Loading the player...</div>
+
+	<script type="text/javascript">
+		jwplayer("myElement").setup({
+//			file: "/video/wah-mov1.mp4",
+//			file: "http://www.youtube.com/watch?v=26lMxaMPUS8",
+			file: "big_buck_bunny_trailer_480p_high.mp4",
+			height: 480,
+			width: 852,
+			image: "/video/watchtrailer.gif"
+		});
+	</script>
+</body>
+</html>

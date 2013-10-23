@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta name="description" content="" />
+	<meta name="author" content="kang2oon" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Image Slider 5 (bxslider) &lt; jQuery_Test</title>
+	<link rel="stylesheet" type="text/css" href="/inc/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/inc/css/jquery.bxslider.css" />
+	<script type="text/javascript" src="/inc/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/inc/js/jquery.bxslider.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.bxslider').bxSlider({
+			auto: true,
+			autoControls: true,
+			pagerCustom: '#bx-pager'
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="slider">
+	<ul class="bxslider">
+		<li><img src="/images/slide-civil-1.jpg" alt=""/></li>
+		<li><img src="/images/slide-env-1.jpg" alt=""/></li>
+		<li><img src="/images/slide-civil-2.jpg" alt=""/></li>
+		<li><img src="/images/slide-env-2.jpg" alt=""/></li>
+	</ul>
+
+	<div id="bx-pager">
+		<a data-slide-index="0" href="javascript:void(0);"><img src="/images/slide-civil-1.jpg" /></a>
+		<a data-slide-index="1" href="javascript:void(0);"><img src="/images/slide-env-1.jpg" /></a>
+		<a data-slide-index="2" href="javascript:void(0);"><img src="/images/slide-civil-2.jpg" /></a>
+		<a data-slide-index="3" href="javascript:void(0);"><img src="/images/slide-env-2.jpg" /></a>
+	</div>
+</div>
+
+</body>
+</html>

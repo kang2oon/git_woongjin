@@ -49,7 +49,7 @@
 	    	base.ticker = setInterval(function() {
 	    	
 	    		base.$el.find('li:first').animate({
-	            	marginTop: '-' + base.options.row_height,
+	            	marginTop: '-' + base.options.row_height
 	            }, base.options.speed, function() {
 	                $(this).detach().css('marginTop', '0').appendTo(base.$el);
 	            });
@@ -76,13 +76,13 @@
 			
 				base.$el.css({
 					height		: ticker_height + 'px', 
-					overflow	: 'hidden',	
+					overflow	: 'hidden'	
 				});
 				
 			}else{
 				//No heights were specified, so just doublecheck overflow = hidden
 				base.$el.css({
-					overflow	: 'hidden',
+					overflow	: 'hidden'
 				})
 			}
 			
@@ -111,7 +111,7 @@
 				$(base.options.previous).click(function(){
 					base.$el.find('li:last').detach().prependTo(base.$el).css('marginTop', '-' + base.options.row_height);
 					base.$el.find('li:first').animate({
-				        marginTop: '0px',
+				        marginTop: '0px'
 				    }, base.options.speed, function () {
 				        base.reset_interval();
 				    });
@@ -123,7 +123,7 @@
 			if (typeof(base.options.next) != "undefined" && base.options.next != null){
 				$(base.options.next).click(function(){
 					base.$el.find('li:first').animate({
-						marginTop: '-' + base.options.row_height,
+						marginTop: '-' + base.options.row_height
 			        }, base.options.speed, function() {
 			            $(this).detach().css('marginTop', '0px').appendTo(base.$el);
 			            base.reset_interval();
@@ -168,7 +168,7 @@
   		row_height	:	'100px',	/* Height of each ticker row in PX. Should be uniform. */
   		speed		:	800,		/* Speed of transition animation in milliseconds */
   		interval	:	4000,		/* Time between change in milliseconds */
-		max_items	: 	null, 		/* Integer for how many items to display at once. Resizes height accordingly (OPTIONAL) */
+		max_items	: 	null 		/* Integer for how many items to display at once. Resizes height accordingly (OPTIONAL) */
   };
   
   $.fn.totemticker = function( options ){
