@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>전출등록요청(일반전출)</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function (){
+	// 터치시 top버튼 보이게 설정.
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside button.top-button').show();
+	});
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		} else {
+//			$('#Document #Aside button.top-button').hide();
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Join_Member">
+		<div class="container">
+			<!-- 기본정보 입력폼  시작 -->
+			<div class="section">
+				<div class="guide">선택한 회원(과목)의 추가정보를 입력해주세요.</div>
+				<div class="memlist">
+					<div class="clearfix"><h3 class="add_bu">김보미</h3><div class="fleft">&nbsp;/ 선택과목:2개</div></div>
+				</div>
+				<div class="viewport">
+					<div class="form-list">
+						<ul>
+							<li>
+								<strong class="label2 required3">
+									<label for="MEMBER_MOVEDAY">이사예정일</label>
+								</strong>
+								<span class="field">
+									<input type="text" name="MEMBER_BIRTHDAY" id="MEMBER_MOVEDAY" onclick="app_openCalendar('insert_move_date');" disabled placeholder="달력에서 선택해 주세요" />
+									<button type="button" onclick="app_openCalendar('insert_move_date');" class="calendar-button blind">달력</button>
+								</span>
+							</li>
+							
+							<li>
+								<strong class="label2 required3">
+									이사주소지
+								</strong>
+								<span class="field">
+									<span class="block-group">
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS1" style="width: 50px; " disabled />
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS2" style="width: 50px; " disabled />
+											<button type="button" class="button-style s-size global" onclick="button_post();">우편번호</button>
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS3" style="width: 100%; " disabled />
+										</span>
+										<span class="block">
+											<input type="text" name="MEMBER_ADDRESS" id="MEMBER_ADDRESS4" style="width: 100%; " />
+										</span>
+									</span>
+								</span>
+							</li>
+
+							<li>
+								<strong class="label2 required3">
+									<label for="MEMBER_CEL1">휴대전화</label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_CEL1">
+										<option value="" selected>선택</option>
+										<option value="010" >010</option>
+										<option value="011" >011</option>
+										<option value="016" >016</option>
+										<option value="017" >017</option>
+										<option value="018" >018</option>
+										<option value="019" >019</option>
+									</select>
+									<input type="text" name="MEMBER_CEL" id="MEMBER_CEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label2 required3">
+									<label for="MEMBER_TEL1">전화번호</label>
+								</strong>
+								<span class="field">
+									<select id="MEMBER_TEL1">
+										<option value="" selected>선택</option>
+										<option value="02">02</option>
+										<option value="031">031</option>
+										<option value="032">032</option>
+										<option value="033">033</option>
+										<option value="041">041</option>
+										<option value="042">042</option>
+										<option value="043">043</option>
+										<option value="051">051</option>
+										<option value="052">052</option>
+										<option value="053">053</option>
+										<option value="054">054</option>
+										<option value="055">055</option>
+										<option value="061">061</option>
+										<option value="062">062</option>
+										<option value="063">063</option>
+										<option value="064">064</option>
+										<option value="070">070</option>
+									</select>
+									<input type="text" name="MEMBER_TEL" id="MEMBER_TEL2" maxlength="8" onfocus="OnCheckPhone(this)" onblur="OnCheckPhone(this)" />
+								</span>
+							</li>
+
+							<li>
+								<strong class="label2 required3">
+									<label for="MEMBER_EMAIL1">특이사항</label>
+								</strong>
+								<span class="field">
+									<textarea rows="5" cols="5"></textarea>
+								</span>
+							</li>
+
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 기본정보 입력폼  끝-->
+
+			
+
+			<!-- 저장버튼  시작-->
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="submit" class="button-style m-size submit" onclick="validity_all();">저장</button>
+					</span>
+				</div>
+			</div>
+			<!-- 저장버튼  끝-->
+		</div>
+	</div>
+
+	<!-- 하단top버튼  시작-->
+	<div id="Aside">
+		<hr />
+
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();return false;">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼  끝-->
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>목표관리</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+    var $ = jQuery;
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+    $(window).scroll(function(){
+//        $('#Document #Aside button.top-button').hide();
+//
+//        if($(this).scrollTop() < 40) {
+//            $('#Document #Aside button.top-button').fadeOut('fast');
+//        } else {
+//            $('#Document #Aside button.top-button').delay('100').fadeIn();
+//        }
+    });
+
+	// top버튼 클릭시
+    $('#Aside button.top-button').click(function(){getUrl('#Document')});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Header">
+		<div class="container">
+			<h1><div class="fleft">&nbsp;&nbsp;&nbsp;&lt;</div>10월<div class="fright">&gt;&nbsp;&nbsp;&nbsp;</div></h1>
+		</div>
+		<hr />
+	</div>
+
+	<div id="Contents" class="Join_Member">
+		<div class="container">
+			<!-- 목표등록등록버튼  시작-->
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="submit" class="button-style m-size submit" onclick="javascript:location.href('C011301.html')">목표 등록</button>
+					</span>
+				</div>
+			</div>
+			<!-- 목표등록등록버튼  끝-->
+			
+			<!-- 기본정보 입력폼  시작 -->
+			<div class="section">
+				<h2><strong class="wrap">10월 목표관리</strong></h2>
+				
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<caption class="hiding">목표관리 LIST</caption>
+						<colgroup>
+							<col/>
+							<col width="50"/>
+							<col/>
+							<col width="50"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>월말 과목수</th>
+								<td>12</td>
+								<th>입회</th>
+								<td>2</td>
+							</tr>
+							<tr>
+								<th>휴회수</th>
+								<td>2</td>
+								<th>수수료(%)</th>
+								<td>10</td>
+							</tr>
+							<tr>
+								<th>순증현황(월)</th>
+								<td>3</td>
+								<th>휴회료(%)</th>
+								<td>10</td>
+							</tr>
+							<tr>
+								<th>당월 입회목표</th>
+								<td>0</td>
+								<th>차월 휴회예상</th>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>차월 휴회승인</th>
+								<td>0</td>
+								<th>차차월 휴회예상</th>
+								<td>0</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 기본정보 입력폼  끝-->
+			
+			<!-- 기본정보 입력폼  시작 -->
+			<div class="section">
+				<h2><strong class="wrap">주차별 MAP</strong><div class="list_count"><select><option>1주차</option><option>2주차</option></select></div></h2>
+				
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<colgroup>
+							<col width="50%"/>
+							<col width="50%"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>주목표</th>
+								<th>달성</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+					
+					<div class="dtype1">
+						<table border="1" class="col">
+						<tbody>
+							<tr>
+								<th>1일 (수요일)</th>
+								<td>등록된 계획이 없습니다.</td>
+							</tr>
+							<tr>
+								<th>2일 (목요일)</th>
+								<td>등록된 계획이 없습니다.</td>
+							</tr>
+							<tr>
+								<th>3일 (금요일)</th>
+								<td>등록된 계획이 없습니다.</td>
+							</tr>
+							<tr>
+								<th>4일 (토요일)</th>
+								<td>등록된 계획이 없습니다.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 기본정보 입력폼  끝-->
+		
+		</div>
+	</div>
+	
+	<!-- 하단top버튼 시작 -->
+	<div id="Aside">
+		<hr />
+        <div class="container">
+            <button type="button" class="top-button blind">Top</button>
+        </div>
+    </div>
+    <!-- 하단top버튼 끝 -->
+</div>
+</body>
+</html>

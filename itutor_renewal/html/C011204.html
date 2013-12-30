@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>관심고객 주관지표 등록</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+    var $ = jQuery;
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+    $(window).scroll(function(){
+//        $('#Document #Aside button.top-button').hide();
+//
+//        if($(this).scrollTop() < 40) {
+//            $('#Document #Aside button.top-button').fadeOut('fast');
+//        } else {
+//            $('#Document #Aside button.top-button').delay('100').fadeIn();
+//        }
+    });
+
+	// top버튼 클릭시
+    $('#Aside button.top-button').click(function(){getUrl('#Document')});
+    
+    $(".scrollable").css("height",($(document).height()-280)+"px");
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<!--div id="Header">
+		<div class="container">
+			<h1><div class="fleft">&nbsp;&nbsp;&nbsp;&lt;</div>2013년 11월<div class="fright">&gt;&nbsp;&nbsp;&nbsp;</div></h1>
+		</div>
+		<hr />
+	</div-->
+
+	<div id="Contents" class="Join_Member">
+		<div class="container">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="clearfix" style="padding:0 10px;">
+						<div class="fleft" style="padding-top:10px;color:#0066bd;">12월 관심고객 주관지표 선정</div>
+						<div class="fright"><button type="submit" class="button-style m-size2 submit" onclick="jjavascript:void(0);">알아두기</button></div>
+					</span>
+				</div>
+			</div>
+			
+			<!-- 기본정보 입력폼  시작 -->
+			<div class="section">
+				
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<colgroup>
+							<col/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th	scope="col" class="name"><div>회원명</div></th>
+								<th	scope="col" class="press"><div>교재밀림</div></th>
+								<th	scope="col" class="defect"><div>수업결손</div></th>
+								<th	scope="col" class="Interest"><div>흥미없음</div></th>
+								<th	scope="col" class="other"><div>타학습시작</div></th>
+								<th	scope="col" class="online"><div>온라인부진</div></th>
+								<th	scope="col" class="time"><div>시간민감</div></th>
+								<th	scope="col" class="etc"><div>기타</div></th>
+							</tr>
+						</thead>
+						</table>
+					</div>
+					<div class="dtype1 scrollable" style="height:400px;">
+						<table border="1" class="col scrolldata">
+						<caption class="hiding">관심고객 LIST</caption>
+						<colgroup>
+							<col/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+							<col width="35"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th	scope="col" class="name"><div>회원명</div></th>
+								<th	scope="col" class="press"><div>교재밀림</div></th>
+								<th	scope="col" class="defect"><div>수업결손</div></th>
+								<th	scope="col" class="Interest"><div>흥미없음</div></th>
+								<th	scope="col" class="other"><div>타학습시작</div></th>
+								<th	scope="col" class="online"><div>온라인부진</div></th>
+								<th	scope="col" class="time"><div>시간민감</div></th>
+								<th	scope="col" class="etc"><div>기타</div></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td >김보미</td>
+								<td class="before_once"><input type="checkbox" checked="checked"/></td>
+								<td class="before_once"><input type="checkbox" checked="checked"/></td>
+								<td><input type="checkbox" checked="checked"/></td>
+								<td><input type="checkbox" checked="checked"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td class="before_both"><input type="checkbox"/></td>
+							</tr>
+							
+							<tr>
+								<td>김슬기</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td class="before_once"><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td class="before_once"><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >신광섭</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>김보미</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>김슬기</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >신광섭</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >김보미</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>김슬기</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >신광섭</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >김보미</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td >김슬기</td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+								<td><input type="checkbox"/></td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 기본정보 입력폼  끝-->
+			
+			<!-- 저장버튼  시작-->
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="submit" class="button-style m-size submit" onclick="javascript:void(0);">저장</button>
+					</span>
+				</div>
+			</div>
+			<!-- 저장버튼  끝-->
+		
+		</div>
+	</div>
+	
+	<!-- 하단top버튼 시작 -->
+	<div id="Aside">
+		<hr />
+        <div class="container">
+            <button type="button" class="top-button blind">Top</button>
+        </div>
+    </div>
+    <!-- 하단top버튼 끝 -->
+</div>
+
+
+<!-- 모달 컨테이너	: 시작 -->
+<div id="Dialog">
+</div>
+<!-- 모달 컨테이너	: 끝 -->
+
+
+<!-- 모달 창 :	시작 -->
+<div id="modal_package" class="none">
+
+	<div class="wrapper">
+		<div id="dialContents" class="dialog-contents">
+			<div class="performing">
+				<div class="modal_title">
+                    알아두기
+				</div>
+				<div class="legend clearfix">
+					<ul>
+						<li><div class="before_once"></div>전월 또는 전전월에 선택함</li>
+						<li><div class="before_both"></div>전월/전전월에 모두 선택함</li>
+						<li><div class="current"></div>당월에 선택함</li>
+					</ul>
+					<p class="mgtop15">매월 25일부터 말일까지 다음달 관심지표를 선정합니다.</p>
+				</div>
+		</div>
+			<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button	type="button" class="button-style pop-size global" onclick="modal_package_close();">확인</button>
+							</span>
+						</div>
+		</div>
+	</div>
+</div>
+<!-- 모달 창  :	끝 -->
+
+</body>
+</html>

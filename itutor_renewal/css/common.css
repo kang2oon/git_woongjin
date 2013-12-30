@@ -288,6 +288,12 @@ em.required {display: inline-block; width: 8px; height: 8px; background: url('..
 	.dtype1 table.col td.day_time {background-color:#4a4740; color:#fff;} /* 2012-12-24 클래스추가. */
 	.dtype1 table th.hyper, .dtype1 table td.hyper1 {letter-spacing:-4px !important;}
 	.dtype1 table th.hyper, .dtype1 table td.hyper2 {font-size:11px; letter-spacing:-1px;}
+	.dtype1 table td.aleft{text-align:left;}
+	.dtype1 table.push td{text-align:left;padding:10px;line-height:130%;}
+	.dtype1 table.push td a:after{content:" ▶"}
+	.dtype1 table.push td .datetime{text-align:right;margin-top:5px;}
+	.dtype1 table.push tr:nth-child(odd){background:rgba(150, 150, 150, 0.15);}
+
 
 /* Definition-List Selector */
 .hiligh-box {clear: both; padding: 0px 2px; }
@@ -332,3 +338,101 @@ em.required {display: inline-block; width: 8px; height: 8px; background: url('..
 		font-weight:bold !important;
 		vertical-align:text-top !important;
 	}
+
+/* 20130821 kang2oon add */
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix {display: block;*zoom:1;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+.fleft{float:left;}
+.fright{float:right;}
+.pdall5{padding:5px;}
+.mgtop15{margin-top:15px;}
+.mgtop30{margin-top:30px;}
+.strong{font-weight:bold;}
+
+.dtype1 table td[rowspan]{border-right: 1px solid #dad8d1;}
+.dtype1 table td div.state{width:15px;height:15px;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;margin:0 auto;}
+.over3days{background:#dc0000;}
+.over2days{background:#ffb900;}
+.completed{background:#0026e6;}
+
+
+/* 20130910 kang2oon add - modal windows */
+#basic-modal-content {display:none;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+
+/* Container */
+#simplemodal-container {height:92%; width:92%; color:#333; background-color:#fff; border:3px solid #444;}
+#simplemodal-container .simplemodal-wrap {overflow:auto !important;}
+#simplemodal-container .simplemodal-data {}
+#simplemodal-container a {color:#333;}
+#simplemodal-container a.modalCloseImg {width:35px;height:23px;display:inline; z-index:3200; position:absolute; top:7px; right:7px; cursor:pointer;background:url('../image/btn_close.png') no-repeat;background-size:auto 100%;}
+#simplemodal-container a.modalClose_C010000 {width:35px;height:23px;display:none; z-index:3200; position:absolute; top:7px; right:7px; cursor:pointer;}
+#simplemodal-container h3 {padding:10px;text-align:center;color:#fff;}
+#simplemodal-container .area_title{position:absolute;display:block;z-index:3100;width:100%;min-height:32px;top:0;left:0;background:url('../image/top_book_bg.png') repeat-x 100% 100%;background-size:auto 100%;}
+#simplemodal-container .button-style{padding:5px 9px;height:auto;}
+.madal_info{font-size:75%;margin:0 0 10px;}
+
+.dtype1 table.tbl_deposit {border: 1px #999;border-style:solid none;border-collapse:collapse;}
+	.dtype1 table.tbl_deposit thead tr th {padding:2px 5px;color:#fff; background:#333;}
+	.dtype1 table.tbl_deposit thead tr:first-child th {border-top: 0px none; }
+	.dtype1 table.tbl_deposit td{border:1px #999; border-style:solid none solid solid;}
+	.dtype1 table.tbl_deposit td:first-child{border-left:none;}
+	.dtype1 table.tbl_deposit tbody tr:nth-child(even) td{border-bottom-width:2px;border-bottom-color:#666;}
+	.dtype1 table.tbl_deposit tbody tr:nth-child(4n-1), .dtype1 table.tbl_deposit tbody tr:nth-child(4n){background:#eaeaea !important;}
+
+.dtype1 table.tbl_weat {width: 100%; border: 0px none; }
+	.dtype1 table.tbl_weat th, .dtype1 table.tbl_weat td {border: 1px solid #dad8d1; border-right: 0px none; padding: 5px 5px; height: 30px; text-align: center; }
+	.dtype1 table.tbl_weat tbody tr:nth-child(odd) td{border-top-width:2px;border-top-color:#dad8d1;}
+	.dtype1 table.tbl_weat div.weat_addr{width:150px;margin:0 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* 2013-10-29 설문조사 관련 스타일 추가 */
+.poll_alist{list-style:none;}
+	.poll_alist li{padding:3px;}
+
+/* 2013-11-25 아이리더 PI 적용 관련 스타일 추가 */
+.list_count{display:inline-block;position:absolute;right:9px;font-weight:normal;font-size:0.75em;color:#666;}
+.list_count select{position:relative;top:-5px;color:#666;}
+.form-list1 {border-top: 1px solid #797874;text-align: center; padding:7px 0;}
+	.form-list1 ul{}
+		.form-list1 ul li label{margin-right: 7px;}
+.memlist{padding:10px;border-top:1px solid rgb(77, 76, 76);}
+	.memlist h3{float:left;font-size:1em;color:#0066bd;}
+	.memlist h3.add_bu:before{content:"▶ ";font-size:0.7em;vertical-align: top;}
+	.memlist>div>div{display:inline-block;}
+	.memlist>ul>li{position:relative;list-style:none;margin-left:13px;margin-top:10px;*zoom:1;}
+	.memlist>ul>li:after{content:"";clear:both;display:block;}
+	.memlist>ul>li button{position:absolute;bottom:0;right:0;}
+	.memlist>ul>li>ul.reset_mg{margin-left:-13px;}
+	.memlist .half{list-style:none;}
+	.memlist .half li{width:50%;float:left;}
+	.memlist .half li.double{width:100%;clear:both;}
+	.memlist .half li a{text-decoration:underline;}
+div.scrollable{overflow:auto;overflow-x:hidden;position:relative;}
+.hspaceM{padding-left:30px;}
+.hspaceS{padding-left:20px;}
+.memlist_hr{border-top:1px solid  rgb(77, 76, 76);height:0;display:block;margin:10px 0;}
+.required3:after{content:"*";color:#9b3140 ;}
+		.form-list ul li> .label2 {display: table-cell; border-top: 1px solid #dad8d1; padding: 5px; height: 30px; vertical-align: top; }
+		.form-list ul li> .label2 {position: relative; padding: 12px 5px 13px; width: 90px; height: 15px; }
+.guide{padding:9px;}
+table.scrolldata thead{display:none;}
+table.scrolldata tbody tr:first-child{border-top:none;}
+table.scrolldata td.before_once{background:#018DC9;}
+table.scrolldata td.before_both{background:#033452;}
+.legend{padding:0 9px 9px;}
+	.legend>ul>li{/*float:left;*/margin-right:25px;}
+	.legend>ul>li div.before_once{display:inline-block;width:13px;height:13px;background:#018DC9;margin-right:5px;}
+	.legend>ul>li div.before_both{display:inline-block;width:13px;height:13px;background:#033452;margin-right:5px;}
+	.legend>ul>li div.current{display:inline-block;width:13px;height:13px;background:url('../image/disabled_checkbox.png') no-repeat;margin-right:5px;}
+.button-style.m-size2 {padding: 3px 14px 1px; background: url('../image/box_btn_m.png') no-repeat; background-size: 100% 200%;background-position:0 100%; }
+.modal_title{text-align:center;padding:10px;border-bottom:1px solid #ccc;margin-bottom:10px;font-weight:bold;font-size:1.1em;}
+
+#C010000 #simplemodal-container{height:250px;position:relative;}
+.area_cookie{border-top:1px solid #ccc;position:absolute;bottom:0;width:100%;background:#f5f5f5;}
+.area_cookie div{margin:10px;}
+.area_cookie a{position:relative;top:2px;font-weight:bold;font-size:1.2em;}

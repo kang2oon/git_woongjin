@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,	user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>설문조사 목록</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css"	/>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script	type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script	type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script	type="text/javascript" src="../js/json2.js?v0004"></script>
+<script	type="text/javascript" src="../js/common.js" ></script>
+<script	type="text/javascript" src="../js/connect.js" ></script>
+<script	type="text/javascript" src="../js/A020400_msg.js?d=2"></script>
+<script	type="text/javascript" src="../js/A020100.js?v=039"></script>
+<script	type="text/javascript" src="../js/A020100_b.js?v=037"></script>
+<script	type="text/javascript" src="../js/A020100_u.js?v=037"></script>
+<script	type="text/javascript" src="../js/extension.js"></script>
+<script	type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script	type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+
+<script	type="text/javascript">
+$(document).ready(function (){
+
+	// top버튼 터치시 보이게 설정
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside	button.top-button').show();
+	});
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		  if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		  }	else {
+//			  $('#Document #Aside button.top-button').hide();
+//			  $('#Document #Aside button.top-button').delay('100').fadeIn();
+//		  }
+	});
+});
+
+
+</script>
+</head>
+
+<body class="noscript">
+
+<!-- 기본구조 : 시작 -->
+<div id="Document">
+	<!-- 상단네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local"	class="area-lnb">
+				<ul class="item-size2">
+					<li class="active"><a href='#' onclick="changePage_check('push_list.html');return false;" data-ajax="false">알림메시지</a></li>
+					<li><a href='#' onclick="changePage_check('poll_list.html');return false;" data-ajax="false">설문조사</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 상단네비 : 끝 -->
+
+	<div class="dtype1">
+		<table id="TABLE_POLL" border="1" class="col push">
+		<caption class="hiding">알림메시지 목록</caption>
+
+		<tbody>
+			<tr>
+				<td>
+					<a href="javascript:void(0);">새로운 설문조사가 도착하였습니다. 설문에 참여해주세요.</a>
+					<div class="datetime">10.18.15:23</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:void(0);">새로운 회원이 선생님께 전입되었습니다.</a>
+					<div class="datetime">10.16.12:12</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:void(0);">전출요청이 거절되었습니다.</a>
+					<div class="datetime">10.16.12:12</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr	/>
+		<div class="container">
+			<button	type="button" class="top-button	blind" onclick="top_scroll();return	false;">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+<!-- 기본구조 : 끝 -->
+</body>
+</html>

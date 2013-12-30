@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="../css/common.css" />
 <link type="text/css" rel="stylesheet" href="../css/style.css" />
 <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script	type="text/javascript" src="../js/jquery.modal.C010000.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="../js/connect.js?v=0016" ></script>
 <script type="text/javascript" src="../js/extension.js"></script>
@@ -37,11 +38,24 @@ $(document).ready(function(){
 		{
 			app_changePage('C010100.html',{},true);
 		}
+
 	}
+	
+	jQuery(function ($) {
+	// Load dialog on page load
+	//$('#basic-modal-content').modal();
+
+	// Load dialog on click
+	$('#Contents .deposit').click(function (e) {
+		$('#basic-modal-content').modal();
+
+		return false;
+		});
+	});
 </script>
 </head>
 
-<body class="noscript">
+<body class="noscript" id="C010000">
 <div id="Document">
 	<div id="Contents" class="Member_Menu" style="border:0px;">
 		<div class="container">
@@ -51,8 +65,11 @@ $(document).ready(function(){
 				<div class="viewport">
 					<div class="dock-list">
 						<ul>
-							<li>회원입회 <button type="button" onclick="moveMemberIns()" class="button-style m-size box">바로가기</button></li>
+							<li>회원입회 <button type="button" onclick="moveMemberIns()" class="button-style m-size box global deposit">바로가기</button></li>
 							<li>휴회관리 <button type="button" onclick="app_changePage('B010600.html',{},true);" class="button-style m-size box">바로가기</button></li>
+							<li>인계/전입전출 <button type="button" onclick="app_changePage('C011100.html',{},true);" class="button-style m-size box">바로가기</button></li>
+							<li>관심고객 주관지표 <button type="button" onclick="app_changePage('C011200.html',{},true);" class="button-style m-size box">바로가기</button></li>
+							<li>목표관리 <button type="button" onclick="app_changePage('C011300.html',{},true);" class="button-style m-size box">바로가기</button></li>
 						</ul>
 					</div>
 				</div>
@@ -77,6 +94,20 @@ $(document).ready(function(){
 			</div>
 			<!-- 회비 메뉴 끝 -->
 		</div>
+		
+		<!-- modal content -->
+		<div id="basic-modal-content">
+			<div style="padding:60px 20px 20px;">
+				<div>
+					2014년 4월 1일 부터는 수진검사를 하지 않으면 입회를 하실 수 없습니다.
+				</div>
+			</div>
+			<div class="area_cookie clearfix">
+					<div class="fleft"><input type="checkbox" id="cookie_close"/> <label for="cookie_close">일주일 동안 보지 않기</label></div>
+					<div class="fright"><a href="C010100.html">X</a></div>
+				</div>
+		</div>
+		
 	</div>
 </div>
 </body>

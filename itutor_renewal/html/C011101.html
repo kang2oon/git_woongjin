@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>인계요청등록</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function (){
+	// 터치시 top버튼 보이게 설정.
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside button.top-button').show();
+	});
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		} else {
+//			$('#Document #Aside button.top-button').hide();
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+	// $('.scrollable').ready(function(){
+// 		
+	// })
+	alert($( document ).height());
+	alert($(window).height());
+	$(".scrollable").css("height",($(window).height()-90)+"px");
+	//$("div[data-role=content]").css({'height':'500px'});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+
+	<div id="Contents" class="Join_Member">
+		<div class="container">
+
+			<!-- 기본정보 입력폼  시작 -->
+			<div class="section">
+				
+				<div class="form-list1">
+					<select><option>수업요일</option></select>
+					<select><option>전체</option></select>
+					<button type="button" class="button-style s-size global" onclick="javascript:void(0);">검색</button>
+				</div>
+				<div class="viewport scrollable" style="height:100px;" data-role="content">
+					
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(유아(내년))</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 바로독해</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(초등2)</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 씽크U수학</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(유아(내년))</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 바로독해</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(초등2)</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 씽크U수학</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(유아(내년))</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 바로독해</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(초등2)</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 씽크U수학</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(유아(내년))</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 바로독해</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="memlist">
+						<div class="clearfix"><h3>김보미(초등2)</h3><div class="fright"><span class="strong">회원번호</span> 1234567890</div></div>
+						<ul>
+							<li>
+								<ul class="reset_mg">
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 영어</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 수학</li>
+									<li><input type="checkbox" /> <span class="strong">계약번호</span> 1234567890<span class="strong hspaceM">과목</span> 씽크U수학</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="form-list1"><button type="submit" class="button-style m-size submit">저장</button></div>
+			</div>
+			<!-- 기본정보 입력폼  끝-->
+
+		</div>
+	</div>
+
+	<!-- 하단top버튼  시작-->
+	<div id="Aside">
+		<hr />
+
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();return false;">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼  끝-->
+</div>
+</body>
+</html>

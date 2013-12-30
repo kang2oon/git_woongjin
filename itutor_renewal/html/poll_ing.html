@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,	user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>설문조사 목록</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css"	/>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script	type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script	type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script	type="text/javascript" src="../js/json2.js?v0004"></script>
+<script	type="text/javascript" src="../js/common.js" ></script>
+<script	type="text/javascript" src="../js/connect.js" ></script>
+<script	type="text/javascript" src="../js/A020400_msg.js?d=2"></script>
+<script	type="text/javascript" src="../js/A020100.js?v=039"></script>
+<script	type="text/javascript" src="../js/A020100_b.js?v=037"></script>
+<script	type="text/javascript" src="../js/A020100_u.js?v=037"></script>
+<script	type="text/javascript" src="../js/extension.js"></script>
+<script	type="text/javascript" src="../js/jquery.treeview.js" ></script>
+<script	type="text/javascript" src="../js/jquery.treeview.edit.js" ></script>
+
+<script	type="text/javascript">
+$(document).ready(function (){
+
+	// top버튼 터치시 보이게 설정
+	$('#Document').on('touchmove',function(e){ 
+		$('#Document #Aside	button.top-button').show();
+	});
+
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		  if($('#Document #Aside button.top-button').css("display")=="none") {
+//
+//		  }	else {
+//			  $('#Document #Aside button.top-button').hide();
+//			  $('#Document #Aside button.top-button').delay('100').fadeIn();
+//		  }
+	});
+});
+
+
+</script>
+</head>
+
+<body class="noscript">
+
+<!-- 기본구조 : 시작 -->
+<div id="Document">
+	<!-- 상단네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local"	class="area-lnb">
+				<ul class="item-size2">
+					<li><a href='#' onclick="javascript:alert('준비중입니다.');return false;" data-ajax="false">알림메시지</a></li>
+					<li class="active"><a href='#' onclick="changePage_check('poll_list.html');return false;" data-ajax="false">설문조사</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 상단네비 : 끝 -->
+
+	<div class="dtype1" style="margin-top:10px;">
+		<table id="TABLE_POLL" border="1" class="col">
+		<caption class="hiding">설문조사 목록</caption>
+		<colgroup>
+			<col style="width: auto; " />
+			<col style="width: auto; " />
+		</colgroup>
+
+		<thead>
+			<tr>
+				<th scope="col" colspan="2">
+					<div style="text-align:left;">[지국교육] 스마트과정 설문조사</div>
+					<div style="text-align:right;margin-top:5px;">2013.05.01~2013.05.10</div>
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td class="aleft">
+					<p>오늘 교육에 대한 만족도를 체크해주세요.</p>
+					<ul class="poll_alist">
+						<li><input type="radio" name="q1" value="5점" id="q1_a1"/> <label for="q1_a1">5점</label></li>
+						<li><input type="radio" name="q1" value="4점" id="q1_a2"/> <label for="q1_a2">4점</label></li>
+						<li><input type="radio" name="q1" value="3점" id="q1_a3"/> <label for="q1_a3">3점</label></li>
+						<li><input type="radio" name="q1" value="2점" id="q1_a4"/> <label for="q1_a4">2점</label></li>
+						<li><input type="radio" name="q1" value="1점" id="q1_a5"/> <label for="q1_a5">1점</label></li>
+					</ul>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td class="aleft">
+					<p>오늘 교육에 대한 좋았던 점을 모두 체크해 주세요.<br/>(2~3개 선택해 주세요)</p>
+					<ul class="poll_alist">
+						<li><input type="checkbox" name="q2" value="강의내용" id="q2_a1"/> <label for="q2_a1">강의내용</label></li>
+						<li><input type="checkbox" name="q2" value="강의자료" id="q2_a2"/> <label for="q2_a2">강의자료</label></li>
+						<li><input type="checkbox" name="q2" value="강의시간" id="q2_a3"/> <label for="q2_a3">강의시간</label></li>
+						<li><input type="checkbox" name="q2" value="강의환경" id="q2_a4"/> <label for="q2_a4">강의환경</label></li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td class="aleft">
+					<p>오늘 교육에 대한 좋았던 점을 적어주세요.</p>
+					<ul class="poll_alist">
+						<li><textarea cols="10" rows="3" name="q3" title="교욱에 대한 좋았던 점"></textarea></li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td>4</td>
+				<td class="aleft">
+					<p>오늘 교육에 대한 좋았던 점의 순위를 매겨주세요.</p>
+					<ul class="poll_alist">
+						<li><select id="q4_a1" name="q4_a1"><option value="선택">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select> <label for="q4_a1">강의내용</label></li>
+						<li><select id="q4_a2" name="q4_a2"><option value="선택">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select> <label for="q4_a2">강의자료</label></li>
+						<li><select id="q4_a3" name="q4_a3"><option value="선택">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select> <label for="q4_a3">강의시간</label></li>
+						<li><select id="q4_a4" name="q4_a4"><option value="선택">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select> <label for="q4_a4">강의환경</label></li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td>5</td>
+				<td class="aleft">
+					<p>오늘 교육에 대한 만족도를 체크해주세요.</p>
+					<ul class="poll_alist">
+						<li><input type="radio" name="q5" value="매우만족" id="q5_a1"/> <label for="q5_a1">매우만족</label></li>
+						<li><input type="radio" name="q5" value="만족" id="q5_a2"/> <label for="q5_a2">만족</label></li>
+						<li><input type="radio" name="q5" value="보통" id="q5_a3"/> <label for="q5_a3">보통</label></li>
+						<li><input type="radio" name="q5" value="불만족" id="q5_a4"/> <label for="q5_a4">불만족</label></li>
+						<li><input type="radio" name="q5" value="매우불만족" id="q5_a5"/> <label for="q5_a5">매우불만족</label></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+
+		<div style="text-align:center;padding:15px;"><button id="mainBtn" type="submit" class="button-style m-size submit">설문완료</button></div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr	/>
+		<div class="container">
+			<button	type="button" class="top-button	blind" onclick="top_scroll();return	false;">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+<!-- 기본구조 : 끝 -->
+</body>
+</html>

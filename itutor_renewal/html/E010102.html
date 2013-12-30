@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,	user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>고객 통화 결과 등록</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css"	/>
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/calendarjs.css?v=0"	/>
+
+<script	type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script	type="text/javascript" src="../js/common.js"></script>
+<script	type="text/javascript" src="../js/connect.js"></script>
+<script	type="text/javascript" src="../js/CalendarUtil.js"></script>
+<script	type="text/javascript" src="../js/B010400.js?v=003"></script>
+<script	type="text/javascript" src="../js/extension.js"></script>
+<script	type="text/javascript">
+//<![CDATA[
+jQuery(function(){
+	var	$ =	jQuery;
+
+	// 스크롤시	top버튼	보이지 않게	설정 : 옵티머스에서	fadeIn() 처리시	어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		  $('#Document #Aside button.top-button').hide();
+//
+//		  if($(this).scrollTop() < 40) {
+//			  $('#Document #Aside button.top-button').fadeOut('fast');
+//		  }	else {
+//			  $('#Document #Aside button.top-button').delay('100').fadeIn();
+//		  }
+	});
+
+	// top버튼 클릭시
+	$('#Aside button.top-button').click(function(){getUrl('#Document')});
+});
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<div id="Contents" class="Join_Class">
+		<div id="mainContainer"	class="container">
+			<div class="section">
+
+				<div class="pdall5 clearfix">
+					<div class="fleft">
+						<strong class="label">신청일 : 2013.07.21</strong>
+					</div>
+					<div class="fright">
+						<button type="button" class="button-style s-size global">컨택</button>
+					</div>
+				</div>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<caption class="hiding">고객 통화 결과 조회</caption>
+							<colgroup>
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<tbody>
+							<tr>
+								<th scope="row">자녀<br/>이름</th>
+								<td>정병진</td>
+								<th scope="row">학년</th>
+								<td>초1</td>
+							</tr>
+							<tr>
+								<th scope="row">과목</th>
+								<td>사회/과학</td>
+								<th scope="row">제품</th>
+								<td>씽크U사회과학</td>
+							</tr>
+							<tr>
+								<th scope="row">신청<br/>방법</th>
+								<td>신청경로 中 1개</td>
+								<th scope="row">소스<br/>구분</th>
+								<td>신규/과입/재입</td>
+							</tr>
+							<tr>
+								<th scope="row">부모<br/>이름</th>
+								<td>나부모</td>
+								<th scope="row">부모<br/>연락처</th>
+								<td><a href="tel:010-1234-5678">010-1234-5678</a></td>
+							</tr>
+							<tr>
+								<th scope="row">자녀<br/>주소</th>
+								<td colspan="3">[120-200] 경기도 안양시 동안구 호계동 목련마을 선경 아파트 104-902호</td>
+							</tr>
+							<tr>
+								<th scope="row">남긴말</th>
+								<td colspan="3">33개월입니다.</td>
+							</tr>
+							<tr>
+								<th scope="row">오류<br/>처리</th>
+								<td colspan="3">
+									<input type="checkbox" name="error" id="error_type1"/> <label for="error_type1">정보오류</label>&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="error" id="error_type2"/> <label for="error_type2">기타</label>&nbsp;&nbsp;&nbsp;
+									<button type="button" class="button-style s-size global">저장</button>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<hr/>
+
+			<div class="section mgtop30">
+
+				<div class="pdall5 clearfix">
+					<div class="fleft">
+						<strong class="label">신청일 : 2013.07.21</strong>
+					</div>
+					<div class="fright">
+						<button type="button" class="button-style s-size global">컨택</button>
+					</div>
+				</div>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<caption class="hiding">고객 통화 결과 조회</caption>
+							<colgroup>
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<tbody>
+							<tr>
+								<th scope="row">자녀<br/>이름</th>
+								<td>정병진</td>
+								<th scope="row">학년</th>
+								<td>초1</td>
+							</tr>
+							<tr>
+								<th scope="row">과목</th>
+								<td>사회/과학</td>
+								<th scope="row">제품</th>
+								<td>씽크U사회과학</td>
+							</tr>
+							<tr>
+								<th scope="row">신청<br/>방법</th>
+								<td>신청경로 中 1개</td>
+								<th scope="row">소스<br/>구분</th>
+								<td>신규/과입/재입</td>
+							</tr>
+							<tr>
+								<th scope="row">부모<br/>이름</th>
+								<td>나부모</td>
+								<th scope="row">부모<br/>연락처</th>
+								<td><a href="tel:010-1234-5678">010-1234-5678</a></td>
+							</tr>
+							<tr>
+								<th scope="row">자녀<br/>주소</th>
+								<td colspan="3">[120-200] 경기도 안양시 동안구 호계동 목련마을 선경 아파트 104-902호</td>
+							</tr>
+							<tr>
+								<th scope="row">남긴말</th>
+								<td colspan="3">33개월입니다.</td>
+							</tr>
+							<tr>
+								<th scope="row">오류<br/>처리</th>
+								<td colspan="3">
+									<input type="checkbox" name="error" id="error_type1"/> <label for="error_type1">정보오류</label>&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="error" id="error_type2"/> <label for="error_type2">기타</label>&nbsp;&nbsp;&nbsp;
+									<button type="button" class="button-style s-size global">저장</button>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<hr/>
+
+			<div class="section mgtop30">
+
+				<div class="pdall5 clearfix">
+					<div class="fleft">
+						<strong class="label">신청일 : 2013.07.21</strong>
+					</div>
+					<div class="fright">
+						<button type="button" class="button-style s-size global">컨택</button>
+					</div>
+				</div>
+
+				<div class="viewport">
+					<div class="dtype1">
+						<table border="1" class="col">
+						<caption class="hiding">고객 통화 결과 조회</caption>
+							<colgroup>
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+								<col style="width: 65px; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+						<tbody>
+							<tr>
+								<th scope="row">자녀<br/>이름</th>
+								<td>정병진</td>
+								<th scope="row">학년</th>
+								<td>초1</td>
+							</tr>
+							<tr>
+								<th scope="row">과목</th>
+								<td>사회/과학</td>
+								<th scope="row">제품</th>
+								<td>씽크U사회과학</td>
+							</tr>
+							<tr>
+								<th scope="row">신청<br/>방법</th>
+								<td>신청경로 中 1개</td>
+								<th scope="row">소스<br/>구분</th>
+								<td>신규/과입/재입</td>
+							</tr>
+							<tr>
+								<th scope="row">부모<br/>이름</th>
+								<td>나부모</td>
+								<th scope="row">부모<br/>연락처</th>
+								<td><a href="tel:010-1234-5678">010-1234-5678</a></td>
+							</tr>
+							<tr>
+								<th scope="row">자녀<br/>주소</th>
+								<td colspan="3">[120-200] 경기도 안양시 동안구 호계동 목련마을 선경 아파트 104-902호</td>
+							</tr>
+							<tr>
+								<th scope="row">남긴말</th>
+								<td colspan="3">33개월입니다.</td>
+							</tr>
+							<tr>
+								<th scope="row">오류<br/>처리</th>
+								<td colspan="3">
+									<input type="checkbox" name="error" id="error_type1"/> <label for="error_type1">정보오류</label>&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="error" id="error_type2"/> <label for="error_type2">기타</label>&nbsp;&nbsp;&nbsp;
+									<button type="button" class="button-style s-size global">저장</button>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			
+			<!-- 학습정보 끝 -->
+		</div>
+		
+		
+	</div>
+
+	<!-- 하단top버튼 시작 -->
+	<div id="Aside">
+		<hr	/>
+
+		<div class="container">
+			<button	type="button" class="top-button	blind">Top</button>
+		</div>
+	</div>
+	<!-- 하단top버튼 끝	-->
+</div>
+
+<script>
+	/**	===============================================================================================================
+	 * 최초시작	:::	랜더링 인식	문제로 html	로드후 시작.
+	 *	*/
+	$(document).ready(function(){
+		readyInit();
+	});
+</script>
+
+</body>
+</html>

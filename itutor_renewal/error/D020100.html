@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>진단</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.simplemodal.1.4.3.min.js" ></script>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/connect.js?v=0017" ></script>
+<script type="text/javascript" src="../js/D020100.js?v=0039"></script>
+<script type="text/javascript" src="../js/extension.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function(){
+	var $ = jQuery;
+	// 스크롤시 top버튼 보이지 않게 설정 : 옵티머스에서 fadeIn() 처리시 어플꺼짐으로 인해 주석처리.
+	$(window).scroll(function(){
+//		$('#Document #Aside button.top-button').hide();
+//
+//		if($(this).scrollTop() < 40) {
+//			$('#Document #Aside button.top-button').fadeOut('fast');
+//		} else {
+//			$('#Document #Aside button.top-button').delay('100').fadeIn();
+//		}
+	});
+
+	$(window).scroll();
+});
+
+
+// top버튼 클릭시 상단으로 이동
+var top_scroll = function() {
+	window.scrollTo(0, 1);
+}
+//]]>
+</script>
+</head>
+
+<body class="noscript">
+<div id="Document">
+	<!-- 수리언어 상단 네비 : 시작 -->
+	<div id="Nav">
+		<div class="container">
+			<div id="local" class="area-lnb">
+				<ul>
+					<li class="active"><a href="#" onclick="move_area('LA');">언어영역</a></li>
+					<li><a href="#" onclick="move_area('MA');">수리영역</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<!-- 수리언어 상단 네비 : 끝 -->
+
+	<div id="Contents" class="Weat_Answers">
+		<div class="container">
+			<div class="informing">
+				<p>영역별 4문항 이상 답안체크를 해야 <br />분석지가 출력됩니다.</p>
+			</div>
+
+			<div class="section">
+				<h2>
+					<strong class="wrap section_name">언어영역</strong>
+				</h2>
+				<input type="hidden" id="area_code" value="LA">
+
+				<div class="viewport">
+					<!-- 학년선택 : 시작 -->
+					<!--20130607 OHJ 학년선택을 학년에서 코드로 수정 -->
+					<div class="absolute-select">
+						<select id="grade_term" class="grade_term">
+							<option value="" selected>학년선택</option>
+							<option value="B">B</option>
+							<option value="C">C</option>
+							<option value="1A">1A</option>
+							<option value="1B">1B</option>
+							<option value="2A">2A</option>
+							<option value="2B">2B</option>
+							<option value="3A">3A</option>
+							<option value="3B">3B</option>
+							<option value="4A">4A</option>
+							<option value="4B">4B</option>
+							<option value="5A">5A</option>
+							<option value="5B">5B</option>
+							<option value="6A">6A</option>
+							<option value="6B">6B</option>
+						</select> 
+					</div>
+					<!-- 학년선택 : 끝 -->
+					
+					<!-- 답안리스트 : 시작 -->
+					<div class="dtype1">
+						<table border="1" class="col top">
+							<colgroup>
+								<col style="width: 14%; " />
+								<col style="width: auto; " />
+							</colgroup>
+
+							<thead>
+								<tr>
+									<th scope="row">문항</th>
+									<th scope="row" id="colsData">답안체크 및 정답</th>
+								</tr>
+							</thead>
+	
+							<tbody id='TB_DATA' style="width: auto;" >
+								<tr>
+									<td colspan=2>검색 데이터가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 답안리스트 : 끝 -->
+
+					<!-- 하단 버튼부 : 시작 -->
+					<div class="performing">
+						<div class="bottom center">
+							<span class="wrap">
+								<button type="submit" class="button-style m-size submit" id="submitButton" onclick="">다음</button>
+							</span>
+						</div>
+					</div>
+					<!-- 하단 버튼부 : 끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 top 버튼 : 시작 -->
+	<div id="Aside">
+		<hr />
+		<div class="container">
+			<button type="button" class="top-button blind" onclick="top_scroll();">Top</button>
+		</div>
+	</div>
+	<!-- 하단 top 버튼 : 끝 -->
+</div>
+
+<!-- 모달 컨테이너(미사용) : 시작 -->
+<div id="Dialog">
+</div>
+<!-- 모달 컨테이너(미사용) : 끝 -->
+
+<!-- 학년 모달 컨텐츠(미사용) : 시작 -->
+<div id="modal_grade" class="none">
+
+    <div class="wrapper">
+        <div id="dialHeader" class="dialog-header">
+            <h1><em class="section_name">언어영역</em> 단계</h1>
+        </div>
+
+        <div id="dialContents" class="dialog-contents">
+            <div class="daily_check">
+
+                <div class="form">
+                    <table border="1">
+                        <colgroup>
+                            <col style="width: auto; " />
+                            <col style="width: auto; " />
+                        </colgroup>
+                    <tbody>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_1" value="B" /> <label for="GRADE_1"><span class="wrap">B&nbsp;</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_2" value="C" /> <label for="GRADE_2"><span class="wrap">C&nbsp;</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_3" value="1A" /> <label for="GRADE_3"><span class="wrap">1A</span></label></td>
+                            <td height=22px><input type="radio" name="GRADE_FORM" id="GRADE_4" value="1B" /> <label for="GRADE_4"><span class="wrap">1B</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_5" value="2A" /> <label for="GRADE_5"><span class="wrap">2A</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_6" value="2B" /> <label for="GRADE_6"><span class="wrap">2B</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_7" value="3A" /> <label for="GRADE_7"><span class="wrap">3A</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_8" value="3B" /> <label for="GRADE_8"><span class="wrap">3B</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_9" value="4A" /> <label for="GRADE_9"><span class="wrap">4A</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_10" value="4B" /> <label for="GRADE_10"><span class="wrap">4B</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_11" value="5A" /> <label for="GRADE_11"><span class="wrap">5A</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_12" value="5B" /> <label for="GRADE_12"><span class="wrap">5B</span></label></td>
+                        </tr>
+                        <tr>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_13" value="6A" /> <label for="GRADE_13"><span class="wrap">6A</span></label></td>
+                            <td style='height:30px;'><input type="radio" name="GRADE_FORM" id="GRADE_14" value="6B" /> <label for="GRADE_14"><span class="wrap">6B</span></label></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="dialFooter" class="dialog-footer">
+            <div class="performing">
+                <div class="bottom center">
+                    <span class="wrap">
+                        <button type="button" class="button-style pop-size global" onclick="modal_grade_cancel();">취소</button>
+                        <button type="submit" class="button-style pop-size submit" onclick="modal_grade_save();">확인</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 학년 모달 컨텐츠(미사용) : 끝 -->
+
+<!-- 연령 모달 컨텐츠(미사용) : 시작 -->
+<div id="modal_history_age" class="none">
+
+	<div class="wrapper">
+		<div id="dialHeader" class="dialog-header">
+			<h1>WEAT 응시 연령</h1>
+		</div>
+
+		<div id="dialContents" class="dialog-contents">
+			<div class="select_list">
+				<div class="form">
+					<ul>
+						<li><input type="radio" name="WEAT_HISTORY_AGE" id="WEAT_HISTORY_AGE1" value="1" /> <label for="WEAT_HISTORY_AGE1">13개월 ~ 60개월(만4세) 까지</label></li>
+						<li><input type="radio" name="WEAT_HISTORY_AGE" id="WEAT_HISTORY_AGE2" value="2" /> <label for="WEAT_HISTORY_AGE2">6세(만5세) ~ 초등</label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="dialFooter" class="dialog-footer">
+			<div class="performing">
+				<div class="bottom center">
+					<span class="wrap">
+						<button type="button" class="button-style pop-size global" onclick="modal_history_cancel();">취소</button>
+						<button type="submit" class="button-style pop-size submit" onclick="modal_history_save();">확인</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 연령 모달 컨텐츠(미사용) : 끝 -->
+
+</body>
+</html>
